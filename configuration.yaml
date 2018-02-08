@@ -1,0 +1,128 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Default
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret zone_home_latitude
+  longitude: !secret zone_home_longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 62
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Oslo
+  # Customization file
+  customize: !include customize.yaml
+  packages: !include_dir_named packages
+
+config:
+conversation:
+discovery:
+#  ignore:
+#    - harmony
+#    - google_cast
+#    - logitech_mediaserver
+#    - samsung_tv
+#    - ikea_tradfri
+frontend:
+#ios:
+hassio:
+history:
+  exclude:
+    entities:
+      - sensor.date
+      - sensor.date__time
+      - sensor.time
+      - sensor.yr_24h_humidity
+      - sensor.yr_24h_precipitation
+      - sensor.yr_24h_symbol
+      - sensor.yr_24h_temperature
+      - sensor.yr_24h_wind_speed
+      - sensor.yr_humidity
+      - sensor.yr_precipitation
+      - sensor.yr_symbol
+      - sensor.yr_temperature
+      - sensor.yr_wind_speed
+      - sun.sun
+
+logbook:
+recorder:
+  purge_interval: 2
+  purge_keep_days: 5
+  exclude:
+    entities:
+      - sensor.date
+      - sensor.date__time
+      - sensor.time
+      - sensor.yr_24h_humidity
+      - sensor.yr_24h_precipitation
+      - sensor.yr_24h_symbol
+      - sensor.yr_24h_temperature
+      - sensor.yr_24h_wind_speed
+      - sensor.yr_humidity
+      - sensor.yr_precipitation
+      - sensor.yr_symbol
+      - sensor.yr_temperature
+      - sensor.yr_wind_speed
+      - sun.sun
+
+logger:
+  default: warning
+  logs:
+    homeassistant.components.switch.broadlink: info
+    homeassistant.components.automation: info
+    homeassistant.components.script: info
+#    homeassistant.components.device_tracker: info
+#    homeassistant.components.http: info
+    homeassistant.components.rfxtrx: info
+    homeassistant.components.binary_sensor: debug
+
+map:
+sun:
+updater:
+
+# Custom
+variable: !include variable.yaml
+
+alert: !include alerts.yaml
+automation: !include automations.yaml
+#automation: !include_dir_merge_list automation
+binary_sensor: !include binary_sensor.yaml
+climate: !include climate.yaml
+device_tracker: !include device_tracker.yaml
+group: !include groups.yaml
+history_graph: !include history_graph.yaml
+http: !include http.yaml
+input_boolean: !include input_boolean.yaml
+input_select: !include input_select.yaml
+input_number: !include input_number.yaml
+light: !include lights.yaml
+media_player: !include media_players.yaml
+mqtt: !include mqtt.yaml
+notify: !include notify.yaml
+rfxtrx:
+  device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433_A1Y0NJGR-if00-port0
+  debug: False
+  dummy: False
+sensor: !include sensor.yaml
+scene: !include scenes.yaml
+#scene: !include_dir_merge_list scene
+script: !include scripts.yaml
+switch: !include switches.yaml
+zone: !include zones.yaml
+zwave:
+  usb_path: /dev/ttyACM0
+  network_key: !secret zwave_network_key
+
+tts:
+  - platform: google
+    language: 'no'
+
+panel_iframe:
+#  configurator:
+#    title: Configurator
+#    icon: mdi:wrench
+#    url: !secret http_configurator_url
+#  nodered_flows:
+#    title: 'Node-RED Flows'
+#    url: 'http://hassio.local:1880'
+#    icon: mdi:nodejs

@@ -1,0 +1,11 @@
+mode_away:
+  name: Modus borte
+
+mode_elm_away:
+  name: Modus ELM borte
+
+mode_guests:
+  name: Modus gjester
+
+mode_home:
+  name: Modus hjemme

@@ -1,0 +1,429 @@
+group.all_automations:
+  hidden: false
+group.all_scripts:
+  hidden: false
+device_tracker.58e28fd02a53:
+  friendly_name: Emma Linn iPhone.
+sensor.fms_am_alarm_level:
+  hidden: true
+sensor.fms_am_alarm_type:
+  hidden: true
+sensor.fms_am_burglar:
+  hidden: true
+sensor.fms_am_sourcenodeid:
+  hidden: true
+sensor.fms_emma_linn_alarm_level:
+  hidden: true
+sensor.fms_emma_linn_alarm_type:
+  hidden: true
+sensor.fms_emma_linn_burglar:
+  hidden: true
+sensor.fms_emma_linn_sourcenodeid:
+  hidden: true
+sensor.fms_mats_alarm_level:
+  hidden: true
+sensor.fms_mats_alarm_type:
+  hidden: true
+sensor.fms_mats_burglar:
+  hidden: true
+sensor.fms_mats_sourcenodeid:
+  hidden: true
+sensor.fms_soverom_alarm_level:
+  hidden: true
+sensor.fms_soverom_alarm_type:
+  hidden: true
+sensor.fms_soverom_burglar:
+  hidden: true
+sensor.fms_soverom_sourcenodeid:
+  hidden: true
+sensor.fwp_am_ovn_alarm_level:
+  hidden: true
+sensor.fwp_am_ovn_alarm_type:
+  hidden: true
+sensor.fwp_am_ovn_exporting:
+  hidden: true
+sensor.fwp_am_ovn_sourcenodeid:
+  hidden: true
+sensor.fwp_emmalinn_ovn_alarm_level:
+  hidden: true
+sensor.fwp_emmalinn_ovn_alarm_type:
+  hidden: true
+sensor.fwp_emmalinn_ovn_exporting:
+  hidden: true
+sensor.fwp_emmalinn_ovn_sourcenodeid:
+  hidden: true
+sensor.fwp_mats_ovn_alarm_level:
+  hidden: true
+sensor.fwp_mats_ovn_alarm_type:
+  hidden: true
+sensor.fwp_mats_ovn_exporting:
+  hidden: true
+sensor.fwp_mats_ovn_sourcenodeid:
+  hidden: true
+sensor.fwp_soverom_ovn_alarm_level:
+  hidden: true
+sensor.fwp_soverom_ovn_alarm_type:
+  hidden: true
+sensor.fwp_soverom_ovn_exporting:
+  hidden: true
+sensor.fwp_soverom_ovn_sourcenodeid:
+  hidden: true
+sensor.strips_soverom_access_control:
+  hidden: true
+sensor.strips_soverom_alarm_level:
+  hidden: true
+sensor.strips_soverom_alarm_type:
+  hidden: true
+sensor.strips_soverom_burglar:
+  hidden: true
+sensor.strips_soverom_sourcenodeid:
+  hidden: true
+sensor.fwp_am_ovn_power_management:
+  hidden: true
+sensor.fwp_emmalinn_ovn_power_management:
+  hidden: true
+sensor.fwp_mats_ovn_power_management:
+  hidden: true
+sensor.fwp_soverom_ovn_power_management:
+  hidden: true
+device_tracker.b0f1ecaa1dfc:
+  hidden: true
+media_player.chromecast_gjesterom:
+  hidden: true
+media_player.chromecast_stue_2:
+  friendly_name: Chromecast Stue
+media_player.chromecast_stue:
+  friendly_name: Chromecast Stue -
+  hidden: true
+media_player.chromecast_audio_gjestrm:
+  friendly_name: Chromecast Audio Gjesterom
+sensor.fwp_light_loftstue_alarm_level:
+  hidden: true
+sensor.fwp_light_loftstue_alarm_type:
+  hidden: true
+sensor.fwp_light_loftstue_exporting:
+  hidden: true
+sensor.fwp_light_loftstue_power_management:
+  hidden: true
+sensor.fwp_light_loftstue_sourcenodeid:
+  hidden: true
+sensor.fwp_light_loftstue_energy: {}
+sensor.fwp_ovn_entre_alarm_level:
+  hidden: true
+sensor.fwp_ovn_entre_alarm_type:
+  hidden: true
+sensor.fwp_ovn_entre_exporting:
+  hidden: true
+sensor.fwp_ovn_entre_power_management:
+  hidden: true
+sensor.fwp_ovn_entre_sourcenodeid:
+  hidden: true
+sensor.fwp_ovn_kjokken_alarm_level:
+  hidden: true
+sensor.fwp_ovn_kjokken_alarm_type:
+  hidden: true
+sensor.fwp_ovn_kjokken_exporting:
+  hidden: true
+sensor.fwp_ovn_kjokken_power_management:
+  hidden: true
+sensor.fwp_ovn_kjokken_sourcenodeid:
+  hidden: true
+sensor.fwp_stue_spots_alarm_level:
+  hidden: true
+sensor.fwp_stue_spots_alarm_type:
+  hidden: true
+sensor.fwp_stue_spots_power_management:
+  hidden: true
+sensor.fwp_stue_spots_sourcenodeid:
+  hidden: true
+sensor.fms_kjokken_temperature:
+  friendly_name: Kjøkken Temperature
+sensor.fms_kjokken_luminance:
+  friendly_name: Kjøkken Luminance
+switch.fwp_kjokken_ovn_switch:
+  friendly_name: FWP kjøkken ovn Switch
+climate.kjokken_termostat:
+  friendly_name: Kjøkken termostat
+sensor.fwp_kjokken_ovn_exporting:
+  hidden: true
+switch.fwp_stue_spots_switch:
+  friendly_name: Stue Spot
+  icon: mdi:lightbulb
+switch.fwp_light_loftstue_switch:
+  friendly_name: Loftstue lys
+  icon: mdi:lightbulb
+binary_sensor.strips_soverom_sensor:
+  device_class: opening
+  friendly_name: Soverom Vindu
+binary_sensor.strips_mats_sensor:
+  device_class: opening
+  friendly_name: Mats Vindu
+binary_sensor.strips_kjokken_sensor:
+  device_class: opening
+  friendly_name: Kjøkken Vindu
+binary_sensor.strips_emmalinn_sensor:
+  device_class: opening
+  friendly_name: Emma Linn Vindu
+binary_sensor.strips_bad_loft_sensor:
+  device_class: opening
+  friendly_name: Bad Loft Vindu
+binary_sensor.fms_am_sensor:
+  device_class: motion
+  friendly_name: Alex Misha Motion
+binary_sensor.fms_emma_linn_sensor:
+  device_class: motion
+  friendly_name: Emma Linn Motion
+binary_sensor.fms_entre_sensor:
+  device_class: motion
+  friendly_name: Entre Motion
+binary_sensor.fms_kjokken_sensor:
+  device_class: motion
+  friendly_name: Kjøkken Motion
+binary_sensor.fms_mats_sensor:
+  device_class: motion
+  friendly_name: Mats Motion
+binary_sensor.fms_soverom_sensor:
+  device_class: motion
+  friendly_name: Soverom Motion
+device_tracker.9ce06360ade2:
+  friendly_name: Emma Linn Tablet
+  icon: mdi:tablet-android
+sensor.fwp_entre_ovn_exporting:
+  hidden: true
+sensor.fwp_stue_spots_exporting:
+  hidden: true
+sensor.fms_entre_sourcenodeid:
+  hidden: true
+sensor.fms_kjokken_sourcenodeid:
+  hidden: true
+sensor.strips_mats_sourcenodeid:
+  hidden: true
+sensor.strips_kjokken_sourcenodeid:
+  hidden: true
+sensor.strips_emmalinn_sourcenodeid:
+  hidden: true
+sensor.strips_bad_loft_sourcenodeid:
+  hidden: true
+device_tracker.zyxel_switch_loft:
+  hidden: true
+sensor.fms_am_seismic_intensity:
+  hidden: true
+sensor.fms_emma_linn_seismic_intensity:
+  hidden: true
+sensor.fms_entre_alarm_level:
+  hidden: true
+sensor.fms_entre_alarm_type:
+  hidden: true
+sensor.fms_entre_burglar:
+  hidden: true
+sensor.fms_entre_seismic_intensity:
+  hidden: true
+sensor.fms_kjokken_alarm_level:
+  hidden: true
+sensor.fms_kjokken_alarm_type:
+  hidden: true
+sensor.fms_kjokken_burglar:
+  hidden: true
+sensor.fms_kjokken_seismic_intensity:
+  hidden: true
+sensor.fms_mats_seismic_intensity:
+  hidden: true
+sensor.fms_soverom_seismic_intensity:
+  hidden: true
+sensor.strips_bad_loft_access_control:
+  hidden: true
+sensor.strips_bad_loft_alarm_level:
+  hidden: true
+sensor.strips_bad_loft_alarm_type:
+  hidden: true
+sensor.strips_bad_loft_burglar:
+  hidden: true
+sensor.strips_emmalinn_access_control:
+  hidden: true
+sensor.strips_emmalinn_alarm_level:
+  hidden: true
+sensor.strips_emmalinn_alarm_type:
+  hidden: true
+sensor.strips_emmalinn_burglar:
+  hidden: true
+sensor.strips_kjokken_access_control:
+  hidden: true
+sensor.strips_kjokken_alarm_level:
+  hidden: true
+sensor.strips_kjokken_alarm_type:
+  hidden: true
+sensor.strips_kjokken_burglar:
+  hidden: true
+sensor.strips_mats_access_control:
+  hidden: true
+sensor.strips_mats_alarm_level:
+  hidden: true
+sensor.strips_mats_alarm_type:
+  hidden: true
+sensor.strips_mats_burglar:
+  hidden: true
+sensor.fms_am_general:
+  hidden: true
+sensor.fms_emma_linn_general:
+  hidden: true
+sensor.fms_kjokken_general:
+  hidden: true
+sensor.fms_mats_general:
+  hidden: true
+sensor.fms_soverom_general:
+  hidden: true
+sensor.fms_entre_general:
+  hidden: true
+sensor.fwp_entre_ovn_alarm_level:
+  hidden: true
+sensor.fwp_entre_ovn_alarm_type:
+  hidden: true
+sensor.fwp_entre_ovn_power_management:
+  hidden: true
+sensor.fwp_entre_ovn_sourcenodeid:
+  hidden: true
+sensor.fwp_kjokken_ovn_alarm_level:
+  hidden: true
+sensor.fwp_kjokken_ovn_alarm_type:
+  hidden: true
+sensor.fwp_kjokken_ovn_power_management:
+  hidden: true
+sensor.fwp_kjokken_ovn_sourcenodeid:
+  hidden: true
+device_tracker.ubiquiti_44d9e736bd60:
+  hidden: true
+device_tracker.ubiquiti_44d9e736d480:
+  hidden: true
+device_tracker.ubiquiti_44d9e736d490:
+  hidden: true
+device_tracker.ubiquiti_44d9e736bd70:
+  hidden: true
+device_tracker.84b153bd85a0:
+  hidden: true
+device_tracker.devolo_av_plus_bad:
+  hidden: true
+device_tracker.devolo_av_plus_kjokken:
+  hidden: true
+device_tracker.devolo_av1200_baseloft:
+  hidden: true
+device_tracker.devolo_av1200_mats:
+  hidden: true
+device_tracker.ubiquiti_44d9e736bd71:
+  hidden: true
+device_tracker.ubiquiti_44d9e736d481:
+  hidden: true
+device_tracker.ubiquiti_44d9e736d491:
+  hidden: true
+device_tracker.ubiquity_44d9e736bd61:
+  hidden: true
+device_tracker.stiansiniphone:
+  hidden: true
+device_tracker.9ce0636a68ea:
+  friendly_name: Sasha Tablet
+zwave.strips_trapp:
+  hidden: true
+sensor.strips_trapp_access_control:
+  hidden: true
+sensor.strips_trapp_alarm_level:
+  hidden: true
+sensor.strips_trapp_alarm_type:
+  hidden: true
+sensor.strips_trapp_burglar:
+  hidden: true
+sensor.strips_trapp_sourcenodeid:
+  hidden: true
+binary_sensor.strips_trapp_sensor:
+  device_class: opening
+  friendly_name: Trapp Vindu
+climate.emmalinn_termostat:
+  friendly_name: Emma Linn Termostat
+device_tracker.iphonedeflavia:
+  hidden: true
+device_tracker.saltanatsiphone:
+  hidden: true
+device_tracker.oddisiphone:
+  hidden: true
+device_tracker.flaviasair:
+  hidden: true
+binary_sensor.workday_today:
+  hidden: true
+binary_sensor.workday_tomorrow:
+  hidden: true
+binary_sensor.workday_yesterday:
+  hidden: true
+device_tracker.devolo_av1200:
+  friendly_name: Devolo AV1200 Hassio
+  hidden: true
+device_tracker.3cd0f81e6941:
+  hidden: true
+device_tracker.allasiphone:
+  hidden: true
+variable.last_motion:
+  friendly_name: Last Motion
+sensor.fms_am_luminance:
+  friendly_name: Alex Misha Luminance
+sensor.fms_am_temperature:
+  friendly_name: Alex Misha Temperature
+sensor.fms_emma_linn_luminance:
+  friendly_name: Emma Linn Luminance
+sensor.fms_emma_linn_temperature:
+  friendly_name: Emma Linn Temperature
+sensor.fms_entre_luminance:
+  friendly_name: Entre Luminance
+sensor.fms_entre_temperature:
+  friendly_name: Entre Temperature
+sensor.fms_mats_luminance:
+  friendly_name: Mats Luminance
+sensor.fms_mats_temperature:
+  friendly_name: Mats Temperature
+sensor.fms_soverom_luminance:
+  friendly_name: Soverom Luminance
+sensor.fms_soverom_temperature:
+  friendly_name: Soverom Temperature
+scene.kjokken_normal_lys:
+  friendly_name: Kjøkken lys normal
+scene.kjokken_mye_lys:
+  friendly_name: Kjøkken lys mye
+scene.kjokken_dempet_lys:
+  friendly_name: Kjøkken lys dempet
+group.kjokken_lys:
+  friendly_name: Kjøkken lys
+scene.kjokken_max_lys:
+  friendly_name: Kjøkken lys max
+scene.kjokken_min_lys:
+  friendly_name: Kjøkken lys min
+group.soverom_temp_control:
+  friendly_name: Soverom temperatur kontroll
+sensor.fwp_kjokken_ovn_rain_rate:
+  hidden: true
+sensor.stue_rc:
+  hidden: true
+sensor.soverom_rc:
+  hidden: true
+sensor.loft_gang_rc:
+  hidden: true
+sensor.am_sov_vegg_rc:
+  hidden: true
+sensor.trapp_motion_detector:
+  hidden: true
+sensor.entre_tak_rc:
+  hidden: true
+sensor.kjkken_spis_rc:
+  hidden: true
+sensor.mats_sov_dimmer:
+  hidden: true
+sensor.el_sov_dimmer:
+  friendly_name: Emma Linn Sov Dimmer
+  hidden: true
+light.el_sov_gruppe:
+  friendly_name: Emma Linn Sov Gruppe
+light.el_sov_tak1:
+  friendly_name: Emma Linn Sov Tak1
+light.el_sov_tak2:
+  friendly_name: Emma Linn Sov Tak2
+light.aquarium_light:
+  icon: mdi:lightbulb
+binary_sensor.oystein_home:
+  device_class: presence
+  friendly_name: Øystein
+  gravatar: '"https://www.gravatar.com/avatar/98938989e7f28fe6024aeb111271542a.jpg?s=80&d=wavatar"'

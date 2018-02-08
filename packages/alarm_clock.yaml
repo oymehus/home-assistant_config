@@ -1,0 +1,93 @@
+automation:
+  - id: wake_me_up
+    alias: 'Wake Me Up'
+    initial_state: False
+    trigger:
+     - platform: time
+       minutes: '/5'
+       seconds: 2
+    condition:
+     - condition: template
+       value_template: '{{ now().hour == (states.input_number.alarmhour.state  | round(0))  and  now().minute == (states.input_number.alarmminutes.state  | round(0) )  }}'
+    action:
+#      - service: script.turn_on
+#        entity_id: script.vekke_lys
+#      - service: script.turn_on
+#        entity_id: script.vekke_lyd
+      - service: homeassistant.turn_off
+        entity_id: automation.wake_me_up
+
+  - id: alarm_enabled
+    alias: "alarm enabled"
+    trigger:
+      platform: state
+      entity_id: 
+       - input_number.alarmhour
+       - input_number.alarmminutes
+    action:
+    - service: homeassistant.turn_on
+      data: 
+        entity_id:
+         - automation.wake_me_up
+
+input_number:
+  alarmhour:
+    name: Alarm Hour
+    icon: mdi:timer
+    initial: 6
+    min: 4
+    max: 11
+    step: 1
+  alarmminutes:
+    name: Alarm Minutes
+    icon: mdi:timer
+    initial: 30
+    min: 0
+    max: 55
+    step: 5
+
+sensor:
+  - platform: template
+    sensors:
+      alarm_time:
+        friendly_name: 'Alarm'
+        value_template: '{% if states.input_number.alarmhour.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.alarmhour.state|round(0)|string }}:{% if states.input_number.alarmminutes.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.alarmminutes.state|round(0)|string }}'
+
+script:
+  vekke_lyd:
+    sequence:
+      - delay: 00:00:03
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kjokken
+          volume_level: 0.4
+      - service: media_player.play_media
+        data:
+          entity_id: media_player.kjokken
+          media_content_type: audio/mp3
+          media_content_id: "https://server1.dahoiv.net:8123/local/Wake_Up_fade_in.mp3"
+      - delay: 00:12:00
+      - service: homeassistant.turn_on
+        entity_id: script.news_soverom
+      - delay: 00:02:00
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.soverom
+          volume_level: 0.6
+      - delay: 00:02:00
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.soverom
+          volume_level: 0.8
+
+  vekke_lys:
+    sequence:
+    - service: homeassistant.turn_off
+      data: 
+        entity_id: input_boolean.alarmstatus
+    - service: homeassistant.turn_on
+      entity_id:
+        - light.soverom1
+      data:
+        brightness: 1
+        xy_color: [0.675,0.322]

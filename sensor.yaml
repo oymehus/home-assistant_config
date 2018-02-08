@@ -1,0 +1,231 @@
+- platform: moon
+
+- platform: yr
+  name: "Yr"
+  monitored_conditions:
+    - temperature
+    - symbol
+    - precipitation
+    - windSpeed
+    - humidity
+
+- platform: yr
+  name: "Yr 24h"
+  forecast: 24
+  monitored_conditions:
+    - temperature
+    - symbol
+    - precipitation
+    - windSpeed
+    - humidity
+
+- platform: tibber
+  access_token: !secret tibber_token
+
+- platform: time_date
+  display_options:
+    - time
+    - date
+    - date_time
+
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /
+    - type: memory_free
+    - type: memory_use_percent
+    - type: processor_use
+
+###############################
+#                             #
+#        Template             #
+#                             #
+###############################
+
+- platform: template
+  sensors:
+    ac_stue_temp_setp:
+      friendly_name: "Varmepumpe Stue Temperature Setpoint"
+      value_template: "{{ states.climate.stue.attributes.temperature }}"
+      unit_of_measurement: 'C'
+
+    ac_stue_temp_act:
+      friendly_name: "Varmepumpe Stue Temperature Actual"
+      value_template: "{{ states.climate.stue.attributes.current_temperature }}"
+      unit_of_measurement: 'C'
+
+    ac_stue_humidity:
+      friendly_name: "Varmepumpe Stue Humidity Actual"
+      value_template: "{{ states.climate.stue.attributes.current_humidity }}"
+      unit_of_measurement: '%'
+
+    ac_loftstue_temp_setp:
+      friendly_name: "Varmepumpe Loftstue Temperature Setpoint"
+      value_template: "{{ states.climate.loftstue.attributes.temperature }}"
+      unit_of_measurement: 'C'
+
+    ac_loftstue_temp_act:
+      friendly_name: "Varmepumpe Loftstue Temperature Actual"
+      value_template: "{{ states.climate.loftstue.attributes.current_temperature }}"
+      unit_of_measurement: 'C'
+
+    ac_loftstue_humidity:
+      friendly_name: "Varmepumpe Loftstue Humidity Actual"
+      value_template: "{{ states.climate.loftstue.attributes.current_humidity }}"
+      unit_of_measurement: '%'
+
+    total_power_usage:
+      value_template: "{{ ((states.sensor.fwp_am_ovn_power.state | float) + (states.sensor.fwp_emmalinn_ovn_power.state | float) + (states.sensor.fwp_entre_ovn_power.state | float) + (states.sensor.fwp_kjokken_ovn_power.state | float) + (states.sensor.fwp_light_loftstue_power.state | float) + (states.sensor.fwp_mats_ovn_power.state | float) + (states.sensor.fwp_soverom_ovn_power.state | float)) | round(1) }}"
+      friendly_name: 'Total power usage'
+      unit_of_measurement: 'w'
+
+    total_energy_usage:
+      value_template: "{{ ((states.sensor.fwp_am_ovn_energy.state | float) + (states.sensor.fwp_emmalinn_ovn_energy.state | float) + (states.sensor.fwp_entre_ovn_energy.state | float) + (states.sensor.fwp_kjokken_ovn_energy.state | float) + (states.sensor.fwp_light_loftstue_energy.state | float) + (states.sensor.fwp_mats_ovn_energy.state | float) + (states.sensor.fwp_soverom_ovn_energy.state | float)) | round(1) }}"
+      friendly_name: 'Total energy usage'
+      unit_of_measurement: 'kWh'
+
+###############################
+#                             #
+#    Attributes - batteries   #
+#                             #
+###############################
+
+- platform: attributes
+  friendly_name: "FMS Soverom battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - zwave.fms_soverom
+
+- platform: attributes
+  friendly_name: "FMS AM battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - zwave.fms_am
+
+- platform: attributes
+  friendly_name: "FMS Emma Linn battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - zwave.fms_emma_linn
+
+- platform: attributes
+  friendly_name: "FMS Mats battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - zwave.fms_mats
+
+- platform: attributes
+  friendly_name: "Strips soverom battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - zwave.strips_soverom
+
+- platform: attributes
+  friendly_name: "Strips kjokken battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - zwave.strips_kjokken
+
+- platform: attributes
+  friendly_name: "Strips Mats battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - zwave.strips_mats
+
+- platform: attributes
+  friendly_name: "Strips Emma Linn battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - zwave.strips_emmalinn
+
+- platform: attributes
+  friendly_name: "Strips Bad Loft battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - zwave.strips_bad_loft
+
+- platform: attributes
+  friendly_name: "Strips Trapp battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - zwave.strips_trapp
+
+- platform: attributes
+  friendly_name: "Alex Misha light vegg dimmer battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - sensor.am_sov_vegg_rc
+
+- platform: attributes
+  friendly_name: "Alex Misha light tak RC battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - sensor.am_sov_tak_rc
+
+- platform: attributes
+  friendly_name: "EmmaLinn light dimmer battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - sensor.el_sov_dimmer
+
+- platform: attributes
+  friendly_name: "Mats light dimmer battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - sensor.mats_sov_dimmer
+
+- platform: attributes
+  friendly_name: "Gang Loft light RC battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - sensor.loft_gang_rc
+
+- platform: attributes
+  friendly_name: "Stue light RC battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - sensor.stue_rc
+
+- platform: attributes
+  friendly_name: "Soverom light dimmer battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - sensor.soverom_rc
+
+- platform: attributes
+  friendly_name: "Kjøkken light RC battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - sensor.kjkken_spis_rc
+
+- platform: attributes
+  friendly_name: "Entre light RC battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - sensor.entre_tak_rc
+
+- platform: attributes
+  friendly_name: "Trapp motion battery"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - sensor.trapp_motion_detector

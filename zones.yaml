@@ -1,0 +1,26 @@
+# This overrides the default home zone
+- name: Home
+  latitude: !secret zone_home_latitude
+  longitude: !secret zone_home_longitude
+  radius: 50
+  icon: mdi:home
+- name: Barnehagen
+  latitude: 58.9415375
+  longitude: 5.6902070
+  radius: 50
+  icon: mdi:castle
+- name: Gosen Skole
+  latitude: 58.9406575
+  longitude: 5.6844102
+  radius: 50
+  icon: mdi:school
+- name: Fotballbanen
+  latitude: 58.9404175
+  longitude: 5.6867461
+  radius: 90
+  icon: mdi:school
+- name: Jobb
+  latitude: 58.8904647
+  longitude: 5.7033527
+  radius: 100
+  icon: mdi:worker

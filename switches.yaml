@@ -1,0 +1,32 @@
+#- platform: rfxtrx
+#  automatic_add: True
+#  signal_repetitions: 2
+#  devices:
+#    0b11000101b2648201000070:
+#      name: Aquarium switch
+#      fire_event: True
+
+- platform: broadlink
+  host: 192.168.1.197
+  mac: '78:0f:77:00:10:35'
+#  friendly_name: "Broadlink Loftstue"
+  timeout: 15
+#  type: rm_mini
+# --------- MAY NEED TO ADD == to end of commands ----------
+  switches:
+    elevator_down:
+       friendly_name: "Heis ned"
+       command_on: 'JgBgAA08DRcNCw0LDgsZFw0AB1AQORAVZBQQAAi6EDkQFA8IJgwaFhAACiYQORAUJQwMDBoWEAAF3RA5EBUyCg4KDgoOAAdRDjwNFzIKDgoOCg0ACL0QORAUMwoOCg4KDgANBQAAAAAAAAAA=='
+    elevator_up:
+       friendly_name: "Heis opp"
+       command_on: 'JgBgAA08DQsNGA4IEAkcFQ8AB08OPA0LDRcPCBAIHBYNAAi+DjsNCw8VDwgQCB0VEAAKJxA6DwcSFBAGNhUPAAGYEDoQFH0AB08POhAUZAcSAAi5DjwNFxoKDgoOCg4KDgANBQAAAAAAAAAA=='
+    front_door_open:
+       friendly_name: "Inngangsdoer åpne"
+       command_on: 'JgBCAAw9DRcaFg8IHBYOAAdRDzsNFxsVDwgdFBAACL0NPA8VHBUPBh8UEAADBRA5EBR9AAdPEDkQFH0ACLoPOhAUfQANBQAAAAAAAA=='
+    front_door_close:
+       friendly_name: "Inngangsdoer lukke"
+       command_on: 'JgBgABE5DwcRCA8WDgobFg0AB1QOOw4KDwgPFg0LGxYNAAjBDjsOCg0MDRcMDBkXDwADBg08DRcaCw0LDQsNCw8AB1ANPA0XGwkOCw8IEAgQAAi7DjsPFRwGEgYSBhIHEgANBQAAAAAAAAAA=='
+#    loftstue_tv:
+#      friendly_name: "Loftstue TV Power"
+#      command_on: 'JgBGAJKVDzsQOhA6EBUQFRAVERQRFBE5EDoSOBEUERQRFBAVEBURFBE5ERQRFBAVERQRFBEUETkRFBE5ETkRORE5EToQOg8ADQUAAA=='
+#      command_off: 'JgBGAJKVDzsQOhA6EBUQFRAVERQRFBE5EDoSOBEUERQRFBAVEBURFBE5ERQRFBAVERQRFBEUETkRFBE5ETkRORE5EToQOg8ADQUAAA=='

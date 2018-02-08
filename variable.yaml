@@ -1,0 +1,6 @@
+last_motion:
+  value: 'Unknown'
+  restore: true
+  attributes:
+    icon: mdi:map-marker
+    name: "Last Motion"

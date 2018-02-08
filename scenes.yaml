@@ -1,0 +1,218 @@
+################ Light - Stue
+- name: Stue min lys
+  entities:
+    group.stue_lys:
+      state: on
+      brightness_pct: 1
+      transition: 3
+
+- name: Stue dempet lys
+  entities:
+    group.stue_lys:
+      state: on
+      brightness_pct: 20
+      transition: 3
+
+- name: Stue normal lys
+  entities:
+    group.stue_lys:
+      state: on
+      brightness_pct: 60
+      transition: 3
+
+- name: Stue mye lys
+  entities:
+    group.stue_lys:
+      state: on
+      brightness_pct: 80
+      transition: 3
+
+- name: Stue max lys
+  entities:
+    group.stue_lys:
+      state: on
+      brightness_pct: 100
+      transition: 3
+
+################ Light - Kjokken
+- name: Kjokken min lys
+  entities:
+    group.kjokken_lys:
+      state: on
+      brightness_pct: 1
+      transition: 3
+
+- name: Kjokken dempet lys
+  entities:
+    group.kjokken_lys:
+      state: on
+      brightness_pct: 20
+      transition: 3
+
+- name: Kjokken normal lys
+  entities:
+    group.kjokken_lys:
+      state: on
+      brightness_pct: 60
+      transition: 3
+
+- name: Kjokken mye lys
+  entities:
+    group.kjokken_lys:
+      state: on
+      brightness_pct: 80
+      transition: 3
+
+- name: Kjokken max lys
+  entities:
+    group.kjokken_lys:
+      state: on
+      brightness_pct: 100
+      transition: 3
+
+################ Light - Entre
+- name: Entre min lys
+  entities:
+    group.entre_lys:
+      state: on
+      brightness_pct: 1
+      transition: 3
+
+- name: Entre dempet lys
+  entities:
+    group.entre_lys:
+      state: on
+      brightness_pct: 20
+      transition: 3
+
+- name: Entre normal lys
+  entities:
+    group.entre_lys:
+      state: on
+      brightness_pct: 60
+      transition: 3
+
+- name: Entre mye lys
+  entities:
+    group.entre_lys:
+      state: on
+      brightness_pct: 80
+      transition: 3
+
+- name: Entre max lys
+  entities:
+    group.entre_lys:
+      state: on
+      brightness_pct: 100
+      transition: 3
+
+
+################ Light - Gang loft
+- name: Loft gang min lys
+  entities:
+    group.loft_gang_lys:
+      state: on
+      brightness_pct: 1
+      transition: 3
+
+- name: Loft gang dempet lys
+  entities:
+    group.loft_gang_lys:
+      state: on
+      brightness_pct: 20
+      transition: 3
+
+- name: Loft gang normal lys
+  entities:
+    group.loft_gang_lys:
+      state: on
+      brightness_pct: 60
+      transition: 3
+
+- name: Loft gang mye lys
+  entities:
+    group.loft_gang_lys:
+      state: on
+      brightness_pct: 80
+      transition: 3
+
+- name: Loft gang max lys
+  entities:
+    group.loft_gang_lys:
+      state: on
+      brightness_pct: 100
+      transition: 3
+
+
+################ Light - Alex Misha
+- name: AM min lys
+  entities:
+    group.am_lys:
+      state: on
+      brightness_pct: 1
+      transition: 3
+
+- name: AM dempet lys
+  entities:
+    group.am_lys:
+      state: on
+      brightness_pct: 20
+      transition: 3
+
+- name: AM normal lys
+  entities:
+    group.am_lys:
+      state: on
+      brightness_pct: 60
+      transition: 3
+
+- name: AM mye lys
+  entities:
+    group.am_lys:
+      state: on
+      brightness_pct: 80
+      transition: 3
+
+- name: AM max lys
+  entities:
+    group.am_lys:
+      state: on
+      brightness_pct: 100
+      transition: 3
+
+
+################ Light - Soverom
+- name: Soverom min lys
+  entities:
+    group.soverom_lys:
+      state: on
+      brightness_pct: 1
+      transition: 3
+
+- name: Soverom dempet lys
+  entities:
+    group.soverom_lys:
+      state: on
+      brightness_pct: 20
+      transition: 3
+
+- name: Soverom normal lys
+  entities:
+    group.soverom_lys:
+      state: on
+      brightness_pct: 60
+      transition: 3
+
+- name: Soverom mye lys
+  entities:
+    group.soverom_lys:
+      state: on
+      brightness_pct: 80
+      transition: 3
+
+- name: Soverom max lys
+  entities:
+    group.soverom_lys:
+      state: on
+      brightness_pct: 100
+      transition: 3

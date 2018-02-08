@@ -1,0 +1,546 @@
+############################################################
+#                                                          #
+#                     Group Tabs                           #
+#                                                          #
+############################################################
+
+home:
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.family
+    - group.modes
+    - group.presence
+    - group.windows
+    - group.info
+    - group.energy
+    - group.alarmclock
+
+ligthing:
+  view: yes
+  name: "Lys"
+  icon: mdi:lightbulb
+  entities:
+    - group.stue_lys
+    - group.alex_misha_lys
+    - group.emma_linn_lys
+    - group.mats_lys
+    - group.soverom_lys
+    - group.loftstue_lys
+    - group.loft_gang_lys
+    - group.entre_lys
+    - group.kjokken_lys
+    - group.aqua_lys
+    - group.trapp_lys
+
+heating:
+  view: yes
+  name: "Oppvarming"
+  icon: mdi:temperature-celsius
+  entities:
+    - group.modes
+    - group.soverom_heating
+    - group.alex_misha_heating
+    - group.mats_heating
+    - group.emma_linn_heating
+    - group.entre_heating
+    - group.kjokken_heating
+    - group.stue_heating
+    - group.loftstue_heating
+
+media:
+  view: yes
+  name: Media
+  icon: mdi:movie
+  entities:
+    - group.media_bad
+    - group.media_kjokken
+    - group.media_stue
+    - media_player.chromecast_loftstue
+    - media_player.tv_loftstue
+    - media_player.chromecast_audio_gjestrm
+
+apparatus:
+  view: yes
+  name: "Apparatus"
+  icon: mdi:radio
+  entities:
+    - group.rpi_monitor
+    - group.battery_levels
+    - group.battery_alert
+
+weather:
+  view: yes
+  name: "Vaeret"
+  icon: mdi:weather-partlycloudy
+  entities:
+    - group.weather_yrnow
+    - group.weather_yrfc
+    - group.weather_celestial
+
+
+############################################################
+#                                                          #
+#                  Entities Groups                         #
+#                                                          #
+############################################################
+
+
+####################### FAMILY
+family:
+  view: no
+  name: "Familie"
+  icon: mdi:account-multiple
+  entities:
+    - binary_sensor.oystein_home
+    - device_tracker.oystein_g8441
+    - device_tracker.sasha_iphone
+    - device_tracker.58e28fd02a53
+    - device_tracker.mats_iphone
+
+
+####################### MISCELANEOUS
+info:
+  view: no
+  name: "Info"
+  icon: mdi:information
+  entities:
+    - sensor.electricity_price_sommerstien_10
+
+alarmclock:
+  view: no
+  name: Wake Me Up
+  entities: 
+   - sensor.alarm_time
+   - input_number.alarmhour
+   - input_number.alarmminutes
+   - automation.wake_me_up
+
+battery_levels:
+  view: no
+  name: "Battery levels"
+  icon: mdi:battery-60
+  entities:
+    - automation.low_battery_alert
+    - sensor.am_sov_vegg_rc_battery_level
+    - sensor.am_sov_tak_rc_battery_level
+    - sensor.el_sov_dimmer_battery_level
+    - sensor.mats_sov_dimmer_battery_level
+    - sensor.soverom_rc_battery_level
+    - sensor.loft_gang_rc_battery_level
+    - sensor.stue_rc_battery_level
+    - sensor.kjkken_spis_rc_battery_level
+    - sensor.entre_tak_rc_battery_level
+    - sensor.trapp_motion_detector_battery_level
+    - sensor.fms_am_battery_level
+    - sensor.fms_emma_linn_battery_level
+    - sensor.fms_mats_battery_level
+    - sensor.fms_soverom_battery_level
+    - sensor.fms_entre_battery_level
+    - sensor.fms_kjokken_battery_level
+    - sensor.strips_soverom_battery_level
+    - sensor.strips_kjokken_battery_level
+    - sensor.strips_mats_battery_level
+    - sensor.strips_emmalinn_battery_level
+    - sensor.strips_bad_loft_battery_level
+    - sensor.strips_trapp_battery_level
+
+energy:
+  name: "Energiforbruk"
+  icon: mdi:battery-charging-40
+  entities:
+    - sensor.fwp_am_ovn_energy
+    - sensor.fwp_emmalinn_ovn_energy
+    - sensor.fwp_mats_ovn_energy
+    - sensor.fwp_soverom_ovn_energy
+    - sensor.fwp_kjokken_ovn_energy
+    - sensor.fwp_entre_ovn_energy
+    - sensor.fwp_light_loftstue_energy
+    - sensor.fwp_stue_spots_energy
+    - sensor.total_power_usage
+    - sensor.total_energy_usage
+
+presence:
+  view: no
+  name: "Tilstedeværelse"
+  icon: mdi:check-circle
+  control: hidden
+  entities:
+    - variable.last_motion
+    - binary_sensor.fms_am_sensor
+    - binary_sensor.fms_emma_linn_sensor
+    - binary_sensor.fms_mats_sensor
+    - binary_sensor.fms_soverom_sensor
+    - binary_sensor.fms_entre_sensor
+    - binary_sensor.fms_kjokken_sensor
+    - binary_sensor.trapp_motion_via_light
+    - sensor.fms_am_luminance
+    - sensor.fms_emma_linn_luminance
+    - sensor.fms_mats_luminance
+    - sensor.fms_soverom_luminance
+    - sensor.fms_entre_luminance
+    - sensor.fms_kjokken_luminance
+
+windows:
+#  view: yes
+  name: "Vindu"
+  icon: mdi:window-open
+  entities:
+    - binary_sensor.strips_soverom_sensor
+    - binary_sensor.strips_kjokken_sensor
+    - binary_sensor.strips_mats_sensor
+    - binary_sensor.strips_emmalinn_sensor
+    - binary_sensor.strips_bad_loft_sensor
+    - binary_sensor.strips_trapp_sensor
+    - alert.kjokken_vindu
+    - alert.soverom_vindu
+    - alert.mats_vindu
+    - alert.emmalinn_vindu
+    - alert.bad_loft_vindu
+    - alert.trapp_vindu
+
+modes:
+  view: no
+  name: Modes
+  control: hidden
+  entities:
+    - input_boolean.mode_away
+    - input_boolean.mode_elm_away
+    - input_boolean.mode_guests
+#    - input_boolean.mode_home
+
+rpi_monitor:
+  view: no
+  name: Raspberry Pi monitor
+  icon: mdi:chart-line
+  entities:
+    - sensor.cpu_used
+#    - sensor.cpu_temp
+    - sensor.ram_available
+    - sensor.ram_used
+    - sensor.disk_used_
+#    - sensor.since_last_boot
+
+
+####################### MEDIA
+media_bad:
+  name: Media
+  entities:
+   - media_player.boom_bad
+   - input_select.radio_bad
+
+media_kjokken:
+  name: Media
+  entities:
+   - media_player.boom_kjokken
+   - input_select.radio_kjokken
+
+media_stue:
+  name: Media
+  control: hidden
+  entities:
+    - media_player.chromecast_stue
+    - media_player.chromecast_stue_2
+    - remote.harmony_hub
+    - media_player.touch_stue
+    - input_selector.radio_stue
+
+####################### WEATHER
+weather_yrnow:
+  view: no
+  name: "Yr"
+  entities:
+    - sensor.yr_symbol
+    - sensor.yr_temperature
+    - sensor.yr_wind_speed
+    - sensor.yr_precipitation
+    - sensor.yr_humidity
+
+weather_yrfc:
+  view: no
+  name: "Yr neste 24t"
+  entities:
+    - sensor.yr_24h_symbol
+    - sensor.yr_24h_temperature
+    - sensor.yr_24h_wind_speed
+    - sensor.yr_24h_precipitation
+    - sensor.yr_24h_humidity
+
+weather_celestial:
+  view: no
+  name: "Celestial"
+  icon: mdi:star
+  entities:
+    - sensor.moon
+    - sun.sun
+
+
+####################### LIGHTING
+entre_lys:
+  name: "Entré lys"
+  entities:
+    - light.entre_tak_panel
+    - group.entre_scene
+    - automation.lights_on_when_motion_detected_entre
+    - automation.light_off_5_minutes_after_motion_detected_entre
+
+entre_scene:
+  name: "Entré Scene"
+  control: hidden
+  entities:
+    - scene.entre_min_lys
+    - scene.entre_dempet_lys
+    - scene.entre_normal_lys
+    - scene.entre_mye_lys
+    - scene.entre_max_lys
+
+stue_lys:
+  name: "Stue lys"
+  entities:
+    - light.stue_aj_lampe
+    - light.stue_spisebord
+    - light.stue_tak_tv1
+    - light.stue_tak_tv2
+    - light.stue_tak_vdr1
+    - light.stue_tak_vdr2
+    - switch.fwp_stue_spots_switch
+    - group.stue_scene
+
+aqua_lys:
+  name: "Akvarium lys"
+  entities:
+    - light.aquarium_light
+
+stue_scene:
+  name: "Stue Scene"
+  control: hidden
+  entities:
+    - scene.stue_min_lys
+    - scene.stue_dempet_lys
+    - scene.stue_normal_lys
+    - scene.stue_mye_lys
+    - scene.stue_max_lys
+
+loftstue_lys:
+  name: "Loftstue lys"
+  entities:
+    - switch.fwp_light_loftstue_switch
+
+kjokken_lys:
+  name: "Kjokken lys"
+  entities:
+    - light.kjkken_spis_panel
+    - light.kjkken_tak_vask
+    - group.kjokken_scene
+    - automation.lights_on_when_motion_detected_kjokken
+    - automation.light_off_20_minutes_after_motion_detected_kjokken
+
+kjokken_scene:
+  name: "Kjøkken Scene"
+  control: hidden
+  entities:
+    - scene.kjokken_min_lys
+    - scene.kjokken_dempet_lys
+    - scene.kjokken_normal_lys
+    - scene.kjokken_mye_lys
+    - scene.kjokken_max_lys
+
+trapp_lys:
+  name: "Trapp lys"
+  entities:
+    - light.trapp
+
+loft_gang_lys:
+  name: "Loft gang lys"
+  entities:
+    - light.loft_gang_vbad
+    - light.loft_gang_vel
+    - group.loft_gang_scene
+
+loft_gang_scene:
+  name: "Loft gang Scene"
+  control: hidden
+  entities:
+    - scene.loft_gang_min_lys
+    - scene.loft_gang_dempet_lys
+    - scene.loft_gang_normal_lys
+    - scene.loft_gang_mye_lys
+    - scene.loft_gang_max_lys
+
+alex_misha_lys:
+  name: "Alex Misha lys"
+  entities:
+    - light.am_sov_tak
+    - light.am_sov_vegg
+    - group.alex_misha_scene
+    - automation.alex_misha_tak_lys_av_om_natten
+
+alex_misha_scene:
+  name: "Alex Misha Scene"
+  control: hidden
+  entities:
+    - scene.am_min_lys
+    - scene.am_dempet_lys
+    - scene.am_normal_lys
+    - scene.am_mye_lys
+    - scene.am_max_lys
+
+emma_linn_lys:
+  name: "Emma Linn lys"
+  entities:
+    - light.el_sov_tak1
+    - light.el_sov_tak2
+
+mats_lys:
+  name: "Mats lys"
+  entities:
+    - light.mats_sov_tak1
+    - light.mats_sov_tak2
+
+soverom_lys:
+  name: "Soverom lys"
+  entities:
+    - light.soverom_tak_1
+    - light.soverom_tak_2
+    - group.soverom_scene
+
+soverom_scene:
+  name: "Soverom Scene"
+  control: hidden
+  entities:
+    - scene.soverom_min_lys
+    - scene.soverom_dempet_lys
+    - scene.soverom_normal_lys
+    - scene.soverom_mye_lys
+    - scene.soverom_max_lys
+
+
+####################### HEATING
+stue_heating:
+  name: Stue Varme
+  control: hidden
+  entities:
+    - climate.stue
+    - history_graph.stue_temperature_graph
+
+loftstue_heating:
+  name: Loftstue Varme
+  control: hidden
+  entities:
+    - climate.loftstue
+    - history_graph.loftstue_temperature_graph
+
+
+alex_misha_heating:
+  name: Alex Misha Varme
+  control: hidden
+  entities:
+    - climate.alex_misha_termostat
+    - switch.fwp_am_ovn_switch
+    - group.alex_misha_temp_control
+
+alex_misha_temp_control:
+  name: Alex Misha temperatur kontroll
+  control: hidden
+  entities:
+    - input_number.temp_control_alex_misha_dagtid_hour
+    - input_number.temp_control_alex_misha_dagtid_helg_hour
+    - input_number.temp_control_alex_misha_dagtid_temp
+    - input_number.temp_control_alex_misha_natt_hour
+    - input_number.temp_control_alex_misha_natt_temp
+
+
+mats_heating:
+  name: Mats Varme
+  control: hidden
+  entities:
+    - climate.mats_termostat
+    - switch.fwp_mats_ovn_switch
+    - group.mats_temp_control
+
+mats_temp_control:
+  name: Mats temperatur kontroll
+  control: hidden
+  entities:
+    - input_number.temp_control_mats_skoletid_hour
+    - input_number.temp_control_mats_skoletid_temp
+    - input_number.temp_control_mats_dagtid_hour
+    - input_number.temp_control_mats_dagtid_helg_hour
+    - input_number.temp_control_mats_dagtid_temp
+    - input_number.temp_control_mats_natt_hour
+    - input_number.temp_control_mats_natt_temp
+
+emma_linn_heating:
+  name: Emma Linn Varme
+  control: hidden
+  entities:
+    - climate.emma_linn_termostat
+    - switch.fwp_emmalinn_ovn_switch
+    - group.emma_linn_temp_control
+
+emma_linn_temp_control:
+  name: Emma Linn temperatur kontroll
+  control: hidden
+  entities:
+    - input_number.temp_control_emma_linn_skoletid_hour
+    - input_number.temp_control_emma_linn_skoletid_temp
+    - input_number.temp_control_emma_linn_dagtid_hour
+    - input_number.temp_control_emma_linn_dagtid_helg_hour
+    - input_number.temp_control_emma_linn_dagtid_temp
+    - input_number.temp_control_emma_linn_natt_hour
+    - input_number.temp_control_emma_linn_natt_temp
+
+soverom_heating:
+  name: Soverom Varme
+  control: hidden
+  entities:
+    - climate.soverom_termostat
+    - switch.fwp_soverom_ovn_switch
+    - group.soverom_temp_control
+
+soverom_temp_control:
+  name: Soverom temperatur kontroll dagtid
+  control: hidden
+  entities:
+    - input_number.temp_control_soverom_dagtid_hour
+    - input_number.temp_control_soverom_dagtid_helg_hour
+    - input_number.temp_control_soverom_dagtid_temp
+    - input_number.temp_control_soverom_leggetid_hour
+    - input_number.temp_control_soverom_leggetid_temp
+    - input_number.temp_control_soverom_natt_hour
+    - input_number.temp_control_soverom_natt_temp
+
+kjokken_heating:
+  name: "Kjøkken Varme"
+  control: hidden
+  entities:
+    - climate.kjokken_termostat
+    - switch.fwp_kjokken_ovn_switch
+    - group.kjokken_temp_control
+
+kjokken_temp_control:
+  name: "Kjøkken temperatur kontroll"
+  control: hidden
+  entities:
+    - input_number.temp_control_kjokken_dagtid_hour
+    - input_number.temp_control_kjokken_dagtid_helg_hour
+    - input_number.temp_control_kjokken_dagtid_temp
+    - input_number.temp_control_kjokken_natt_hour
+    - input_number.temp_control_kjokken_natt_temp
+
+entre_heating:
+  name: "Entré Varme"
+  entities:
+    - climate.entre_termostat
+    - switch.fwp_entre_ovn_switch
+    - group.entre_temp_control
+
+entre_temp_control:
+  name: "Entré temperatur kontroll"
+  control: hidden
+  entities:
+    - input_number.temp_control_entre_dagtid_hour
+    - input_number.temp_control_entre_dagtid_helg_hour
+    - input_number.temp_control_entre_dagtid_temp
+    - input_number.temp_control_entre_natt_hour
+    - input_number.temp_control_entre_natt_temp

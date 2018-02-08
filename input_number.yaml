@@ -1,0 +1,287 @@
+temp_control_soverom_natt_temp:
+  name: "Natt temp"
+  min: 15
+  max: 25
+  step: 1
+  icon: mdi:temperature-celsius
+  mode: box
+
+temp_control_soverom_natt_hour:
+  name: "Natt tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_soverom_leggetid_temp:
+  name: "Leggetid temp"
+  min: 15
+  max: 25
+  step: 1
+  icon: mdi:temperature-celsius
+  mode: box
+
+temp_control_soverom_leggetid_hour:
+  name: "Leggetid tid"
+  min: 15
+  max: 25
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_soverom_dagtid_temp:
+  name: "Dag temp"
+  min: 15
+  max: 25
+  step: 1
+  icon: mdi:temperature-celsius
+  mode: box
+
+temp_control_soverom_dagtid_hour:
+  name: "Dag tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_soverom_dagtid_helg_hour:
+  name: "Dag helg tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_alex_misha_natt_temp:
+  name: Natt temp
+  min: 15
+  max: 25
+  step: 1
+  icon: mdi:temperature-celsius
+  mode: box
+
+temp_control_alex_misha_natt_hour:
+  name: "Natt tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_alex_misha_dagtid_temp:
+  name: "Dag temp"
+  min: 15
+  max: 25
+  step: 1
+  icon: mdi:temperature-celsius
+  mode: box
+
+temp_control_alex_misha_dagtid_hour:
+  name: "Dag tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_alex_misha_dagtid_helg_hour:
+  name: "Dag helg tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_emma_linn_natt_temp:
+  name: "Natt temp"
+  min: 15
+  max: 25
+  step: 1
+  icon: mdi:temperature-celsius
+  mode: box
+
+temp_control_emma_linn_natt_hour:
+  name: "Natt tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_emma_linn_dagtid_temp:
+  name: Dag temp
+  min: 15
+  max: 25
+  step: 1
+  icon: mdi:temperature-celsius
+  mode: box
+
+temp_control_emma_linn_dagtid_hour:
+  name: "Dag tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_emma_linn_dagtid_helg_hour:
+  name: "Dag helg tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_emma_linn_skoletid_temp:
+  name: "Skoletid temp"
+  min: 15
+  max: 25
+  step: 1
+  icon: mdi:temperature-celsius
+  mode: box
+
+temp_control_emma_linn_skoletid_hour:
+  name: "Skoletid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_mats_natt_temp:
+  name: "Natt temp"
+  min: 15
+  max: 25
+  step: 1
+  icon: mdi:temperature-celsius
+  mode: box
+
+temp_control_mats_natt_hour:
+  name: "Natt tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_mats_dagtid_temp:
+  name: "Dag temp"
+  min: 15
+  max: 25
+  step: 1
+  icon: mdi:temperature-celsius
+  mode: box
+
+temp_control_mats_dagtid_hour:
+  name: "Dag tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_mats_dagtid_helg_hour:
+  name: "Dag helg tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_mats_skoletid_temp:
+  name: Mats skoletid temp
+  min: 15
+  max: 25
+  step: 1
+  icon: mdi:temperature-celsius
+  mode: box
+
+temp_control_mats_skoletid_hour:
+  name: "Skoletid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_kjokken_natt_temp:
+  name: "Natt temp"
+  min: 15
+  max: 27
+  step: 1
+  icon: mdi:temperature-celsius
+  mode: box
+
+temp_control_kjokken_natt_hour:
+  name: "Natt tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_kjokken_dagtid_temp:
+  name: "Dag temp"
+  min: 15
+  max: 27
+  step: 1
+  icon: mdi:temperature-celsius
+  mode: box
+
+temp_control_kjokken_dagtid_hour:
+  name: "Dag tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_kjokken_dagtid_helg_hour:
+  name: "Dag helg tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_entre_natt_temp:
+  name: "Natt temp"
+  min: 15
+  max: 27
+  step: 1
+  icon: mdi:temperature-celsius
+  mode: box
+
+temp_control_entre_natt_hour:
+  name: "Natt tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_entre_dagtid_temp:
+  name: "Dag temp"
+  min: 15
+  max: 27
+  step: 1
+  icon: mdi:temperature-celsius
+  mode: box
+
+temp_control_entre_dagtid_hour:
+  name: "Dag tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box
+
+temp_control_entre_dagtid_helg_hour:
+  name: "Dag helg tid"
+  min: 00
+  max: 24
+  step: 1
+  icon: mdi:clock
+  mode: box

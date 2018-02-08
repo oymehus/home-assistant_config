@@ -1,0 +1,18 @@
+gr1:
+  name: Stue Temperature Graph
+  entities:
+    - climate.stue
+  hours_to_show: 24
+  refresh: 60
+gr2:
+  name: Loftstue Temperature Graph
+  entities:
+    - climate.loftstue
+  hours_to_show: 24
+  refresh: 60
+gr3:
+  name: Electricity Price - Tibber
+  entities:
+    - sensor.electricity_price_sommerstien_10
+  hours_to_show: 48
+  refresh: 60

@@ -1,0 +1,26 @@
+- platform: owntracks
+  max_gps_accuracy: 200
+  waypoints: True
+  waypoint_whitelist:
+    - oystein_g8441
+
+- platform: owntracks_http
+  max_gps_accuracy: 200
+  waypoints: True
+  waypoint_whitelist:
+    - oystein_g8441
+
+- platform: unifi
+  host: !secret unifi_controller_ip
+  username: !secret unifi_controller_user
+  password: !secret unifi_controller_pw
+  verify_ssl: False
+  new_device_defaults:
+    track_new_devices: True
+    hide_if_away: False
+  consider_home: 180
+
+#- platform: snmp
+#  host: !secret gateway_ip
+#  community: public
+#  baseoid: !secret snmp_baseoid

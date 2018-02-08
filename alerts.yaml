@@ -1,0 +1,83 @@
+soverom_vindu:
+  name: Soverom vindu er åpent
+  done_message: Soverom vindu er lukket
+  entity_id: binary_sensor.strips_soverom_sensor
+  state: 'on'
+  repeat: 
+    - 15
+    - 30
+    - 60
+  can_acknowledge: True
+  skip_first: True
+  notifiers:
+    - all
+
+kjokken_vindu:
+  name: Kjøkken vindu er åpent
+  done_message: Kjøkken vindu er lukket
+  entity_id: binary_sensor.strips_kjokken_sensor
+  state: 'on'
+  repeat: 
+    - 15
+    - 30
+    - 60
+  can_acknowledge: True
+  skip_first: True
+  notifiers:
+    - all
+
+mats_vindu:
+  name: Mats vindu er åpent
+  done_message: Mats vindu er lukket
+  entity_id: binary_sensor.strips_mats_sensor
+  state: 'on'
+  repeat: 
+    - 15
+    - 30
+    - 60
+  can_acknowledge: True
+  skip_first: True
+  notifiers:
+    - all
+
+emmalinn_vindu:
+  name: Emma Linn vindu er åpent
+  done_message: Emma Linn vindu er lukket
+  entity_id: binary_sensor.strips_emmalinn_sensor
+  state: 'on'
+  repeat: 
+    - 15
+    - 30
+    - 60
+  can_acknowledge: True
+  skip_first: True
+  notifiers:
+    - all
+
+bad_loft_vindu:
+  name: Bad Loft vindu er åpent
+  done_message: Bad Loft vindu er lukket
+  entity_id: binary_sensor.strips_bad_loft_sensor
+  state: 'on'
+  repeat: 
+    - 15
+    - 30
+    - 60
+  can_acknowledge: True
+  skip_first: True
+  notifiers:
+    - all
+
+trapp_vindu:
+  name: Trapp vindu er åpent
+  done_message: Trapp vindu er lukket
+  entity_id: binary_sensor.strips_trapp_sensor
+  state: 'on'
+  repeat: 
+    - 15
+    - 30
+    - 60
+  can_acknowledge: True
+  skip_first: True
+  notifiers:
+    - all

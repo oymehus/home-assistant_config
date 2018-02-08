@@ -1,0 +1,36 @@
+- platform: workday
+  country: 'NO'
+  name: 'workday_today'
+
+- platform: workday
+  country: 'NO'
+  days_offset: 1
+  name: 'workday_tomorrow'
+
+- platform: workday
+  country: 'NO'
+  days_offset: -1
+  name: 'workday_yesterday'
+
+- platform: template
+  sensors:
+    trapp_motion_via_light:
+      friendly_name: 'Trapp motion via light'
+      device_class: motion
+      value_template: "{{ is_state('light.trapp', 'on') }}"
+
+- platform: 'bayesian'
+  prior: 0.75
+  name: 'Oystein Home'
+  probability_threshold: 0.95
+  observations:
+    - entity_id: 'device_tracker.oystein_g8441'
+      prob_given_true: 0.8
+      prob_given_false: 0.2
+      platform: 'state'
+      to_state: 'home'
+    - entity_id: 'device_tracker.4a4a4a4a4a4a'
+      prob_given_true: 0.8
+      prob_given_false: 0.2
+      platform: 'state'
+      to_state: 'home'

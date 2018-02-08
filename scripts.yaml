@@ -1,0 +1,87 @@
+heis_drive_up:
+  alias: "Heis kjør opp"
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DQsNGA4IEAkcFQ8AB08OPA0LDRcPCBAIHBYNAAi+DjsNCw8VDwgQCB0VEAAKJxA6DwcSFBAGNhUPAAGYEDoQFH0AB08POhAUZAcSAAi5DjwNFxoKDgoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DQsNGA4IEAkcFQ8AB08OPA0LDRcPCBAIHBYNAAi+DjsNCw8VDwgQCB0VEAAKJxA6DwcSFBAGNhUPAAGYEDoQFH0AB08POhAUZAcSAAi5DjwNFxoKDgoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DQsNGA4IEAkcFQ8AB08OPA0LDRcPCBAIHBYNAAi+DjsNCw8VDwgQCB0VEAAKJxA6DwcSFBAGNhUPAAGYEDoQFH0AB08POhAUZAcSAAi5DjwNFxoKDgoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DQsNGA4IEAkcFQ8AB08OPA0LDRcPCBAIHBYNAAi+DjsNCw8VDwgQCB0VEAAKJxA6DwcSFBAGNhUPAAGYEDoQFH0AB08POhAUZAcSAAi5DjwNFxoKDgoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DQsNGA4IEAkcFQ8AB08OPA0LDRcPCBAIHBYNAAi+DjsNCw8VDwgQCB0VEAAKJxA6DwcSFBAGNhUPAAGYEDoQFH0AB08POhAUZAcSAAi5DjwNFxoKDgoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DQsNGA4IEAkcFQ8AB08OPA0LDRcPCBAIHBYNAAi+DjsNCw8VDwgQCB0VEAAKJxA6DwcSFBAGNhUPAAGYEDoQFH0AB08POhAUZAcSAAi5DjwNFxoKDgoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DQsNGA4IEAkcFQ8AB08OPA0LDRcPCBAIHBYNAAi+DjsNCw8VDwgQCB0VEAAKJxA6DwcSFBAGNhUPAAGYEDoQFH0AB08POhAUZAcSAAi5DjwNFxoKDgoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DQsNGA4IEAkcFQ8AB08OPA0LDRcPCBAIHBYNAAi+DjsNCw8VDwgQCB0VEAAKJxA6DwcSFBAGNhUPAAGYEDoQFH0AB08POhAUZAcSAAi5DjwNFxoKDgoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DQsNGA4IEAkcFQ8AB08OPA0LDRcPCBAIHBYNAAi+DjsNCw8VDwgQCB0VEAAKJxA6DwcSFBAGNhUPAAGYEDoQFH0AB08POhAUZAcSAAi5DjwNFxoKDgoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DQsNGA4IEAkcFQ8AB08OPA0LDRcPCBAIHBYNAAi+DjsNCw8VDwgQCB0VEAAKJxA6DwcSFBAGNhUPAAGYEDoQFH0AB08POhAUZAcSAAi5DjwNFxoKDgoOCg4KDgANBQAAAAAAAAAA=="
+
+heis_drive_down:
+  alias: "Heis kjør ned"
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DRcNCw0LDgsZFw0AB1AQORAVZBQQAAi6EDkQFA8IJgwaFhAACiYQORAUJQwMDBoWEAAF3RA5EBUyCg4KDgoOAAdRDjwNFzIKDgoOCg0ACL0QORAUMwoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DRcNCw0LDgsZFw0AB1AQORAVZBQQAAi6EDkQFA8IJgwaFhAACiYQORAUJQwMDBoWEAAF3RA5EBUyCg4KDgoOAAdRDjwNFzIKDgoOCg0ACL0QORAUMwoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DRcNCw0LDgsZFw0AB1AQORAVZBQQAAi6EDkQFA8IJgwaFhAACiYQORAUJQwMDBoWEAAF3RA5EBUyCg4KDgoOAAdRDjwNFzIKDgoOCg0ACL0QORAUMwoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DRcNCw0LDgsZFw0AB1AQORAVZBQQAAi6EDkQFA8IJgwaFhAACiYQORAUJQwMDBoWEAAF3RA5EBUyCg4KDgoOAAdRDjwNFzIKDgoOCg0ACL0QORAUMwoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DRcNCw0LDgsZFw0AB1AQORAVZBQQAAi6EDkQFA8IJgwaFhAACiYQORAUJQwMDBoWEAAF3RA5EBUyCg4KDgoOAAdRDjwNFzIKDgoOCg0ACL0QORAUMwoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DRcNCw0LDgsZFw0AB1AQORAVZBQQAAi6EDkQFA8IJgwaFhAACiYQORAUJQwMDBoWEAAF3RA5EBUyCg4KDgoOAAdRDjwNFzIKDgoOCg0ACL0QORAUMwoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DRcNCw0LDgsZFw0AB1AQORAVZBQQAAi6EDkQFA8IJgwaFhAACiYQORAUJQwMDBoWEAAF3RA5EBUyCg4KDgoOAAdRDjwNFzIKDgoOCg0ACL0QORAUMwoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DRcNCw0LDgsZFw0AB1AQORAVZBQQAAi6EDkQFA8IJgwaFhAACiYQORAUJQwMDBoWEAAF3RA5EBUyCg4KDgoOAAdRDjwNFzIKDgoOCg0ACL0QORAUMwoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DRcNCw0LDgsZFw0AB1AQORAVZBQQAAi6EDkQFA8IJgwaFhAACiYQORAUJQwMDBoWEAAF3RA5EBUyCg4KDgoOAAdRDjwNFzIKDgoOCg0ACL0QORAUMwoOCg4KDgANBQAAAAAAAAAA=="
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet: 
+          - "JgBgAA08DRcNCw0LDgsZFw0AB1AQORAVZBQQAAi6EDkQFA8IJgwaFhAACiYQORAUJQwMDBoWEAAF3RA5EBUyCg4KDgoOAAdRDjwNFzIKDgoOCg0ACL0QORAUMwoOCg4KDgANBQAAAAAAAAAA=="
