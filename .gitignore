@@ -1,5 +1,9 @@
 *
 !*.yaml
+!*.py
+!appdaemon
+!custom_components
+!packages
 !scenes
 !.gitignore
 secrets.yaml
