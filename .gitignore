@@ -3,6 +3,7 @@
 !*.py
 !appdaemon
 !custom_components
+!custom_components/sensor
 !packages
 !scenes
 !.gitignore
