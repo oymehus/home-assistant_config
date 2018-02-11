@@ -427,3 +427,24 @@ binary_sensor.oystein_home:
   device_class: presence
   friendly_name: Øystein
   gravatar: '"https://www.gravatar.com/avatar/98938989e7f28fe6024aeb111271542a.jpg?s=80&d=wavatar"'
+device_tracker.rmmini001035:
+  friendly_name: RM MINI
+  hidden: true
+sensor.fwp_varmtvannsbereder_alarm_level:
+  hidden: true
+sensor.fwp_varmtvannsbereder_alarm_type:
+  hidden: true
+sensor.fwp_varmtvannsbereder_exporting:
+  hidden: true
+sensor.fwp_varmtvannsbereder_power_management:
+  hidden: true
+sensor.fwp_varmtvannsbereder_sourcenodeid:
+  hidden: true
+device_tracker.7811dc833947:
+  hidden: true
+binary_sensor.lagringsrom_doer:
+  friendly_name: Lagringsrom dør
+binary_sensor.loft_gang_bevegelse:
+  friendly_name: Loft gang motion
+binary_sensor.doer2:
+  friendly_name: Entredør

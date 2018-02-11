@@ -11,4 +11,4 @@
   platform: group
   services:
     - service: oymehus_html5
-#    - service: pushbullet
+    - service: pushbullet

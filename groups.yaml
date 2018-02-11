@@ -13,6 +13,7 @@ home:
     - group.presence
     - group.windows
     - group.info
+    - group.power
     - group.energy
     - group.alarmclock
 
@@ -26,7 +27,6 @@ ligthing:
     - group.emma_linn_lys
     - group.mats_lys
     - group.soverom_lys
-    - group.loftstue_lys
     - group.loft_gang_lys
     - group.entre_lys
     - group.kjokken_lys
@@ -45,6 +45,7 @@ heating:
     - group.emma_linn_heating
     - group.entre_heating
     - group.kjokken_heating
+    - group.varmtvannsbereder_heating
     - group.stue_heating
     - group.loftstue_heating
 
@@ -66,6 +67,7 @@ apparatus:
   icon: mdi:radio
   entities:
     - group.rpi_monitor
+    - group.fridge_monitor
     - group.battery_levels
     - group.battery_alert
 
@@ -74,6 +76,7 @@ weather:
   name: "Vaeret"
   icon: mdi:weather-partlycloudy
   entities:
+    - group.weather_station
     - group.weather_yrnow
     - group.weather_yrfc
     - group.weather_celestial
@@ -94,7 +97,7 @@ family:
   entities:
     - binary_sensor.oystein_home
     - device_tracker.oystein_g8441
-    - device_tracker.sasha_iphone
+#    - device_tracker.sasha_iphone
     - device_tracker.58e28fd02a53
     - device_tracker.mats_iphone
 
@@ -106,6 +109,7 @@ info:
   icon: mdi:information
   entities:
     - sensor.electricity_price_sommerstien_10
+    - history_graph.electricity_price__tibber
 
 alarmclock:
   view: no
@@ -157,8 +161,23 @@ energy:
     - sensor.fwp_entre_ovn_energy
     - sensor.fwp_light_loftstue_energy
     - sensor.fwp_stue_spots_energy
-    - sensor.total_power_usage
+    - sensor.fwp_varmtvannsbereder_energy
     - sensor.total_energy_usage
+
+power:
+  name: "El forbruk"
+  icon: mdi:battery-charging-40
+  entities:
+    - sensor.fwp_am_ovn_power
+    - sensor.fwp_emmalinn_ovn_power
+    - sensor.fwp_mats_ovn_power
+    - sensor.fwp_soverom_ovn_power
+    - sensor.fwp_kjokken_ovn_power
+    - sensor.fwp_entre_ovn_power
+    - sensor.fwp_light_loftstue_power
+    - sensor.fwp_stue_spots_power
+    - sensor.fwp_varmtvannsbereder_power
+    - sensor.total_power_usage
 
 presence:
   view: no
@@ -174,6 +193,7 @@ presence:
     - binary_sensor.fms_entre_sensor
     - binary_sensor.fms_kjokken_sensor
     - binary_sensor.trapp_motion_via_light
+    - binary_sensor.loft_gang_bevegelse
     - sensor.fms_am_luminance
     - sensor.fms_emma_linn_luminance
     - sensor.fms_mats_luminance
@@ -183,7 +203,7 @@ presence:
 
 windows:
 #  view: yes
-  name: "Vindu"
+  name: "Vindu og dører"
   icon: mdi:window-open
   entities:
     - binary_sensor.strips_soverom_sensor
@@ -192,6 +212,8 @@ windows:
     - binary_sensor.strips_emmalinn_sensor
     - binary_sensor.strips_bad_loft_sensor
     - binary_sensor.strips_trapp_sensor
+    - binary_sensor.lagringsrom_doer
+    - binary_sensor.doer2
     - alert.kjokken_vindu
     - alert.soverom_vindu
     - alert.mats_vindu
@@ -211,7 +233,7 @@ modes:
 
 rpi_monitor:
   view: no
-  name: Raspberry Pi monitor
+  name: "Raspberry Pi monitor"
   icon: mdi:chart-line
   entities:
     - sensor.cpu_used
@@ -220,6 +242,18 @@ rpi_monitor:
     - sensor.ram_used
     - sensor.disk_used_
 #    - sensor.since_last_boot
+
+fridge_monitor:
+  view: no
+  name: "Fridge/Freezer monitor"
+  icon: mdi:chart-line
+  entities:
+    - sensor.kjokkenkjoleskap_temperature
+    - sensor.kjokkenfryseboks_temperature
+    - sensor.kjokkenvinskap_temperature
+    - automation.kjoleskap_temp_alert
+    - automation.fryseboks_temp_alert
+    - automation.vinskap_temp_alert
 
 
 ####################### MEDIA
@@ -274,10 +308,17 @@ weather_celestial:
     - sensor.moon
     - sun.sun
 
+weather_station:
+  view: no
+  name: "Weather station"
+  entities:
+    - sensor.kjokkenute_temperature
+
 
 ####################### LIGHTING
 entre_lys:
   name: "Entré lys"
+  control: hidden
   entities:
     - light.entre_tak_panel
     - group.entre_scene
@@ -296,6 +337,7 @@ entre_scene:
 
 stue_lys:
   name: "Stue lys"
+  control: hidden
   entities:
     - light.stue_aj_lampe
     - light.stue_spisebord
@@ -308,6 +350,7 @@ stue_lys:
 
 aqua_lys:
   name: "Akvarium lys"
+  control: hidden
   entities:
     - light.aquarium_light
 
@@ -321,13 +364,9 @@ stue_scene:
     - scene.stue_mye_lys
     - scene.stue_max_lys
 
-loftstue_lys:
-  name: "Loftstue lys"
-  entities:
-    - switch.fwp_light_loftstue_switch
-
 kjokken_lys:
   name: "Kjokken lys"
+  control: hidden
   entities:
     - light.kjkken_spis_panel
     - light.kjkken_tak_vask
@@ -347,15 +386,19 @@ kjokken_scene:
 
 trapp_lys:
   name: "Trapp lys"
+  control: hidden
   entities:
     - light.trapp
 
 loft_gang_lys:
   name: "Loft gang lys"
+  control: hidden
   entities:
     - light.loft_gang_vbad
     - light.loft_gang_vel
     - group.loft_gang_scene
+    - automation.lights_on_when_motion_detected_loft_gang
+    - automation.light_off_5_minutes_after_motion_detected_loft_gang
 
 loft_gang_scene:
   name: "Loft gang Scene"
@@ -369,11 +412,13 @@ loft_gang_scene:
 
 alex_misha_lys:
   name: "Alex Misha lys"
+  control: hidden
   entities:
     - light.am_sov_tak
     - light.am_sov_vegg
     - group.alex_misha_scene
     - automation.alex_misha_tak_lys_av_om_natten
+    - automation.alex_misha_vegg_lys_av_om_natten
 
 alex_misha_scene:
   name: "Alex Misha Scene"
@@ -387,18 +432,21 @@ alex_misha_scene:
 
 emma_linn_lys:
   name: "Emma Linn lys"
+  control: hidden
   entities:
     - light.el_sov_tak1
     - light.el_sov_tak2
 
 mats_lys:
   name: "Mats lys"
+  control: hidden
   entities:
     - light.mats_sov_tak1
     - light.mats_sov_tak2
 
 soverom_lys:
   name: "Soverom lys"
+  control: hidden
   entities:
     - light.soverom_tak_1
     - light.soverom_tak_2
@@ -437,6 +485,7 @@ alex_misha_heating:
   entities:
     - climate.alex_misha_termostat
     - switch.fwp_am_ovn_switch
+    - sensor.fwp_am_ovn_power
     - group.alex_misha_temp_control
 
 alex_misha_temp_control:
@@ -456,6 +505,7 @@ mats_heating:
   entities:
     - climate.mats_termostat
     - switch.fwp_mats_ovn_switch
+    - sensor.fwp_mats_ovn_power
     - group.mats_temp_control
 
 mats_temp_control:
@@ -476,6 +526,7 @@ emma_linn_heating:
   entities:
     - climate.emma_linn_termostat
     - switch.fwp_emmalinn_ovn_switch
+    - sensor.fwp_emmalinn_ovn_power
     - group.emma_linn_temp_control
 
 emma_linn_temp_control:
@@ -496,6 +547,7 @@ soverom_heating:
   entities:
     - climate.soverom_termostat
     - switch.fwp_soverom_ovn_switch
+    - sensor.fwp_soverom_ovn_power
     - group.soverom_temp_control
 
 soverom_temp_control:
@@ -515,7 +567,10 @@ kjokken_heating:
   control: hidden
   entities:
     - climate.kjokken_termostat
+    - sensor.kjokkenvindu_temperature
+    - sensor.kjokkenvindu_humidity
     - switch.fwp_kjokken_ovn_switch
+    - sensor.fwp_kjokken_ovn_power
     - group.kjokken_temp_control
 
 kjokken_temp_control:
@@ -530,9 +585,11 @@ kjokken_temp_control:
 
 entre_heating:
   name: "Entré Varme"
+  control: hidden
   entities:
     - climate.entre_termostat
     - switch.fwp_entre_ovn_switch
+    - sensor.fwp_entre_ovn_power
     - group.entre_temp_control
 
 entre_temp_control:
@@ -544,3 +601,12 @@ entre_temp_control:
     - input_number.temp_control_entre_dagtid_temp
     - input_number.temp_control_entre_natt_hour
     - input_number.temp_control_entre_natt_temp
+
+varmtvannsbereder_heating:
+  name: "Varmtvannsbereder"
+  control: hidden
+  entities:
+    - switch.fwp_varmtvannsbereder_switch
+    - sensor.fwp_varmtvannsbereder_power
+    - automation.varmtvannsbereder_off
+    - automation.varmtvannsbereder_on

@@ -12,6 +12,19 @@
   days_offset: -1
   name: 'workday_yesterday'
 
+- platform: rfxtrx
+  automatic_add: False
+  devices:
+    0b110078018fc1a20a000070:
+      name: 'Lagringsrom doer'
+      device_class: opening
+    0b110000019138020a000070:
+      name: 'Doer2'
+      device_class: opening
+    0b1100000153bdb60a010f70:
+      name: 'Loft gang bevegelse'
+      device_class: motion
+
 - platform: template
   sensors:
     trapp_motion_via_light:

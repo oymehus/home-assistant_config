@@ -1,36 +1,10 @@
-- id: battery_check
-  alias: Low battery alert
-  initial_state: 'on'
-  trigger:
-  - at: '18:00:00'
-    platform: time
-  condition:
-  - condition: template
-    value_template: '{% for entity_id in states.group.battery_levels.attributes.entity_id if ((states(entity_id) | int)) < (states.input_number.battery_alert_threshold_min.state | round(0)) %} {%- if loop.first -%} {{ true }} {%- endif -%} {% endfor %}'
-  action:
-    service: notify.all
-    data:
-      message: Low battery detected for at least one sensor
-
-- id: update_notification
-  alias: Update notifications
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: updater.updater
-  action:
-    service: notify.all
-    data_template: 
-      title: 'New Home Assistant Release'
-      message: "Home Assistant  {{ states.updater.updater.state }}  is now available."
-
 # Update Last Motion variable
 - id: update_last_motion
   alias: "Update Last Motion"
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.fms_am_sensor, binary_sensor.fms_emma_linn_sensor, binary_sensor.fms_entre_sensor, binary_sensor.fms_kjokken_sensor, binary_sensor.fms_mats_sensor, binary_sensor.fms_soverom_sensor, binary_sensor.trapp_motion_via_light
+      entity_id: binary_sensor.fms_am_sensor, binary_sensor.fms_emma_linn_sensor, binary_sensor.fms_entre_sensor, binary_sensor.fms_kjokken_sensor, binary_sensor.fms_mats_sensor, binary_sensor.fms_soverom_sensor, binary_sensor.trapp_motion_via_light, binary_sensor.loft_gang_bevegelse, binary_sensor.doer2, binary_sensor.lagringsrom_doer
       to: 'on'
   action:
     - service: variable.set_variable
@@ -44,6 +18,34 @@
             }
       data_template:
         value: "{{ trigger.to_state.attributes.friendly_name }}"
+
+
+################################################################## ALERTS
+- id: update_notification
+  alias: Update notifications
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: updater.updater
+  action:
+    service: notify.all
+    data_template: 
+      title: 'New Home Assistant Release'
+      message: "Home Assistant  {{ states.updater.updater.state }}  is now available."
+
+- id: battery_check
+  alias: Low battery alert
+  initial_state: 'on'
+  trigger:
+  - at: '18:00:00'
+    platform: time
+  condition:
+  - condition: template
+    value_template: '{% for entity_id in states.group.battery_levels.attributes.entity_id if ((states(entity_id) | int)) < (states.input_number.battery_alert_threshold_min.state | round(0)) %} {%- if loop.first -%} {{ true }} {%- endif -%} {% endfor %}'
+  action:
+    service: notify.all
+    data:
+      message: Low battery detected for at least one sensor
 
 - id: home_alerter
   alias: 'Home Alerter'
@@ -61,18 +63,68 @@
           {{ trigger.to_state.attributes.friendly_name }} is {% if trigger.to_state.state == 'home' %}back{% else %}away{% endif %}.
         title: ""
 
-#- id: window_alerter
-#  alias: 'Window Open Alert'
-#  trigger:
-#    platform: state
-#    entity_id: binary_sensor.strips_soverom_sensor, binary_sensor.strips_bad_loft_sensor, binary_sensor.strips_mats_sensor, binary_sensor.strips_emmalinn_sensor, binary_sensor.strips_trapp_sensor, binary_sensor.strips_kjokken_sensor
-#  action:
-#    - service: notify.all
-#      data_template:
-#        message: >
-#          {{ trigger.to_state.attributes.friendly_name }} is {% if trigger.to_state.state == 'on' %}open{% else %}closed{% endif %}.
-#        title: ""
+- id: door_alerter
+  alias: 'Door Open Alert'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.doer2
+    to: 'on'
+    for:
+      seconds: 10
+  action:
+    - service: notify.all
+      data_template:
+        message: >
+          {{ trigger.to_state.attributes.friendly_name }} is {% if trigger.to_state.state == 'on' %}open{% else %}closed{% endif %}.
+        title: ""
 
+- id: kjoleskap_temp_alert
+  alias: 'Kjoleskap temp alert'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.kjokkenkjoleskap_temperature
+    below: 2
+    above: 4
+    for:
+      seconds: 30
+  action:
+    service: notify.all
+    data_template:
+      title: "Kjøleskap temp avvik"
+      message: "Temperatur: {{ states.sensor.kjokkenkjoleskap_temperature.state }} C"
+
+- id: vinskap_temp_alert
+  alias: 'Vinskap temp alert'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.kjokkenvinskap_temperature
+    below: 4
+    above: 8
+    for:
+      seconds: 30
+  action:
+    service: notify.all
+    data_template:
+      title: "Vinskap temp avvik"
+      message: "Temperatur: {{ states.sensor.kjokkenvinskap_temperature.state }} C"
+
+- id: fryseboks_temp_alert
+  alias: 'Fryseboks temp alert'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.kjokkenfryseboks_temperature
+    below: -24
+    above: -18
+    for:
+      seconds: 30
+  action:
+    service: notify.all
+    data_template:
+      title: "Fryseboks temp avvik"
+      message: "Temperatur: {{ states.sensor.kjokkenfryseboks_temperature.state }} C"
+
+
+################################################################## LIGHT CONTROL
 - id: aqua_light_on
   alias: Aquarium lights on
   initial_state: 'on'
@@ -110,6 +162,23 @@
     service: homeassistant.turn_off
     entity_id: light.am_sov_tak
 
+- id: am_vegg_light_off_night
+  alias: Alex Misha Vegg lys av om natten
+  initial_state: 'off'
+  trigger:
+    - platform: state
+      entity_id: light.am_sov_vegg
+      to: 'on'
+      for:
+        seconds: 3
+  condition:
+    condition: time
+    after: '19:00:00'
+    before: '07:00:00'
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.am_sov_vegg
+
 ## Motion sensor kitchen
 - id: light_on_motion_detected_kjokken
   alias: Lights on when motion detected kjokken
@@ -124,7 +193,7 @@
     below: 50
   action:
     - service: homeassistant.turn_on
-      entity_id:     
+      entity_id:
         - light.kjkken_spis_panel
         - light.kjkken_tak_vask
 
@@ -174,6 +243,36 @@
     - service: homeassistant.turn_off
       entity_id: light.entre_tak_panel
 
+## Motion sensor loft gang
+- id: light_on_motion_detected_loft_gang
+  alias: Lights on when motion detected loft gang
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.loft_gang_bevegelse
+      to: 'on'
+  condition:
+    condition: time
+    after: '17:00:00'
+    before: '09:00:00'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: light.loft_gang_gruppe
+
+- id: light_off_after_motion_detected_loft_gang
+  alias: Light off 5 minutes after motion detected loft gang
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.loft_gang_bevegelse
+      to: 'off'
+      for:
+        minutes: 5
+        seconds: 0
+  action:
+    - service: homeassistant.turn_off
+      entity_id: light.loft_gang_gruppe
+
 ## Switch Stue spots on/off with Trådfri lights
 - id: light_on_tradfri_on_stue
   alias: Lights on when Trådfri turns on stue
@@ -196,6 +295,33 @@
   action:
     - service: homeassistant.turn_off
       entity_id: switch.fwp_stue_spots_switch
+
+
+################################################################## HEATING CONTROL
+#turn off varmtvannsbereder in prime time
+- id: varmtvannsbereder_on
+  alias: Varmtvannsbereder on
+  initial_state: 'on'
+  trigger:
+  - at: '10:00:00'
+    platform: time
+  - at: '19:00:00'
+    platform: time
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.fwp_varmtvannsbereder_switch
+
+- id: varmtvannsbereder_off
+  alias: Varmtvannsbereder off
+  initial_state: 'on'
+  trigger:
+  - at: '06:00:00'
+    platform: time
+  - at: '16:00:00'
+    platform: time
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.fwp_varmtvannsbereder_switch
 
 - id: temp_control_soverom_hour_enabled
   alias: temp_control_soverom_hour_enabled
@@ -908,6 +1034,32 @@
       data_template:
         entity_id: climate.entre_termostat
         temperature: "{{ states.input_number.temp_control_entre_natt_temp.state | float }}"
+        operation_mode: 'heat'
+
+- id: temp_control_entre_dor_opened
+  alias: Varme Entre Dør åpen
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.doer2
+      to: 'on'
+  action:
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.entre_termostat
+        operation_mode: 'off'
+
+- id: temp_control_entre_dor_closed
+  alias: Varme Entre Dør lukket
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.doer2
+      to: 'off'
+  action:
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.entre_termostat
         operation_mode: 'heat'
 
 - id: temp_control_elm_away_mode

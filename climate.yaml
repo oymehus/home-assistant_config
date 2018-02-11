@@ -1,6 +1,8 @@
 - platform: sensibo
   api_key: !secret sensibo_key
 
+- platform: zwave
+
 - platform: generic_thermostat
   name: Soverom Termostat
   heater: switch.fwp_soverom_ovn_switch
