@@ -37,15 +37,15 @@
     - type: processor_use
 
 - platform: rfxtrx
-  automatic_add: False
+  automatic_add: True
   devices:
     0a520904b7000106270269:
-      name: Kjokkenvindu
+      name: KjokkenvinduInne
       data_type:
         - Humidity
         - Temperature
     08500705b80000ef69:
-      name: KjokkenUte
+      name: KjokkenVinduUte
       data_type:
         - Temperature
     085007039700002d79:

@@ -68,13 +68,14 @@ recorder:
 logger:
   default: warning
   logs:
-    homeassistant.components.switch.broadlink: info
     homeassistant.components.automation: info
-    homeassistant.components.script: info
+#    homeassistant.components.binary_sensor: info
 #    homeassistant.components.device_tracker: info
 #    homeassistant.components.http: info
+#    homeassistant.components.mqtt: info
     homeassistant.components.rfxtrx: info
-    homeassistant.components.binary_sensor: debug
+#    homeassistant.components.script: info
+    homeassistant.components.switch.broadlink: info
 
 map:
 sun:
@@ -98,10 +99,11 @@ input_number: !include input_number.yaml
 light: !include lights.yaml
 media_player: !include media_players.yaml
 mqtt: !include mqtt.yaml
+#netatmo: !include netatmo.yaml
 notify: !include notify.yaml
 rfxtrx:
   device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433_A1Y0NJGR-if00-port0
-  debug: False
+  debug: True
   dummy: False
 sensor: !include sensor.yaml
 scene: !include scenes.yaml

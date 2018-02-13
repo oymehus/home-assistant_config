@@ -4,7 +4,7 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.fms_am_sensor, binary_sensor.fms_emma_linn_sensor, binary_sensor.fms_entre_sensor, binary_sensor.fms_kjokken_sensor, binary_sensor.fms_mats_sensor, binary_sensor.fms_soverom_sensor, binary_sensor.trapp_motion_via_light, binary_sensor.loft_gang_bevegelse, binary_sensor.doer2, binary_sensor.lagringsrom_doer
+      entity_id: binary_sensor.fms_am_sensor, binary_sensor.fms_emma_linn_sensor, binary_sensor.fms_entre_sensor, binary_sensor.fms_kjokken_sensor, binary_sensor.fms_mats_sensor, binary_sensor.fms_soverom_sensor, binary_sensor.trapp_motion_via_light, binary_sensor.loft_gang_bevegelse,binary_sensor.loft_gang_bevegelse2, binary_sensor.entre_doer, binary_sensor.lagringsrom_doer, binary_sensor.stue_terasse_doer
       to: 'on'
   action:
     - service: variable.set_variable
@@ -29,7 +29,7 @@
       entity_id: updater.updater
   action:
     service: notify.all
-    data_template: 
+    data_template:
       title: 'New Home Assistant Release'
       message: "Home Assistant  {{ states.updater.updater.state }}  is now available."
 
@@ -67,7 +67,7 @@
   alias: 'Door Open Alert'
   trigger:
     platform: state
-    entity_id: binary_sensor.doer2
+    entity_id: binary_sensor.entre_doer, binary_sensor.stue_terasse_doer
     to: 'on'
     for:
       seconds: 10
@@ -147,7 +147,7 @@
 
 - id: am_tak_light_off_night
   alias: Alex Misha Tak lys av om natten
-  initial_state: 'on'
+  initial_state: 'off'
   trigger:
     - platform: state
       entity_id: light.am_sov_tak
@@ -164,7 +164,7 @@
 
 - id: am_vegg_light_off_night
   alias: Alex Misha Vegg lys av om natten
-  initial_state: 'off'
+  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: light.am_sov_vegg
@@ -336,7 +336,7 @@
       event: start
   action:
   - service: homeassistant.turn_on
-    data: 
+    data:
       entity_id:
        - automation.temp_control_soverom_nighttime
        - automation.temp_control_soverom_bedtime
@@ -430,7 +430,7 @@
         operation_mode: 'heat'
 
 - id: temp_control_soverom_vindu_opened
-  alias: Varme soveromsvindu åpentd
+  alias: Varme soveromsvindu åpent
   initial_state: 'on'
   trigger:
     - platform: state
@@ -468,7 +468,7 @@
       event: start
   action:
   - service: homeassistant.turn_on
-    data: 
+    data:
       entity_id:
        - automation.temp_control_alex_misha_nighttime
        - automation.temp_control_alex_misha_daytime_weekdays
@@ -556,7 +556,7 @@
       event: start
   action:
   - service: homeassistant.turn_on
-    data: 
+    data:
       entity_id:
        - automation.temp_control_emma_linn_nighttime
        - automation.temp_control_emma_linn_daytime_weekdays
@@ -706,7 +706,7 @@
       event: start
   action:
   - service: homeassistant.turn_on
-    data: 
+    data:
       entity_id:
        - automation.temp_control_mats_nighttime
        - automation.temp_control_mats_daytime_weekdays
@@ -853,7 +853,7 @@
       event: start
   action:
   - service: homeassistant.turn_on
-    data: 
+    data:
       entity_id:
        - automation.temp_control_kjokken_daytime_weekdays
        - automation.temp_control_kjokken_daytime_weekends
@@ -964,7 +964,7 @@
       event: start
   action:
   - service: homeassistant.turn_on
-    data: 
+    data:
       entity_id:
        - automation.temp_control_entre_daytime_weekdays
        - automation.temp_control_entre_daytime_weekends
@@ -1041,7 +1041,7 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.doer2
+      entity_id: binary_sensor.entre_doer
       to: 'on'
   action:
     - service: climate.set_operation_mode
@@ -1054,7 +1054,7 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.doer2
+      entity_id: binary_sensor.entre_doer
       to: 'off'
   action:
     - service: climate.set_operation_mode
@@ -1101,7 +1101,7 @@
         away_mode: 'off'
 
 - id: temp_control_away_mode
-  alias: Varme borte modus 
+  alias: Varme borte modus
   initial_state: 'on'
   trigger:
     - platform: state

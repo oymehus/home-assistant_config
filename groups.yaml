@@ -114,7 +114,7 @@ info:
 alarmclock:
   view: no
   name: Wake Me Up
-  entities: 
+  entities:
    - sensor.alarm_time
    - input_number.alarmhour
    - input_number.alarmminutes
@@ -194,6 +194,7 @@ presence:
     - binary_sensor.fms_kjokken_sensor
     - binary_sensor.trapp_motion_via_light
     - binary_sensor.loft_gang_bevegelse
+    - binary_sensor.loft_gang_bevegelse2
     - sensor.fms_am_luminance
     - sensor.fms_emma_linn_luminance
     - sensor.fms_mats_luminance
@@ -213,7 +214,8 @@ windows:
     - binary_sensor.strips_bad_loft_sensor
     - binary_sensor.strips_trapp_sensor
     - binary_sensor.lagringsrom_doer
-    - binary_sensor.doer2
+    - binary_sensor.entre_doer
+    - binary_sensor.stue_terasse_doer
     - alert.kjokken_vindu
     - alert.soverom_vindu
     - alert.mats_vindu
@@ -312,7 +314,7 @@ weather_station:
   view: no
   name: "Weather station"
   entities:
-    - sensor.kjokkenute_temperature
+    - sensor.kjokkenvinduute_temperature
 
 
 ####################### LIGHTING
@@ -567,8 +569,8 @@ kjokken_heating:
   control: hidden
   entities:
     - climate.kjokken_termostat
-    - sensor.kjokkenvindu_temperature
-    - sensor.kjokkenvindu_humidity
+    - sensor.kjokkenvinduinne_temperature
+    - sensor.kjokkenvinduinne_humidity
     - switch.fwp_kjokken_ovn_switch
     - sensor.fwp_kjokken_ovn_power
     - group.kjokken_temp_control

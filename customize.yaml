@@ -446,5 +446,17 @@ binary_sensor.lagringsrom_doer:
   friendly_name: Lagringsrom dør
 binary_sensor.loft_gang_bevegelse:
   friendly_name: Loft gang motion
-binary_sensor.doer2:
+binary_sensor.loft_gang_bevegelse2:
+  friendly_name: Loft gang motion2
+binary_sensor.entre_doer:
   friendly_name: Entredør
+sensor.085007039700002d79_temperature_battery:
+  friendly_name: KjokkenKjoleskap Temperature Battery
+sensor.0a520904b7000106270269_temperature_battery:
+  friendly_name: Kjokkenvindu Inne Temperature Battery
+sensor.08500705b80000ef69_temperature_battery:
+  friendly_name: Kjokkenvindu Ute Temperature Battery
+sensor.08200a220000000649_sensor_status:
+  hidden: true
+sensor.08200a590000010649_sensor_status:
+  hidden: true

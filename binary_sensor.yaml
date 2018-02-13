@@ -19,10 +19,16 @@
       name: 'Lagringsrom doer'
       device_class: opening
     0b110000019138020a000070:
-      name: 'Doer2'
+      name: 'Entre doer'
+      device_class: opening
+    0b110009017846d20a010f70:
+      name: Stue terasse doer
       device_class: opening
     0b1100000153bdb60a010f70:
       name: 'Loft gang bevegelse'
+      device_class: motion
+    0b11002b015e19760a010f60:
+      name: 'Loft gang bevegelse2'
       device_class: motion
 
 - platform: template
