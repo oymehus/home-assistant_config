@@ -1,7 +1,7 @@
 - platform: sensibo
   api_key: !secret sensibo_key
 
-- platform: zwave
+#- platform: zwave
 
 - platform: generic_thermostat
   name: Soverom Termostat
