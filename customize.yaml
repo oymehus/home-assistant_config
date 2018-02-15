@@ -478,3 +478,5 @@ sensor.kjokken_kjoleskap_temperature:
   friendly_name: Kjøkken Kjøleskap Temperature
 sensor.am_sov_tak_rc:
   hidden: true
+device_tracker.sasha_iphone:
+  hidden: true
