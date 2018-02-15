@@ -37,29 +37,44 @@
     - type: processor_use
 
 - platform: rfxtrx
-  automatic_add: True
+  automatic_add: False
   devices:
     0a520904b7000106270269:
-      name: KjokkenvinduInne
+      name: Kjokkenvindu Inne
       data_type:
         - Humidity
         - Temperature
     08500705b80000ef69:
-      name: KjokkenVinduUte
+      name: Kjokkenvindu Ute
       data_type:
         - Temperature
     085007039700002d79:
-      name: KjokkenKjoleskap
+      name: Kjokken Kjoleskap
       data_type:
         - Temperature
     08500799d70000fb79:
-      name: KjokkenFryseboks
+      name: Kjokken Fryseboks
       data_type:
         - Temperature
     0850071af700010079:
-      name: KjokkenVinskap
+      name: Kjokken Vinskap
       data_type:
         - Temperature
+    0a52071c3e0e00f5230279 :
+      name: Loft bad
+      data_type:
+        - Temperature
+        - Humidity
+    0a5207c53d0e00ec230269:
+      name: Bad nede
+      data_type:
+        - Temperature
+        - Humidity
+    0a5207a52b0e00eb200279:
+      name: Stue Bokhylle
+      data_type:
+        - Temperature
+        - Humidity
 
 
 ###############################

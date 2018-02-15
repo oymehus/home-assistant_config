@@ -48,6 +48,8 @@ heating:
     - group.varmtvannsbereder_heating
     - group.stue_heating
     - group.loftstue_heating
+    - group.bad_heating
+
 
 media:
   view: yes
@@ -250,9 +252,9 @@ fridge_monitor:
   name: "Fridge/Freezer monitor"
   icon: mdi:chart-line
   entities:
-    - sensor.kjokkenkjoleskap_temperature
-    - sensor.kjokkenfryseboks_temperature
-    - sensor.kjokkenvinskap_temperature
+    - sensor.kjokken_kjoleskap_temperature
+    - sensor.kjokken_fryseboks_temperature
+    - sensor.kjokken_vinskap_temperature
     - automation.kjoleskap_temp_alert
     - automation.fryseboks_temp_alert
     - automation.vinskap_temp_alert
@@ -314,7 +316,7 @@ weather_station:
   view: no
   name: "Weather station"
   entities:
-    - sensor.kjokkenvinduute_temperature
+    - sensor.kjokkenvindu_ute_temperature
 
 
 ####################### LIGHTING
@@ -472,6 +474,8 @@ stue_heating:
   entities:
     - climate.stue
     - history_graph.stue_temperature_graph
+    - sensor.stue_bokhylle_temperature
+    - sensor.stue_bokhylle_humidity
 
 loftstue_heating:
   name: Loftstue Varme
@@ -499,7 +503,6 @@ alex_misha_temp_control:
     - input_number.temp_control_alex_misha_dagtid_temp
     - input_number.temp_control_alex_misha_natt_hour
     - input_number.temp_control_alex_misha_natt_temp
-
 
 mats_heating:
   name: Mats Varme
@@ -569,10 +572,10 @@ kjokken_heating:
   control: hidden
   entities:
     - climate.kjokken_termostat
-    - sensor.kjokkenvinduinne_temperature
-    - sensor.kjokkenvinduinne_humidity
     - switch.fwp_kjokken_ovn_switch
     - sensor.fwp_kjokken_ovn_power
+    - sensor.kjokkenvindu_inne_temperature
+    - sensor.kjokkenvindu_inne_humidity
     - group.kjokken_temp_control
 
 kjokken_temp_control:
@@ -612,3 +615,12 @@ varmtvannsbereder_heating:
     - sensor.fwp_varmtvannsbereder_power
     - automation.varmtvannsbereder_off
     - automation.varmtvannsbereder_on
+
+bad_heating:
+  name: "Bad varme"
+  control: hidden
+  entities:
+    - sensor.loft_bad_temperature
+    - sensor.loft_bad_humidity
+    - sensor.bad_nede_temperature
+    - sensor.bad_nede_humidity

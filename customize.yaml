@@ -445,18 +445,36 @@ device_tracker.7811dc833947:
 binary_sensor.lagringsrom_doer:
   friendly_name: Lagringsrom dør
 binary_sensor.loft_gang_bevegelse:
-  friendly_name: Loft gang motion
+  friendly_name: Loft gang motion sov
 binary_sensor.loft_gang_bevegelse2:
-  friendly_name: Loft gang motion2
+  friendly_name: Loft gang motion bad
 binary_sensor.entre_doer:
   friendly_name: Entredør
 sensor.085007039700002d79_temperature_battery:
-  friendly_name: KjokkenKjoleskap Temperature Battery
+  friendly_name: Kjøkken Kjøleskap Temperature Battery
 sensor.0a520904b7000106270269_temperature_battery:
-  friendly_name: Kjokkenvindu Inne Temperature Battery
+  friendly_name: Kjøkkenvindu Inne Temperature Battery
 sensor.08500705b80000ef69_temperature_battery:
-  friendly_name: Kjokkenvindu Ute Temperature Battery
+  friendly_name: Kjøkkenvindu Ute Temperature Battery
 sensor.08200a220000000649_sensor_status:
   hidden: true
 sensor.08200a590000010649_sensor_status:
+  hidden: true
+sensor.08200acd802b2c0659_sensor_status:
+  hidden: true
+sensor.08200a8a8042000649_sensor_status:
+  hidden: true
+sensor.kjokken_fryseboks_temperature:
+  friendly_name: Kjøkken Fryseboks Temperature
+sensor.kjokkenvindu_inne_temperature:
+  friendly_name: Kjøkkenvindu Inne Temperature
+sensor.kjokkenvindu_inne_humidity:
+  friendly_name: Kjøkkenvindu Inne Humidity
+sensor.kjokken_vinskap_temperature:
+  friendly_name: Kjøkken Vinskap Temperature
+sensor.kjokkenvindu_ute_temperature:
+  friendly_name: Kjøkkenvindu Ute Temperature
+sensor.kjokken_kjoleskap_temperature:
+  friendly_name: Kjøkken Kjøleskap Temperature
+sensor.am_sov_tak_rc:
   hidden: true
