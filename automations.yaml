@@ -48,10 +48,10 @@
       message: Low battery detected for at least one sensor
 
 - id: home_alerter
-  alias: 'Home Alerter'
+  alias: 'Home Alerter Kids'
   trigger:
     platform: state
-    entity_id: device_tracker.oystein_g8441, device_tracker.sasha_iphone, device_tracker.58e28fd02a53, device_tracker.mats_iphone
+    entity_id: device_tracker.58e28fd02a53, device_tracker.mats_iphone
   condition:
     condition: time
     after: '07:00:00'
@@ -82,38 +82,38 @@
   alias: 'Kjoleskap temp alert'
   trigger:
     platform: numeric_state
-    entity_id: sensor.kjokkenkjoleskap_temperature
+    entity_id: sensor.kjokken_kjoleskap_temperature
     below: 2
-    above: 4
+    above: 6
     for:
       seconds: 60
   action:
     service: notify.all
     data_template:
       title: "Kjøleskap temp avvik"
-      message: "Temperatur: {{ states.sensor.kjokkenkjoleskap_temperature.state }} C"
+      message: "Temperatur: {{ states.sensor.kjokken_kjoleskap_temperature.state }} C"
 
 - id: vinskap_temp_alert
   alias: 'Vinskap temp alert'
   trigger:
     platform: numeric_state
-    entity_id: sensor.kjokkenvinskap_temperature
-    below: 4
-    above: 8
+    entity_id: sensor.kjokken_vinskap_temperature
+    below: 5
+    above: 9
     for:
       seconds: 60
   action:
     service: notify.all
     data_template:
       title: "Vinskap temp avvik"
-      message: "Temperatur: {{ states.sensor.kjokkenvinskap_temperature.state }} C"
+      message: "Temperatur: {{ states.sensor.kjokken_vinskap_temperature.state }} C"
 
 - id: fryseboks_temp_alert
   alias: 'Fryseboks temp alert'
   trigger:
     platform: numeric_state
-    entity_id: sensor.kjokkenfryseboks_temperature
-    below: -24
+    entity_id: sensor.kjokken_fryseboks_temperature
+    below: -25
     above: -18
     for:
       seconds: 60
@@ -121,7 +121,7 @@
     service: notify.all
     data_template:
       title: "Fryseboks temp avvik"
-      message: "Temperatur: {{ states.sensor.kjokkenfryseboks_temperature.state }} C"
+      message: "Temperatur: {{ states.sensor.kjokken_fryseboks_temperature.state }} C"
 
 
 ################################################################## LIGHT CONTROL
