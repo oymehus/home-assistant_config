@@ -81,12 +81,16 @@
 - id: kjoleskap_temp_alert
   alias: 'Kjoleskap temp alert'
   trigger:
-    platform: numeric_state
-    entity_id: sensor.kjokken_kjoleskap_temperature
-    below: 2
-    above: 6
-    for:
-      seconds: 60
+    - platform: numeric_state
+      entity_id: sensor.kjokken_kjoleskap_temperature
+      below: 2.0
+      for:
+        seconds: 60
+    - platform: numeric_state
+      entity_id: sensor.kjokken_kjoleskap_temperature
+      above: 5.0
+      for:
+        seconds: 60
   action:
     service: notify.all
     data_template:
@@ -96,12 +100,16 @@
 - id: vinskap_temp_alert
   alias: 'Vinskap temp alert'
   trigger:
-    platform: numeric_state
-    entity_id: sensor.kjokken_vinskap_temperature
-    below: 5
-    above: 9
-    for:
-      seconds: 60
+    - platform: numeric_state
+      entity_id: sensor.kjokken_vinskap_temperature
+      below: 5.0
+      for:
+        seconds: 60
+    - platform: numeric_state
+      entity_id: sensor.kjokken_vinskap_temperature
+      above: 9.0
+      for:
+        seconds: 60
   action:
     service: notify.all
     data_template:
@@ -111,12 +119,16 @@
 - id: fryseboks_temp_alert
   alias: 'Fryseboks temp alert'
   trigger:
-    platform: numeric_state
-    entity_id: sensor.kjokken_fryseboks_temperature
-    below: -25
-    above: -18
-    for:
-      seconds: 60
+    - platform: numeric_state
+      entity_id: sensor.kjokken_fryseboks_temperature
+      below: '-25.0'
+      for:
+        seconds: 60
+    - platform: numeric_state
+      entity_id: sensor.kjokken_fryseboks_temperature
+      above: '-18.0'
+      for:
+        seconds: 60
   action:
     service: notify.all
     data_template:
