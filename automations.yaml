@@ -70,7 +70,7 @@
     entity_id: binary_sensor.entre_doer, binary_sensor.stue_terasse_doer
     to: 'on'
     for:
-      seconds: 10
+      seconds: 40
   action:
     - service: notify.all
       data_template:
@@ -86,7 +86,7 @@
     below: 2
     above: 4
     for:
-      seconds: 30
+      seconds: 60
   action:
     service: notify.all
     data_template:
@@ -101,7 +101,7 @@
     below: 4
     above: 8
     for:
-      seconds: 30
+      seconds: 60
   action:
     service: notify.all
     data_template:
@@ -116,7 +116,7 @@
     below: -24
     above: -18
     for:
-      seconds: 30
+      seconds: 60
   action:
     service: notify.all
     data_template:
@@ -249,7 +249,7 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.loft_gang_bevegelse
+      entity_id: binary_sensor.loft_gang_bevegelse, binary_sensor.loft_gang_bevegelse2
       to: 'on'
   condition:
     condition: time
@@ -264,7 +264,7 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.loft_gang_bevegelse
+      entity_id: binary_sensor.loft_gang_bevegelse, binary_sensor.loft_gang_bevegelse2
       to: 'off'
       for:
         minutes: 5
@@ -467,12 +467,12 @@
     - platform: homeassistant
       event: start
   action:
-  - service: homeassistant.turn_on
-    data:
-      entity_id:
-       - automation.temp_control_alex_misha_nighttime
-       - automation.temp_control_alex_misha_daytime_weekdays
-       - automation.temp_control_alex_misha_daytime_weekends
+    - service: homeassistant.turn_on
+      data:
+        entity_id:
+         - automation.temp_control_alex_misha_nighttime
+         - automation.temp_control_alex_misha_daytime_weekdays
+         - automation.temp_control_alex_misha_daytime_weekends
 
 - id: temp_control_alex_misha_daytime_weekdays
   alias: Varme Alex Misha dagtid ukedag
@@ -555,13 +555,13 @@
     - platform: homeassistant
       event: start
   action:
-  - service: homeassistant.turn_on
-    data:
-      entity_id:
-       - automation.temp_control_emma_linn_nighttime
-       - automation.temp_control_emma_linn_daytime_weekdays
-       - automation.temp_control_emma_linn_daytime_weekends
-       - automation.temp_control_emma_linn_school_time_weekdays
+    - service: homeassistant.turn_on
+      data:
+        entity_id:
+          - automation.temp_control_emma_linn_nighttime
+          - automation.temp_control_emma_linn_daytime_weekdays
+          - automation.temp_control_emma_linn_daytime_weekends
+          - automation.temp_control_emma_linn_school_time_weekdays
 
 - id: temp_control_emma_linn_school_time_weekdays
   alias: Varme Emma Linn skoletid ukedag
