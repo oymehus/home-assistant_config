@@ -3,6 +3,25 @@
 ################################################################
 
 ################################################################
+## Version 1.0.1
+################################################################
+##
+## Changelog
+## 1.0.0 (2018-02-14)
+##   Added
+##   - Added version number to enable better tracking
+## 1.0.1 (2018-02-15)
+##   Added
+##   - Added battery_sensor_creation_disabled attibute to skip
+##     creating a battery sensor even when an battery attribute
+##     exists.
+##
+################################################################
+
+################################################################
+## Install Instructions
+################################################################
+##
 ## 1. Enable MQTT using your preferred MQTT broker
 ##    https://home-assistant.io/components/mqtt/
 ##
@@ -43,6 +62,14 @@
 ##      customize:
 ##        sensor.sensor_name_to_ignore_battery:
 ##          battery_alert_disabled: true
+##
+## 9. To disable creating a sensor from battery attributes for a specific entity, use customize to
+##    set `battery_sensor_creation_disabled` to `true`
+##
+##    homeassistant:
+##      customize:
+##        sensor.sensor_with_battery_attibute:
+##          battery_sensor_creation_disabled: true
 ##
 ################################################################
 
@@ -345,6 +372,8 @@ automation:
       value_template: "{{ trigger.event.data.new_state.attributes.battery_level is defined }}"
     - condition: template
       value_template: "{{ 'battery' not in trigger.event.data.new_state.name | lower }}"
+    - condition: template
+      value_template: "{{ not is_state_attr(trigger.event.data.new_state.object_id, 'battery_sensor_creation_disabled', true) }}"
   action:
     - service: mqtt.publish
       data_template:
@@ -380,6 +409,8 @@ automation:
       value_template: "{{ trigger.event.data.new_state.attributes.battery is defined }}"
     - condition: template
       value_template: "{{ 'battery' not in trigger.event.data.new_state.name | lower }}"
+    - condition: template
+      value_template: "{{ not is_state_attr(trigger.event.data.new_state.object_id, 'battery_sensor_creation_disabled', true) }}"
   action:
     - service: mqtt.publish
       data_template:
@@ -415,6 +446,8 @@ automation:
       value_template: "{{ trigger.event.data.new_state.attributes['Battery numeric'] is defined }}"
     - condition: template
       value_template: "{{ 'battery' not in trigger.event.data.new_state.name | lower }}"
+    - condition: template
+      value_template: "{{ not is_state_attr(trigger.event.data.new_state.object_id, 'battery_sensor_creation_disabled', true) }}"
   action:
     - service: mqtt.publish
       data_template:
