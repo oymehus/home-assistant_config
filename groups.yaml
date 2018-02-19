@@ -72,6 +72,7 @@ apparatus:
     - group.fridge_monitor
     - group.battery_levels
     - group.battery_alert
+#    - vacuum.robbie
 
 weather:
   view: yes
@@ -473,15 +474,17 @@ stue_heating:
   control: hidden
   entities:
     - climate.stue
-    - history_graph.stue_temperature_graph
     - sensor.stue_bokhylle_temperature
     - sensor.stue_bokhylle_humidity
+    - sensor.ac_stue_humidity
+    - history_graph.stue_temperature_graph
 
 loftstue_heating:
   name: Loftstue Varme
   control: hidden
   entities:
     - climate.loftstue
+    - sensor.ac_loftstue_humidity
     - history_graph.loftstue_temperature_graph
 
 
