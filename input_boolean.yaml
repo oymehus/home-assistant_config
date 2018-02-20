@@ -1,11 +1,19 @@
 mode_away:
   name: Modus borte
+  icon: mdi:airplane-takeoff
 
 mode_elm_away:
   name: Modus ELM borte
+  icon: mdi:account-multiple-outline
 
 mode_guests:
   name: Modus gjester
+  icon: mdi:account-multiple
 
 mode_home:
   name: Modus hjemme
+  icon: mdi:home-circle
+
+cleaned_today:
+  name: Cleaned today
+  icon: mdi:broom
