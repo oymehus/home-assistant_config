@@ -56,6 +56,7 @@ media:
   name: Media
   icon: mdi:movie
   entities:
+    - group.tv_loftstue_scenes
     - group.media_bad
     - group.media_kjokken
     - group.media_stue
@@ -297,17 +298,26 @@ fridge_monitor:
 
 
 ####################### MEDIA
+tv_loftstue_scenes:
+  name: 'TV Loftstue'
+  control: hidden
+  entities:
+    - switch.tv_mode_loftstue
+    - switch.chromecast_mode_loftstue
+    - switch.dvd_bd_mode_loftstue
+    - switch.loftstue_tv_power
+
 media_bad:
   name: Media
   entities:
    - media_player.boom_bad
-   - input_select.radio_bad
+   - input_select.radio_source
 
 media_kjokken:
   name: Media
   entities:
    - media_player.boom_kjokken
-   - input_select.radio_kjokken
+   - input_select.radio_source
 
 media_stue:
   name: Media
@@ -317,8 +327,7 @@ media_stue:
     - media_player.chromecast_stue_2
     - remote.harmony_hub
     - media_player.touch_stue
-    - input_select.radio_stue
-
+    - input_select.radio_source
 
 ####################### WEATHER
 weather_yrnow:
