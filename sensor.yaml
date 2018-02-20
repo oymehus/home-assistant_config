@@ -60,7 +60,7 @@
       name: Kjokken Vinskap
       data_type:
         - Temperature
-    0a52071c3e0e00f5230279 :
+    0a52071c3e0e00f5230279:
       name: Loft bad
       data_type:
         - Temperature
@@ -148,6 +148,10 @@
       friendly_name: 'Printer'
       value_template: "{{ 'online' if is_state('device_tracker.printer', 'home') else 'off' }}"
 
+    hassio:
+      friendly_name: 'Hassio - Home Assistant'
+      value_template: "{{ 'online' if is_state('device_tracker.hassio', 'home') else 'off' }}"
+
     wiiu:
       friendly_name: 'Wii U'
       value_template: "{{ 'online' if is_state('device_tracker.wiiu', 'home') else 'off' }}"
@@ -178,11 +182,45 @@
 
     broadlink_mini:
       friendly_name: 'BroadlinkMini'
-      value_template: "{{ 'online' if is_state('device_tracker.rmmini001035', 'home') else 'off' }}"
+      value_template: "{{ 'online' if is_state('device_tracker.rmmini03', 'home') else 'off' }}"
 
     tradfri:
       friendly_name: 'Tradfri Gateway'
       value_template: "{{ 'online' if is_state('device_tracker.tradfri', 'home') else 'off' }}"
+
+    chromecast_audio:
+      friendly_name: 'Chromecast Audio'
+      value_template: "{{ 'online' if is_state('device_tracker.chromecastaudio', 'home') else 'off' }}"
+
+    chromecast_stue:
+      friendly_name: 'Chromecast Stue'
+      value_template: "{{ 'online' if is_state('device_tracker.cc_stue', 'home') else 'off' }}"
+
+    chromecast_loftstue:
+      friendly_name: 'Chromecast Loftstue'
+      value_template: "{{ 'online' if is_state('device_tracker.cc_loftstue', 'home') else 'off' }}"
+
+    sb_touch:
+      friendly_name: 'Squeezebox Touch Stue'
+      value_template: "{{ 'online' if is_state('device_tracker.sb_touch', 'home') else 'off' }}"
+
+    sb_boom_kjokken:
+      friendly_name: 'Squeezebox Boom Kjokken'
+      value_template: "{{ 'online' if is_state('device_tracker.sb_boom_kjokken', 'home') else 'off' }}"
+
+    sb_boom_bad:
+      friendly_name: 'Squeezebox Boom Bad'
+      value_template: "{{ 'online' if is_state('device_tracker.sb_boom_bad', 'home') else 'off' }}"
+
+    samsung_bd_stue:
+      friendly_name: 'Samsung BD Stue'
+      value_template: "{{ 'online' if is_state('device_tracker.samsung_bd_stue', 'home') else 'off' }}"
+
+    vekt_bad:
+      friendly_name: 'Vekt Bad'
+      value_template: "{{ 'online' if is_state('device_tracker.vekt_bad', 'home') else 'off' }}"
+
+
 
 ###############################
 #                             #

@@ -206,7 +206,6 @@ sensor.strips_bad_loft_sourcenodeid:
   hidden: true
 device_tracker.zyxel_switch_loft:
   hidden: true
-  homebridge_hidden: true
 sensor.fms_am_seismic_intensity:
   hidden: true
 sensor.fms_emma_linn_seismic_intensity:
@@ -471,12 +470,22 @@ sensor.kjokkenvindu_inne_temperature:
   friendly_name: Kjøkkenvindu Inne Temperature
 sensor.kjokkenvindu_inne_humidity:
   friendly_name: Kjøkkenvindu Inne Humidity
+  icon: mdi:water-percent
 sensor.kjokken_vinskap_temperature:
   friendly_name: Kjøkken Vinskap Temperature
 sensor.kjokkenvindu_ute_temperature:
   friendly_name: Kjøkkenvindu Ute Temperature
 sensor.kjokken_kjoleskap_temperature:
   friendly_name: Kjøkken Kjøleskap Temperature
+sensor.loft_bad_humidity:
+  friendly_name: Loft Bad Humidity
+  icon: mdi:water-percent
+sensor.bad_nede_humidity:
+  friendly_name: Bad nede Humidity
+  icon: mdi:water-percent
+sensor.stue_bokhylle_humidity:
+  friendly_name: Stue Bokhylle Humidity
+  icon: mdi:water-percent
 sensor.am_sov_tak_rc:
   hidden: true
 device_tracker.sasha_iphone:
@@ -507,6 +516,7 @@ device_tracker.altibox_router:
   hidden: true
 device_tracker.tradfri:
   hidden: true
+  icon: mdi:lightbulb-on
 device_tracker.unifi_ap_loft:
   hidden: true
 device_tracker.unifi_ap_stue:
@@ -525,37 +535,65 @@ device_tracker.sb_boom_kjokken:
   hidden: true
 device_tracker.sb_boom_bad:
   hidden: true
-device_tracker.rp2:
-  hidden: true
+sensor.ac_stue_humidity:
+  icon: mdi:water-percent
+sensor.ac_loftstue_humidity:
+  icon: mdi:water-percent
+sensor.wiiu:
+  icon: mdi:wiiu
+sensor.hjemmepc:
+  icon: mdi:desktop-classic
+sensor.tradfri:
+  icon: mdi:lightbulb-on
+sensor.harmony_hub:
+  icon: mdi:remote
+sensor.hassio:
+  icon: mdi:home-assistant
 sensor.rp2:
   icon: mdi:raspberrypi
-device_tracker.sensibo_loft:
-  hidden: true
-  icon: mdi:thermostat-box
-device_tracker.sensibo_stue:
-  hidden: true
+sensor.printer:
+  icon: mdi:printer
+sensor.chromecast_audio:
+  icon: mdi:google-chrome
+sensor.chromecast_loftstue:
+  icon: mdi:google-chrome
+sensor.chromecast_stue:
+  icon: mdi:google-chrome
+sensor.sb_boom_bad:
+  icon: mdi:boombox
+sensor.sb_boom_kjokken:
+  icon: mdi:boombox
+sensor.sb_touch:
+  icon: mdi:boombox
+sensor.vekt_bad:
+  icon: mdi:scale-bathroom
+sensor.samsung_bd_stue:
+  icon: mdi:disk
+sensor.tv_loftstue:
+  icon: mdi:television
+sensor.sensibo_loft:
   icon: mdi:thermostat-box
 sensor.sensibo_stue:
   icon: mdi:thermostat-box
-sensor.sensibo_loft:
-  icon: mdi:thermostat-box
-device_tracker.samsung_bd_stue:
-  hidden: true
-sensor.robbie:
-  icon: mdi:robot
-sensor.hjemmepc:
-  icon: mdi:desktop-classic
-sensor.uck:
-  icon: mdi:raspberrypi
 sensor.broadlink_mini:
   icon: mdi:remote
-sensor.tv_loftstue:
-  icon: mdi:television
-sensor.printer:
-  icon: mdi:printer
-sensor.wiiu:
-  icon: mdi:wiiu
+sensor.robbie:
+  icon: mdi:robot
 sensor.zyxel_switch_loft:
   icon: mdi:switch
-sensor.harmony_hub:
-  icon: mdi:remote
+sensor.uck:
+  icon: mdi:cloud-sync
+device_tracker.cc_loftstue:
+  hidden: true
+device_tracker.robbie:
+  hidden: true
+device_tracker.rmmini03:
+  hidden: true
+device_tracker.rp2:
+  hidden: true
+device_tracker.samsung_bd_stue:
+  hidden: true
+device_tracker.sensibo_loft:
+  hidden: true
+device_tracker.sensibo_stue:
+  hidden: true
