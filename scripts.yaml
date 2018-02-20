@@ -1,0 +1,89 @@
+############################################################ Loftstue TV control
+######################## Samsung TV (codes: https://github.com/yahat/broadlink_mini_homeassistant_ir_codes_samsung_tv)
+loftstue_tv_turn_on:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgDSAJSUEzcSNxM3EhISExISEhMSEhI3EzcSOBISEhISExISEhITNxISEhMROBI4EhISExE4EhMROBI4EhISEhI4EjgSEhIABgCUlBI3EzcSOBISEhISExISEhISOBI3EzcSEhITEhISExISEjcTEhISEjgSNxITERMSOBISEjcSOBISExISNxI4EhISAAYAlJQSOBI3EzcSEhITEhISEhITEjcSOBI3ExISEhITERMSEhI4EhISExE4EjgSEhISEjgSEhI4EjcTEhISEjgSNxITEgANBQAAAAAAAA=='
+
+loftstue_tv_turn_off:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgDSAJaUEzYTNxI4EhISEhMSERMRExI4EjgSNxMSEBQSEhITEBQRExITERMRNhU3EhMQFBI3EzcSOBM2EhMRExI3EjgSEhIABgCUlBI4EzYUNhITERMSEhITEBQSNxM3EjgTERISEhMRExISERQRExISEjgSOBMRERMRORI3EzcTNxETERMRORI3ExISAAYAlJQTNhI4EzYUERISEhMRExISEjgSNxM3EhISExETEhITEhETEhMRExI3EjgTERITETgSOBI3EzcSEhITETgTNxISEgANBQAAAAAAAA=='
+
+loftstue_receiver_turn_on:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - '='
+
+loftstue_receiver_turn_off:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - '='
+
+loftstue_tv_set_input_hdmi1:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgBGAJKVETkRORE5ERQQFRAVERQQFRE5ETkROREUERQRFBEUERQRORAVERUPOxAVDzsQOhA6EBUQOhA6EBUQOhAVEBUPFhAADQUAAA=='
+
+loftstue_tv_set_input_hdmi2:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgBGAJOUETkRORA6ERQQFRAVERQRFBA6ETkROhAVDxYQFQ8WEBUQFQ87EDoRORA6DzsQFRA6DzsPFhAVDxYQFRAVEDoQFRAADQUAAA=='
+
+loftstue_tv_set_input_hdmi3:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgBGAJOUEDoRORE5ERQRFRAUERQRFBE5EDsQOhAVEBUPFg8WDxYPFhA6EBUPFg8WEBUROQ87EDoQFQ87EDoQOhA6EBUPFhAADQUAAA=='
+
+loftstue_tv_pause:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgBGAJKVETkQOhA6EhMQFREUERQQFRA7DzsQOhAVEBUPFhAVDxYQFRE5EBUQOhAVERQROREUETkQFRE5ERQQOhA6EBUQOhAADQUAAA=='
+
+loftstue_tv_play:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgBGAJOUETkRORA7EBUQFRAVEBUQFQ87DzsPOw8WEBUQFRAVEBUPOxA6EDoRFBEUEBURORAVEBURFBEUEDoRORE5ERUPOw8ADQUAAA=='
+
+loftstue_tv_stop:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgBGAJSTEjgQOhE5EBYQFQ8VEBYQFRA6DzsPOxAVEBUPFg8WEBUQFRA6EDoRFBAVERQROg8VEDoRFBEUETkQOhE5EhMQOhAADQUAAA=='
+
+#loftstue_watch_tv:
+#  sequence:
+#    - service: script.pause_all_media
+#    - service: script.turn_on
+#      entity_id: script.turn_on_receiver
+    # switch on TV and change input
+#    - service: switch.broadlink_send_packet_192_168_1_197
+#      data:
+#        packet:
+          # switch on TV
+#          - 'JgDSAJSUEjgSNxM3EhISExISEhIRFBI3EjgSNxITERMSExETEhISOBI3ExISNxI4EhISExETERMSExI3ERQRExI4ETgSOBEABgGUlBM2EjYUNxMSERMSExISEhISOBI3EjgTERITERMSEhITETgSOBISEjgSNxITEhIRExITEhISOBISEhISOBI4EjcSAAYAlJQSOBI3EzcSEhITEBQSEhITETgSOBI3EhMRExISEhMSEhI4EzYRFBE4EjgSEhITERMSEhITETgSExETEjcSOBI4EgANBQAAAAAAAA=='
+          # change receiver input to TV
+#          - 'JgBQAAABKJMUERQ1FREUERQ1FBEUNRQ2FDUUERU0FTUUERQ1FTUUERQ1FBEVEBU1FBEUERQRFBEVEBU1FDUUERU0FTUUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
+
+#loftstue_pause_all_media:
+#  sequence:
+#    -
