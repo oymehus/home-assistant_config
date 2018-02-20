@@ -72,7 +72,8 @@ apparatus:
     - group.fridge_monitor
     - group.battery_levels
     - group.battery_alert
-#    - vacuum.robbie
+#    - group.vacuumer
+    - group.devices
 
 weather:
   view: yes
@@ -151,6 +152,33 @@ battery_levels:
     - sensor.strips_emmalinn_battery_level
     - sensor.strips_bad_loft_battery_level
     - sensor.strips_trapp_battery_level
+
+devices:
+  name: 'Devices'
+  entities:
+    - sensor.hjemmepc
+    - sensor.uck
+    - sensor.printer
+    - sensor.zyxel_switch_loft
+    - sensor.devolo_av1200_mats
+    - sensor.hassio
+    - sensor.rp2
+    - sensor.tradfri
+    - sensor.robbie
+    - sensor.vekt_bad
+    - sensor.sensibo_loft
+    - sensor.sensibo_stue
+    - sensor.broadlink_mini
+    - sensor.harmony_hub
+    - sensor.tv_loftstue
+    - sensor.wiiu
+    - sensor.chromecast_loftstue
+    - sensor.chromecast_stue
+    - sensor.chromecast_audio
+    - sensor.sb_touch
+    - sensor.sb_boom_bad
+    - sensor.sb_boom_kjokken
+    - sensor.samsung_bd_stue
 
 energy:
   name: "Energiforbruk"
@@ -260,6 +288,13 @@ fridge_monitor:
     - automation.fryseboks_temp_alert
     - automation.vinskap_temp_alert
 
+#vacuumer:
+#  view: no
+#  name: 'Vacuum Cleaner'
+#  entities:
+#    - vacuum.robbie
+#    - input_boolean.cleaned_today
+
 
 ####################### MEDIA
 media_bad:
@@ -282,7 +317,8 @@ media_stue:
     - media_player.chromecast_stue_2
     - remote.harmony_hub
     - media_player.touch_stue
-    - input_selector.radio_stue
+    - input_select.radio_stue
+
 
 ####################### WEATHER
 weather_yrnow:

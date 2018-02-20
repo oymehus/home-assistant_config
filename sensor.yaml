@@ -125,6 +125,65 @@
       friendly_name: 'Total energy usage'
       unit_of_measurement: 'kWh'
 
+    # Inspired by https://github.com/rytilahti/python-mirobo/issues/4
+    vacuum_status:
+      value_template: '{{ states.vacuum.robbie.attributes.status}}'
+      friendly_name: 'Status'
+      icon_template: mdi:comment
+
+    # device status
+    hjemmepc:
+      friendly_name: 'HjemmePC'
+      value_template: "{{ 'online' if is_state('device_tracker.hjemmepc', 'home') else 'off' }}"
+
+    uck:
+      friendly_name: 'UniFi Cloudkey'
+      value_template: "{{ 'online' if is_state('device_tracker.uck', 'home') else 'off' }}"
+
+    tv_loftstue:
+      friendly_name: 'TV Loftstue'
+      value_template: "{{ 'online' if is_state('device_tracker.tv_loftstue', 'home') else 'off' }}"
+
+    printer:
+      friendly_name: 'Printer'
+      value_template: "{{ 'online' if is_state('device_tracker.printer', 'home') else 'off' }}"
+
+    wiiu:
+      friendly_name: 'Wii U'
+      value_template: "{{ 'online' if is_state('device_tracker.wiiu', 'home') else 'off' }}"
+
+    rp2:
+      friendly_name: 'RaspBerry Pi2'
+      value_template: "{{ 'online' if is_state('device_tracker.rp2', 'home') else 'off' }}"
+
+    harmony_hub:
+      friendly_name: 'Harmony Hub Stue'
+      value_template: "{{ 'online' if is_state('device_tracker.harmony_hub', 'home') else 'off' }}"
+
+    sensibo_loft:
+      friendly_name: 'Sensibo Loft'
+      value_template: "{{ 'online' if is_state('device_tracker.sensibo_loft', 'home') else 'off' }}"
+
+    sensibo_stue:
+      friendly_name: 'Sensibo Stue'
+      value_template: "{{ 'online' if is_state('device_tracker.sensibo_stue', 'home') else 'off' }}"
+
+    zyxel_switch_loft:
+      friendly_name: 'Zyxel Switch Loft'
+      value_template: "{{ 'online' if is_state('device_tracker.zyxel_switch_loft', 'home') else 'off' }}"
+
+    robbie:
+      friendly_name: 'Robbie'
+      value_template: "{{ 'online' if is_state('device_tracker.robbie', 'home') else 'off' }}"
+
+    broadlink_mini:
+      friendly_name: 'BroadlinkMini'
+      value_template: "{{ 'online' if is_state('device_tracker.rmmini001035', 'home') else 'off' }}"
+
+    tradfri:
+      friendly_name: 'Tradfri Gateway'
+      value_template: "{{ 'online' if is_state('device_tracker.tradfri', 'home') else 'off' }}"
+
 ###############################
 #                             #
 #    Attributes - batteries   #

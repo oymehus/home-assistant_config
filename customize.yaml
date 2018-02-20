@@ -206,6 +206,7 @@ sensor.strips_bad_loft_sourcenodeid:
   hidden: true
 device_tracker.zyxel_switch_loft:
   hidden: true
+  homebridge_hidden: true
 sensor.fms_am_seismic_intensity:
   hidden: true
 sensor.fms_emma_linn_seismic_intensity:
@@ -480,3 +481,81 @@ sensor.am_sov_tak_rc:
   hidden: true
 device_tracker.sasha_iphone:
   hidden: true
+device_tracker.cc_stue:
+  hidden: true
+device_tracker.4409b83f77b9:
+  hidden: true
+device_tracker.cc_loftstue_old:
+  hidden: true
+device_tracker.cc_audio:
+  hidden: true
+device_tracker.chromecastaudio:
+  hidden: true
+device_tracker.f4068d4f56e6:
+  hidden: true
+device_tracker.harmony_hub:
+  hidden: true
+device_tracker.hjemmepc:
+  hidden: true
+device_tracker.printer:
+  hidden: true
+device_tracker.wiiu:
+  hidden: true
+device_tracker.vekt_bad:
+  hidden: true
+device_tracker.altibox_router:
+  hidden: true
+device_tracker.tradfri:
+  hidden: true
+device_tracker.unifi_ap_loft:
+  hidden: true
+device_tracker.unifi_ap_stue:
+  hidden: true
+device_tracker.uck:
+  hidden: true
+device_tracker.unifi_switch_loft:
+  hidden: true
+device_tracker.unifi_switch_stue:
+  hidden: true
+device_tracker.hassio:
+  hidden: true
+device_tracker.sb_touch:
+  hidden: true
+device_tracker.sb_boom_kjokken:
+  hidden: true
+device_tracker.sb_boom_bad:
+  hidden: true
+device_tracker.rp2:
+  hidden: true
+sensor.rp2:
+  icon: mdi:raspberrypi
+device_tracker.sensibo_loft:
+  hidden: true
+  icon: mdi:thermostat-box
+device_tracker.sensibo_stue:
+  hidden: true
+  icon: mdi:thermostat-box
+sensor.sensibo_stue:
+  icon: mdi:thermostat-box
+sensor.sensibo_loft:
+  icon: mdi:thermostat-box
+device_tracker.samsung_bd_stue:
+  hidden: true
+sensor.robbie:
+  icon: mdi:robot
+sensor.hjemmepc:
+  icon: mdi:desktop-classic
+sensor.uck:
+  icon: mdi:raspberrypi
+sensor.broadlink_mini:
+  icon: mdi:remote
+sensor.tv_loftstue:
+  icon: mdi:television
+sensor.printer:
+  icon: mdi:printer
+sensor.wiiu:
+  icon: mdi:wiiu
+sensor.zyxel_switch_loft:
+  icon: mdi:switch
+sensor.harmony_hub:
+  icon: mdi:remote
