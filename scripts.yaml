@@ -14,20 +14,6 @@ loftstue_tv_turn_off:
         packet:
           - 'JgDSAJaUEzYTNxI4EhISEhMSERMRExI4EjgSNxMSEBQSEhITEBQRExITERMRNhU3EhMQFBI3EzcSOBM2EhMRExI3EjgSEhIABgCUlBI4EzYUNhITERMSEhITEBQSNxM3EjgTERISEhMRExISERQRExISEjgSOBMRERMRORI3EzcTNxETERMRORI3ExISAAYAlJQTNhI4EzYUERISEhMRExISEjgSNxM3EhISExETEhITEhETEhMRExI3EjgTERITETgSOBI3EzcSEhITETgTNxISEgANBQAAAAAAAA=='
 
-loftstue_receiver_turn_on:
-  sequence:
-    - service: switch.broadlink_send_packet_192_168_1_197
-      data:
-        packet:
-          - '='
-
-loftstue_receiver_turn_off:
-  sequence:
-    - service: switch.broadlink_send_packet_192_168_1_197
-      data:
-        packet:
-          - '='
-
 loftstue_tv_set_input_hdmi1:
   sequence:
     - service: switch.broadlink_send_packet_192_168_1_197
@@ -70,20 +56,92 @@ loftstue_tv_stop:
         packet:
           - 'JgBGAJSTEjgQOhE5EBYQFQ8VEBYQFRA6DzsPOxAVEBUPFg8WEBUQFRA6EDoRFBAVERQROg8VEDoRFBEUETkQOhE5EhMQOhAADQUAAA=='
 
-#loftstue_watch_tv:
-#  sequence:
-#    - service: script.pause_all_media
-#    - service: script.turn_on
-#      entity_id: script.turn_on_receiver
-    # switch on TV and change input
-#    - service: switch.broadlink_send_packet_192_168_1_197
-#      data:
-#        packet:
-          # switch on TV
-#          - 'JgDSAJSUEjgSNxM3EhISExISEhIRFBI3EjgSNxITERMSExETEhISOBI3ExISNxI4EhISExETERMSExI3ERQRExI4ETgSOBEABgGUlBM2EjYUNxMSERMSExISEhISOBI3EjgTERITERMSEhITETgSOBISEjgSNxITEhIRExITEhISOBISEhISOBI4EjcSAAYAlJQSOBI3EzcSEhITEBQSEhITETgSOBI3EhMRExISEhMSEhI4EzYRFBE4EjgSEhITERMSEhITETgSExETEjcSOBI4EgANBQAAAAAAAA=='
-          # change receiver input to TV
-#          - 'JgBQAAABKJMUERQ1FREUERQ1FBEUNRQ2FDUUERU0FTUUERQ1FTUUERQ1FBEVEBU1FBEUERQRFBEVEBU1FDUUERU0FTUUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
 
-#loftstue_pause_all_media:
-#  sequence:
-#    -
+######################## Altibox IPTV (Huawei Q22)
+loftstue_altibox_turn_on:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - '='
+
+loftstue_altibox_turn_off:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - '='
+
+######################## Chromecast Ultra
+loftstue_chromecast_turn_on:
+  sequence:
+    - service: media_player.turn_on
+      entity_id: media_player.chromecast_loftstue
+
+loftstue_chromecast_turn_off:
+  sequence:
+    - service: media_player.turn_off
+      entity_id: media_player.chromecast_loftstue
+
+######################## Samsung DVD-BD ()
+loftstue_dvdbd_turn_on:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - '='
+
+loftstue_dvdbd_turn_off:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - '='
+
+########################## Input selection scripts
+loftstue_tv_mode_set_input_tv:
+  sequence:
+    - service: script.turn_on
+      entity_id: script.loftstue_altibox_turn_on
+    - service: script.turn_on
+      entity_id: script.loftstue_tv_turn_on
+    - service: script.turn_on
+      entity_id: script.loftstue_tv_set_input_hdmi1
+
+loftstue_tv_mode_set_input_chromecast:
+  sequence:
+    - service: script.turn_on
+      entity_id: script.loftstue_tv_turn_on
+    - service: script.turn_on
+      entity_id: script.loftstue_chromecast_turn_on
+    - service: script.turn_on
+      entity_id: script.loftstue_tv_set_input_hdmi2
+
+loftstue_tv_mode_set_input_dvdbd:
+  sequence:
+    - service: script.turn_on
+      entity_id: script.loftstue_dvdbd_turn_on
+    - service: script.turn_on
+      entity_id: script.loftstue_tv_turn_on
+    - service: script.turn_on
+      entity_id: script.loftstue_tv_set_input_hdmi3
+
+# triggers automation
+loftstue_tv_mode_set_input_off:
+  sequence:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.tv_mode_loftstue
+        option: OFF
+
+# all TV devices off
+loftstue_tv_all_off:
+  sequence:
+    - service: script.turn_on
+      entity_id: script.loftstue_tv_turn_off
+    - service: script.turn_on
+      entity_id: script.loftstue_altibox_turn_off
+    - service: script.turn_on
+      entity_id: script.loftstue_dvdbd_turn_off
+    - service: script.turn_on
+      entity_id: script.loftstue_chromecast_turn_off

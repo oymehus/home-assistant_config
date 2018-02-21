@@ -311,13 +311,13 @@ media_bad:
   name: Media
   entities:
    - media_player.boom_bad
-   - input_select.radio_source
+   - input_select.radio_source_bad
 
 media_kjokken:
   name: Media
   entities:
    - media_player.boom_kjokken
-   - input_select.radio_source
+   - input_select.radio_source_kjokken
 
 media_stue:
   name: Media
@@ -327,7 +327,7 @@ media_stue:
     - media_player.chromecast_stue_2
     - remote.harmony_hub
     - media_player.touch_stue
-    - input_select.radio_source
+    - input_select.radio_source_stue
 
 ####################### WEATHER
 weather_yrnow:
