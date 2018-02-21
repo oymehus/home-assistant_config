@@ -3,10 +3,10 @@ soverom_vindu:
   done_message: Soverom vindu er lukket
   entity_id: binary_sensor.strips_soverom_sensor
   state: 'on'
-  repeat: 
+  repeat:
+    - 2
     - 15
     - 30
-    - 60
   can_acknowledge: True
   skip_first: True
   notifiers:
@@ -17,10 +17,10 @@ kjokken_vindu:
   done_message: Kjøkken vindu er lukket
   entity_id: binary_sensor.strips_kjokken_sensor
   state: 'on'
-  repeat: 
+  repeat:
+    - 2
     - 15
     - 30
-    - 60
   can_acknowledge: True
   skip_first: True
   notifiers:
@@ -31,10 +31,10 @@ mats_vindu:
   done_message: Mats vindu er lukket
   entity_id: binary_sensor.strips_mats_sensor
   state: 'on'
-  repeat: 
+  repeat:
+    - 2
     - 15
     - 30
-    - 60
   can_acknowledge: True
   skip_first: True
   notifiers:
@@ -45,10 +45,10 @@ emmalinn_vindu:
   done_message: Emma Linn vindu er lukket
   entity_id: binary_sensor.strips_emmalinn_sensor
   state: 'on'
-  repeat: 
+  repeat:
+    - 2
     - 15
     - 30
-    - 60
   can_acknowledge: True
   skip_first: True
   notifiers:
@@ -59,10 +59,10 @@ bad_loft_vindu:
   done_message: Bad Loft vindu er lukket
   entity_id: binary_sensor.strips_bad_loft_sensor
   state: 'on'
-  repeat: 
+  repeat:
+    - 2
     - 15
     - 30
-    - 60
   can_acknowledge: True
   skip_first: True
   notifiers:
@@ -73,10 +73,10 @@ trapp_vindu:
   done_message: Trapp vindu er lukket
   entity_id: binary_sensor.strips_trapp_sensor
   state: 'on'
-  repeat: 
+  repeat:
+    - 2
     - 15
     - 30
-    - 60
   can_acknowledge: True
   skip_first: True
   notifiers:
