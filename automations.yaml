@@ -1195,7 +1195,7 @@
     - service: script.turn_on
       data_template:
         entity_id: >
-          {% elif trigger.to_state.state == 'TV' %}
+          {% if trigger.to_state.state == 'TV' %}
             script.loftstue_set_input_tv
           {% elif trigger.to_state.state == 'Chromecast' %}
             script.loftstue_set_input_chromecast
