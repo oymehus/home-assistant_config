@@ -75,6 +75,11 @@
       data_type:
         - Temperature
         - Humidity
+    0a520721330e00b0240279:
+      name: Lagringsrom
+      data_type:
+        - Temperature
+        - Humidity
 
 
 ###############################

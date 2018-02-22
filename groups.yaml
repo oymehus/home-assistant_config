@@ -49,7 +49,7 @@ heating:
     - group.stue_heating
     - group.loftstue_heating
     - group.bad_heating
-
+    - group.lagringsrom_heating
 
 media:
   view: yes
@@ -74,6 +74,7 @@ apparatus:
     - group.battery_alert
 #    - group.vacuumer
     - group.devices
+    - group.gadgets
 
 weather:
   view: yes
@@ -179,6 +180,26 @@ devices:
     - sensor.sb_boom_bad
     - sensor.sb_boom_kjokken
     - sensor.samsung_bd_stue
+
+gadgets:
+  name: 'Gadgets'
+  entities:
+    - device_tracker.misha_ipad
+    - device_tracker.alex_ipad
+    - device_tracker.emma_linn_iphone
+    - device_tracker.emma_linn_pc
+    - device_tracker.emma_linn_chromebook
+    - device_tracker.emma_linn_tablet
+    - device_tracker.mats_iphone
+    - device_tracker.mats_ipad
+    - device_tracker.mats_laptop_lan
+    - device_tracker.mats_pc
+    - device_tracker.mats_chromebook
+    - device_tracker.sasha_mbp
+    - device_tracker.sasha_tablet
+    - device_tracker.oystein_g8441
+    - device_tracker.4a4a4a4a4a4a
+    - device_tracker.oystein_pc_lan_usb
 
 energy:
   name: "Energiforbruk"
@@ -663,3 +684,11 @@ bad_heating:
     - sensor.loft_bad_humidity
     - sensor.bad_nede_temperature
     - sensor.bad_nede_humidity
+
+lagringsrom_heating:
+  name: "Lagringsrom varme"
+  control: hidden
+  entities:
+    - sensor.Lagringsrom_temperature
+    - sensor.lagringsrom_humidity
+    - binary_sensor.lagringsrom_doer
