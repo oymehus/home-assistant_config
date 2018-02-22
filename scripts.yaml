@@ -63,14 +63,28 @@ loftstue_altibox_turn_on:
     - service: switch.broadlink_send_packet_192_168_1_197
       data:
         packet:
-          - '='
+          - 'JgBwAAABKpEVNhU1FREVERU1FTUVERU1FREVERU2FTUVERURFTUVERURFREVNRU1FTYVERU1FTUVNRU1FREVERURFTYVERURFQAFHQABKkgVAAxPAAEqSBUADFsAAStIFQAMWgABKkgVAAxmAAEqSRUADQUAAAAAAAAAAA=='
 
 loftstue_altibox_turn_off:
   sequence:
     - service: switch.broadlink_send_packet_192_168_1_197
       data:
         packet:
-          - '='
+          - 'JgBwAAABKpEVNhU1FREVERU1FTUVERU1FREVERU2FTUVERURFTUVERURFREVNRU1FTYVERU1FTUVNRU1FREVERURFTYVERURFQAFHQABKkgVAAxPAAEqSBUADFsAAStIFQAMWgABKkgVAAxmAAEqSRUADQUAAAAAAAAAAA=='
+
+loftstue_altibox_button_ok:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgCwAAABKZIVNRU2FBIUEhQ2FTUVERU1FREVERU1FTYUEhQSFDYUEhURFDYVNRU1FREUEhU1FTYVNRURFREVERU1FTUVERURFQAFHgABKUkVAAxVAAEpSRQADGoAASpIFQAMcgABKkgVAAxjAAEqkhU1FTUVERURFTUVNRYRFTUVERURFTUVNRURFREVNRURFREVNRU2FREVERU1FTUVERU1FREVERU1FTYVERURFTUVAA0FAAAAAAAAAAA='
+
+loftstue_altibox_button_3:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgCwAAABJ5IVNxM4EhQSFBI4EzcTExM3ExMTExM3EzgSFBIUEjgTExMTEhQSOBM3ExMTExM3EzgSOBM3ExMTExM3EzcTExMTEwAFDwABKEoTAAxGAAEoShMADFEAAShKEwAMUQABKEsSAAxVAAEolBM3EzgSExMTEzgSOBMTEzcTExMTEzcTNxMTExMTOBIUEhQSOBM3ExMTExM3EzcTExM4EhQSFBI4EzcTExMTEzcTAA0FAAAAAAAAAAA='
 
 ######################## Chromecast Ultra
 loftstue_chromecast_turn_on:
@@ -89,14 +103,29 @@ loftstue_dvdbd_turn_on:
     - service: switch.broadlink_send_packet_192_168_1_197
       data:
         packet:
-          - '='
+          - 'JgBAAZeREw4TDhMOEw4TDhMvEw4TDhMOEw4TDhMOEw4TDhMOEw0UkRMvEy8TLxMOEw4TDhMOEw4TDhMOEw4TDhMvEy4ULhQuFC4TLxMvEy8TAAddl5ITDhMOEw4TDhMOEy4UDhMOEw0UDRQNEw4UDRQNEw4TDhOREy8TLxMvEw4TDhMOEw4TDhMOEw4TDhMOEy8TLxMvEy8TLxMvEy8TLxMAB12XkRQOEw4TDhIOEw4TLxMPEg4TDhMOEw4TDhMOEw4TDhMOE5ETLxMvEy8TDhMOEw4TDhMOEw4TDhMOEw4TLxMvEy8TLxMvEy8TLxMvEwAHXZeREw4TDhMOEw4TDhMvEw4TDhMOEw4TDhMOEw4TDhMOEw4TkRMvEy8TLxMOEw4TDhMOEw4TDhMOEw4TDhMvEy8TLxMvEy8TLhQuFC4TAA0FAAAAAAAAAAA='
 
 loftstue_dvdbd_turn_off:
   sequence:
     - service: switch.broadlink_send_packet_192_168_1_197
       data:
         packet:
-          - '='
+          - 'JgBAAZeREw4TDhMOEw4TDhMvEw4TDhMOEw4TDhMOEw4TDhMOEw0UkRMvEy8TLxMOEw4TDhMOEw4TDhMOEw4TDhMvEy4ULhQuFC4TLxMvEy8TAAddl5ITDhMOEw4TDhMOEy4UDhMOEw0UDRQNEw4UDRQNEw4TDhOREy8TLxMvEw4TDhMOEw4TDhMOEw4TDhMOEy8TLxMvEy8TLxMvEy8TLxMAB12XkRQOEw4TDhIOEw4TLxMPEg4TDhMOEw4TDhMOEw4TDhMOE5ETLxMvEy8TDhMOEw4TDhMOEw4TDhMOEw4TLxMvEy8TLxMvEy8TLxMvEwAHXZeREw4TDhMOEw4TDhMvEw4TDhMOEw4TDhMOEw4TDhMOEw4TkRMvEy8TLxMOEw4TDhMOEw4TDhMOEw4TDhMvEy8TLxMvEy8TLhQuFC4TAA0FAAAAAAAAAAA='
+
+loftstue_dvdbd_play:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgDwAJeRFA0UDRQNFA0UDRQuFA0TDhMOEw4TDhMOEw4TDhMOEw4TkRMvEy8TLxMOEw4TDhMvEw4TLxMOEw4TDhMvEy8TDhMvEw4TLxMuFC4UAAddl5ETDhMOEw4TDhMOEy8TDhMOEw4TDhMOEw4TDhMOEw4TDhOREy8TLxMvEw4TDhMOEy8TDhMvEw4TDhMOEy8TLxMOEy8TDhMuFC4ULhMAB16XkRMOEw4TDhMOEw4TLxMOEw4TDhMOEw4TDhMOEw4TDhMOE5ETLxMvEy8TDhMOEw4TLxMOEy8TDhMOEw4TLxMvEw4TLxMOEy8TLxMvEwANBQAAAAAAAAAA'
+
+loftstue_dvdbd_pause:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgDwAJeREw4TDhMOEw4TDhMvEw4TDhMOEw4TDhMOEw4TDhMOEw4TkRMvEy8TLxMOEw4TLxMOEw4TLxMvEw4TDhMvEw4TLxMvEw4TDhMuFC8TAAddmJETDhMOEw4TDhMOEy8TDhMOEw4TDhMOEw4TDhMOEw4TDRSREy8TLxMvEw4TDhMvEw4TDhMvEy8TDhMOEy8TDhMvEy8TDhMOEy8TLxMAB16XkRQNFA4TDRQNFA0ULhQNFA0UDRQNEw4TDhMOFA0TDhQNE5EULhQuFC4TDhMOEy8TDhMOEy8TLxMOEw4TLxMOEy8TLxMOEw4TLxMvEwANBQAAAAAAAAAA'
+
 
 ########################## Input selection scripts
 loftstue_tv_mode_set_input_tv:
@@ -115,7 +144,7 @@ loftstue_tv_mode_set_input_chromecast:
     - service: script.turn_on
       entity_id: script.loftstue_chromecast_turn_on
     - service: script.turn_on
-      entity_id: script.loftstue_tv_set_input_hdmi2
+      entity_id: script.loftstue_tv_set_input_hdmi3
 
 loftstue_tv_mode_set_input_dvdbd:
   sequence:
@@ -124,7 +153,7 @@ loftstue_tv_mode_set_input_dvdbd:
     - service: script.turn_on
       entity_id: script.loftstue_tv_turn_on
     - service: script.turn_on
-      entity_id: script.loftstue_tv_set_input_hdmi3
+      entity_id: script.loftstue_tv_set_input_hdmi2
 
 # triggers automation
 loftstue_tv_mode_set_input_off:
