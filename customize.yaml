@@ -597,3 +597,5 @@ device_tracker.sensibo_loft:
   hidden: true
 device_tracker.sensibo_stue:
   hidden: true
+sensor.lagringsrom_humidity:
+  icon: mdi:water-percent
