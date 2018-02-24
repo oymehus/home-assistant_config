@@ -1115,12 +1115,6 @@
     - platform: state
       entity_id: input_boolean.mode_elm_away
       to: 'on'
-#    - platform: homeassistant
-#      event: start
-  condition:
-    - condition: state
-      entity_id: input_boolean.mode_elm_away
-      state: 'off'
   action:
     - service: climate.set_away_mode
       data:
@@ -1136,10 +1130,6 @@
       to: 'off'
     - platform: homeassistant
       event: start
-  condition:
-    - condition: state
-      entity_id: input_boolean.mode_elm_away
-      state: 'on'
   action:
     - service: climate.set_away_mode
       data:
@@ -1153,12 +1143,6 @@
     - platform: state
       entity_id: input_boolean.mode_away
       to: 'on'
-#    - platform: homeassistant
-#      event: start
-  condition:
-    - condition: state
-      entity_id: input_boolean.mode_away
-      state: 'off'
   action:
     - service: climate.set_away_mode
       data:
@@ -1174,10 +1158,6 @@
       to: 'off'
     - platform: homeassistant
       event: start
-  condition:
-    - condition: state
-      entity_id: input_boolean.mode_away
-      state: 'on'
   action:
     - service: climate.set_away_mode
       data:
