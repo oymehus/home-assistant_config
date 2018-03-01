@@ -132,8 +132,8 @@
 
     # Inspired by https://github.com/rytilahti/python-mirobo/issues/4
     vacuum_status:
-      value_template: '{{ states.vacuum.robbie.attributes.status}}'
-      friendly_name: 'Status'
+      value_template: '{{ states.vacuum.robbie.attributes.status }}'
+      friendly_name: 'Robbie Status'
       icon_template: mdi:comment
 
     # device status

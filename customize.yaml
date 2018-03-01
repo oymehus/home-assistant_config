@@ -599,3 +599,17 @@ device_tracker.sensibo_stue:
   hidden: true
 sensor.lagringsrom_humidity:
   icon: mdi:water-percent
+device_tracker.tv_loftstue:
+  hidden: true
+lock.entredoer_locked:
+  friendly_name: Entredør Locked
+zwave.entredoer:
+  hidden: true
+sensor.entredoer_access_control:
+  hidden: true
+sensor.entredoer_alarm_level:
+  hidden: true
+sensor.entredoer_alarm_type:
+  hidden: true
+sensor.entredoer_sourcenodeid:
+  hidden: true

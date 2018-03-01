@@ -19,6 +19,25 @@
       data_template:
         value: "{{ trigger.to_state.attributes.friendly_name }}"
 
+# Update Last Lock Notification variable
+- id: update_last_lock_notification
+  alias: "Update Last Lock Notification"
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: lock.entredoer_locked
+  action:
+    - service: variable.set_variable
+      data:
+        variable: last_lock_notification
+        attributes_template: >
+            {
+              "history_1": "{{ variable.state }}",
+              "history_2": "{{ variable.attributes.history_1 }}",
+              "history_3": "{{ variable.attributes.history_2 }}"
+            }
+      data_template:
+        value: "{{ states.lock.entredoer_locked.attributes.notification }}"
 
 ################################################################## ALERTS
 - id: update_notification
@@ -47,7 +66,7 @@
     data:
       message: Low battery detected for at least one sensor
 
-- id: home_alerter
+- id: home_alert
   alias: 'Home Alerter Kids'
   trigger:
     platform: state
@@ -63,7 +82,7 @@
           {{ trigger.to_state.attributes.friendly_name }} is {% if trigger.to_state.state == 'home' %}back{% else %}away{% endif %}.
         title: "Kids home"
 
-- id: door_alerter
+- id: door_open_alert
   alias: 'Door Open Alert'
   trigger:
     platform: state
@@ -77,6 +96,22 @@
         message: >
           {{ trigger.to_state.attributes.friendly_name }} is {% if trigger.to_state.state == 'on' %}open{% else %}closed{% endif %}.
         title: "Door open alert"
+
+- id: door_unlocked_alert
+  alias: 'Door Unlocked Alert'
+  trigger:
+    platform: state
+    entity_id: lock.entredoer_locked
+    to: 'unlocked'
+    for:
+      minutes: 2
+      seconds: 10
+  action:
+    - service: notify.all
+      data_template:
+        message: >
+          {{ trigger.to_state.attributes.friendly_name }} reports { trigger.to_state.attributes.notification }}
+        title: "Door unlocked alert"
 
 - id: kjoleskap_temp_alert
   alias: 'Kjoleskap temp alert'
@@ -206,7 +241,7 @@
   trigger:
     - platform: state
       entity_id: light.am_sov_vegg
-      to: 'on'
+      to: 'off'
       for:
         seconds: 3
   condition:
@@ -1115,6 +1150,12 @@
     - platform: state
       entity_id: input_boolean.mode_elm_away
       to: 'on'
+#    - platform: homeassistant
+#      event: start
+  condition:
+    - condition: state
+      entity_id: input_boolean.mode_elm_away
+      state: 'off'
   action:
     - service: climate.set_away_mode
       data:
@@ -1130,6 +1171,10 @@
       to: 'off'
     - platform: homeassistant
       event: start
+  condition:
+    - condition: state
+      entity_id: input_boolean.mode_elm_away
+      state: 'on'
   action:
     - service: climate.set_away_mode
       data:
@@ -1143,6 +1188,12 @@
     - platform: state
       entity_id: input_boolean.mode_away
       to: 'on'
+#    - platform: homeassistant
+#      event: start
+  condition:
+    - condition: state
+      entity_id: input_boolean.mode_away
+      state: 'off'
   action:
     - service: climate.set_away_mode
       data:
@@ -1158,8 +1209,33 @@
       to: 'off'
     - platform: homeassistant
       event: start
+  condition:
+    - condition: state
+      entity_id: input_boolean.mode_away
+      state: 'on'
   action:
     - service: climate.set_away_mode
       data:
         entity_id: climate.emma_linn_termostat, climate.mats_termostat, climate.soverom_termostat, climate.alex_misha_termostat, climate.kjokken_termostat, climate.entre_termostat
         away_mode: 'off'
+
+################################################################## MEDIA CONTROL
+- id: media_select_mode_tv_loftstue
+  alias: 'Media: Select mode TV Loftstue'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode_loftstue
+  action:
+    - service: script.turn_on
+      data_template:
+        entity_id: >
+          {% if trigger.to_state.state == 'TV' %}
+            script.loftstue_set_input_tv
+          {% elif trigger.to_state.state == 'Chromecast' %}
+            script.loftstue_set_input_chromecast
+          {% elif trigger.to_state.state == 'DVD-BD' %}
+            script.loftstue_set_input_dvd_bd
+          {% elif trigger.to_state.state == 'OFF' %}
+            script.loftstue_tv_all_off
+          {% endif %}
