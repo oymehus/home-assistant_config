@@ -8,6 +8,7 @@ home:
   view: yes
   icon: mdi:home
   entities:
+    - group.perimeter
     - group.family
     - group.modes
     - group.presence
@@ -104,7 +105,7 @@ family:
     - binary_sensor.oystein_home
     - device_tracker.oystein_g8441
 #    - device_tracker.sasha_iphone
-    - device_tracker.58e28fd02a53
+    - device_tracker.emma_linn_iphone
     - device_tracker.mats_iphone
 
 
@@ -154,6 +155,7 @@ battery_levels:
     - sensor.strips_emmalinn_battery_level
     - sensor.strips_bad_loft_battery_level
     - sensor.strips_trapp_battery_level
+    - sensor.entredoer_battery
 
 devices:
   name: 'Devices'
@@ -185,8 +187,6 @@ devices:
 gadgets:
   name: 'Gadgets'
   entities:
-    - device_tracker.misha_ipad
-    - device_tracker.alex_ipad
     - device_tracker.emma_linn_iphone
     - device_tracker.emma_linn_pc
     - device_tracker.emma_linn_chromebook
@@ -201,6 +201,8 @@ gadgets:
     - device_tracker.oystein_g8441
     - device_tracker.4a4a4a4a4a4a
     - device_tracker.oystein_pc_lan_usb
+    - device_tracker.misha_ipad
+    - device_tracker.alex_ipad
 
 energy:
   name: "Energiforbruk"
@@ -255,11 +257,24 @@ presence:
     - sensor.fms_entre_luminance
     - sensor.fms_kjokken_luminance
 
+perimeter:
+  name: "Entre dør"
+  icon: mdi:door
+  entities:
+    - lock.entredoer_locked
+    - variable.last_lock_notification
+    - sensor.entre_doer_lock_notification
+    - binary_sensor.entre_doer
+    - automation.door_open_alert
+    - automation.door_unlocked_alert
+
 windows:
 #  view: yes
   name: "Vindu og dører"
   icon: mdi:window-open
   entities:
+    - binary_sensor.entre_doer
+    - binary_sensor.stue_terasse_doer
     - binary_sensor.strips_soverom_sensor
     - binary_sensor.strips_kjokken_sensor
     - binary_sensor.strips_mats_sensor
@@ -267,8 +282,6 @@ windows:
     - binary_sensor.strips_bad_loft_sensor
     - binary_sensor.strips_trapp_sensor
     - binary_sensor.lagringsrom_doer
-    - binary_sensor.entre_doer
-    - binary_sensor.stue_terasse_doer
     - alert.kjokken_vindu
     - alert.soverom_vindu
     - alert.mats_vindu
@@ -503,14 +516,14 @@ alex_misha_scene:
 
 emma_linn_lys:
   name: "Emma Linn lys"
-  control: hidden
+#  control: hidden
   entities:
     - light.el_sov_tak1
     - light.el_sov_tak2
 
 mats_lys:
   name: "Mats lys"
-  control: hidden
+#  control: hidden
   entities:
     - light.mats_sov_tak1
     - light.mats_sov_tak2

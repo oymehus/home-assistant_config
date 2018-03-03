@@ -4,3 +4,10 @@ last_motion:
   attributes:
     icon: mdi:map-marker
     name: "Last Motion"
+
+last_lock_notification:
+  value: 'Unknown'
+  restore: true
+  attributes:
+    icon: mdi:lock-plus
+    name: "Last lock notification"
