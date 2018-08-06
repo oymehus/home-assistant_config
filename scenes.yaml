@@ -181,38 +181,74 @@
       transition: 3
 
 
-################ Light - Soverom
-- name: Soverom min lys
+################ Light - Soverom loft
+- name: Soverom loft min lys
   entities:
-    group.soverom_lys:
+    group.soverom_loft_lys:
       state: on
       brightness_pct: 1
       transition: 3
 
-- name: Soverom dempet lys
+- name: Soverom loft dempet lys
   entities:
-    group.soverom_lys:
+    group.soverom_loft_lys:
       state: on
       brightness_pct: 20
       transition: 3
 
-- name: Soverom normal lys
+- name: Soverom loft normal lys
   entities:
-    group.soverom_lys:
+    group.soverom_loft_lys:
       state: on
       brightness_pct: 60
       transition: 3
 
-- name: Soverom mye lys
+- name: Soverom loft mye lys
   entities:
-    group.soverom_lys:
+    group.soverom_loft_lys:
       state: on
       brightness_pct: 80
       transition: 3
 
-- name: Soverom max lys
+- name: Soverom loft max lys
   entities:
-    group.soverom_lys:
+    group.soverom_loft_lys:
+      state: on
+      brightness_pct: 100
+      transition: 3
+
+################ Light - Soverom nede
+- name: Soverom nede min lys
+  entities:
+    group.soverom_nede_lys:
+      state: on
+      brightness_pct: 1
+      transition: 3
+
+- name: Soverom nede dempet lys
+  entities:
+    group.soverom_nede_lys:
+      state: on
+      brightness_pct: 20
+      transition: 3
+
+- name: Soverom nede normal lys
+  entities:
+    group.soverom_nede_lys:
+      state: on
+      brightness_pct: 60
+      transition: 3
+
+- name: Soverom nede mye lys
+  entities:
+    group.soverom_nede_lys:
+      state: on
+      brightness_pct: 80
+      transition: 3
+
+- name: Soverom nede max lys
+  entities:
+    group.soverom_nede_lys:
       state: on
       brightness_pct: 100
       transition: 3

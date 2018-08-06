@@ -1,0 +1,213 @@
+############################################################ Loftstue TV control
+######################## Samsung TV (codes: https://github.com/yahat/broadlink_mini_homeassistant_ir_codes_samsung_tv)
+loftstue_tv_turn_on:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgDSAJSUEzcSNxM3EhISExISEhMSEhI3EzcSOBISEhISExISEhITNxISEhMROBI4EhISExE4EhMROBI4EhISEhI4EjgSEhIABgCUlBI3EzcSOBISEhISExISEhISOBI3EzcSEhITEhISExISEjcTEhISEjgSNxITERMSOBISEjcSOBISExISNxI4EhISAAYAlJQSOBI3EzcSEhITEhISEhITEjcSOBI3ExISEhITERMSEhI4EhISExE4EjgSEhISEjgSEhI4EjcTEhISEjgSNxITEgANBQAAAAAAAA=='
+
+loftstue_tv_turn_off:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgDSAJaUEzYTNxI4EhISEhMSERMRExI4EjgSNxMSEBQSEhITEBQRExITERMRNhU3EhMQFBI3EzcSOBM2EhMRExI3EjgSEhIABgCUlBI4EzYUNhITERMSEhITEBQSNxM3EjgTERISEhMRExISERQRExISEjgSOBMRERMRORI3EzcTNxETERMRORI3ExISAAYAlJQTNhI4EzYUERISEhMRExISEjgSNxM3EhISExETEhITEhETEhMRExI3EjgTERITETgSOBI3EzcSEhITETgTNxISEgANBQAAAAAAAA=='
+
+loftstue_tv_set_input_hdmi1:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgBGAJKVETkRORE5ERQQFRAVERQQFRE5ETkROREUERQRFBEUERQRORAVERUPOxAVDzsQOhA6EBUQOhA6EBUQOhAVEBUPFhAADQUAAA=='
+
+loftstue_tv_set_input_hdmi2:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgBGAJOUETkRORA6ERQQFRAVERQRFBA6ETkROhAVDxYQFQ8WEBUQFQ87EDoRORA6DzsQFRA6DzsPFhAVDxYQFRAVEDoQFRAADQUAAA=='
+
+loftstue_tv_set_input_hdmi3:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgBGAJOUEDoRORE5ERQRFRAUERQRFBE5EDsQOhAVEBUPFg8WDxYPFhA6EBUPFg8WEBUROQ87EDoQFQ87EDoQOhA6EBUPFhAADQUAAA=='
+
+loftstue_tv_pause:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgBGAJKVETkQOhA6EhMQFREUERQQFRA7DzsQOhAVEBUPFhAVDxYQFRE5EBUQOhAVERQROREUETkQFRE5ERQQOhA6EBUQOhAADQUAAA=='
+
+loftstue_tv_play:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgBGAJOUETkRORA7EBUQFRAVEBUQFQ87DzsPOw8WEBUQFRAVEBUPOxA6EDoRFBEUEBURORAVEBURFBEUEDoRORE5ERUPOw8ADQUAAA=='
+
+loftstue_tv_stop:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgBGAJSTEjgQOhE5EBYQFQ8VEBYQFRA6DzsPOxAVEBUPFg8WEBUQFRA6EDoRFBAVERQROg8VEDoRFBEUETkQOhE5EhMQOhAADQUAAA=='
+
+
+######################## Altibox IPTV (Huawei Q22)
+loftstue_altibox_turn_on:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgBwAAABKpEVNhU1FREVERU1FTUVERU1FREVERU2FTUVERURFTUVERURFREVNRU1FTYVERU1FTUVNRU1FREVERURFTYVERURFQAFHQABKkgVAAxPAAEqSBUADFsAAStIFQAMWgABKkgVAAxmAAEqSRUADQUAAAAAAAAAAA=='
+
+loftstue_altibox_turn_off:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgBwAAABKpEVNhU1FREVERU1FTUVERU1FREVERU2FTUVERURFTUVERURFREVNRU1FTYVERU1FTUVNRU1FREVERURFTYVERURFQAFHQABKkgVAAxPAAEqSBUADFsAAStIFQAMWgABKkgVAAxmAAEqSRUADQUAAAAAAAAAAA=='
+
+loftstue_altibox_button_ok:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgCwAAABKZIVNRU2FBIUEhQ2FTUVERU1FREVERU1FTYUEhQSFDYUEhURFDYVNRU1FREUEhU1FTYVNRURFREVERU1FTUVERURFQAFHgABKUkVAAxVAAEpSRQADGoAASpIFQAMcgABKkgVAAxjAAEqkhU1FTUVERURFTUVNRYRFTUVERURFTUVNRURFREVNRURFREVNRU2FREVERU1FTUVERU1FREVERU1FTYVERURFTUVAA0FAAAAAAAAAAA='
+
+loftstue_altibox_button_3:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgCwAAABJ5IVNxM4EhQSFBI4EzcTExM3ExMTExM3EzgSFBIUEjgTExMTEhQSOBM3ExMTExM3EzgSOBM3ExMTExM3EzcTExMTEwAFDwABKEoTAAxGAAEoShMADFEAAShKEwAMUQABKEsSAAxVAAEolBM3EzgSExMTEzgSOBMTEzcTExMTEzcTNxMTExMTOBIUEhQSOBM3ExMTExM3EzcTExM4EhQSFBI4EzcTExMTEzcTAA0FAAAAAAAAAAA='
+
+######################## Chromecast Ultra
+loftstue_chromecast_turn_on:
+  sequence:
+    - service: media_player.turn_on
+      entity_id: media_player.chromecast_loftstue
+
+loftstue_chromecast_turn_off:
+  sequence:
+    - service: media_player.turn_off
+      entity_id: media_player.chromecast_loftstue
+
+######################## Samsung DVD-BD ()
+loftstue_dvdbd_turn_on:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgBAAZeREw4TDhMOEw4TDhMvEw4TDhMOEw4TDhMOEw4TDhMOEw0UkRMvEy8TLxMOEw4TDhMOEw4TDhMOEw4TDhMvEy4ULhQuFC4TLxMvEy8TAAddl5ITDhMOEw4TDhMOEy4UDhMOEw0UDRQNEw4UDRQNEw4TDhOREy8TLxMvEw4TDhMOEw4TDhMOEw4TDhMOEy8TLxMvEy8TLxMvEy8TLxMAB12XkRQOEw4TDhIOEw4TLxMPEg4TDhMOEw4TDhMOEw4TDhMOE5ETLxMvEy8TDhMOEw4TDhMOEw4TDhMOEw4TLxMvEy8TLxMvEy8TLxMvEwAHXZeREw4TDhMOEw4TDhMvEw4TDhMOEw4TDhMOEw4TDhMOEw4TkRMvEy8TLxMOEw4TDhMOEw4TDhMOEw4TDhMvEy8TLxMvEy8TLhQuFC4TAA0FAAAAAAAAAAA='
+
+loftstue_dvdbd_turn_off:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgBAAZeREw4TDhMOEw4TDhMvEw4TDhMOEw4TDhMOEw4TDhMOEw0UkRMvEy8TLxMOEw4TDhMOEw4TDhMOEw4TDhMvEy4ULhQuFC4TLxMvEy8TAAddl5ITDhMOEw4TDhMOEy4UDhMOEw0UDRQNEw4UDRQNEw4TDhOREy8TLxMvEw4TDhMOEw4TDhMOEw4TDhMOEy8TLxMvEy8TLxMvEy8TLxMAB12XkRQOEw4TDhIOEw4TLxMPEg4TDhMOEw4TDhMOEw4TDhMOE5ETLxMvEy8TDhMOEw4TDhMOEw4TDhMOEw4TLxMvEy8TLxMvEy8TLxMvEwAHXZeREw4TDhMOEw4TDhMvEw4TDhMOEw4TDhMOEw4TDhMOEw4TkRMvEy8TLxMOEw4TDhMOEw4TDhMOEw4TDhMvEy8TLxMvEy8TLhQuFC4TAA0FAAAAAAAAAAA='
+
+loftstue_dvdbd_play:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgDwAJeRFA0UDRQNFA0UDRQuFA0TDhMOEw4TDhMOEw4TDhMOEw4TkRMvEy8TLxMOEw4TDhMvEw4TLxMOEw4TDhMvEy8TDhMvEw4TLxMuFC4UAAddl5ETDhMOEw4TDhMOEy8TDhMOEw4TDhMOEw4TDhMOEw4TDhOREy8TLxMvEw4TDhMOEy8TDhMvEw4TDhMOEy8TLxMOEy8TDhMuFC4ULhMAB16XkRMOEw4TDhMOEw4TLxMOEw4TDhMOEw4TDhMOEw4TDhMOE5ETLxMvEy8TDhMOEw4TLxMOEy8TDhMOEw4TLxMvEw4TLxMOEy8TLxMvEwANBQAAAAAAAAAA'
+
+loftstue_dvdbd_pause:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgDwAJeREw4TDhMOEw4TDhMvEw4TDhMOEw4TDhMOEw4TDhMOEw4TkRMvEy8TLxMOEw4TLxMOEw4TLxMvEw4TDhMvEw4TLxMvEw4TDhMuFC8TAAddmJETDhMOEw4TDhMOEy8TDhMOEw4TDhMOEw4TDhMOEw4TDRSREy8TLxMvEw4TDhMvEw4TDhMvEy8TDhMOEy8TDhMvEy8TDhMOEy8TLxMAB16XkRQNFA4TDRQNFA0ULhQNFA0UDRQNEw4TDhMOFA0TDhQNE5EULhQuFC4TDhMOEy8TDhMOEy8TLxMOEw4TLxMOEy8TLxMOEw4TLxMvEwANBQAAAAAAAAAA'
+
+
+########################## Input selection scripts
+loftstue_tv_mode_set_input_tv:
+  sequence:
+    - service: script.turn_on
+      entity_id: script.loftstue_altibox_turn_on
+    - service: script.turn_on
+      entity_id: script.loftstue_tv_turn_on
+    - service: script.turn_on
+      entity_id: script.loftstue_tv_set_input_hdmi1
+
+loftstue_tv_mode_set_input_chromecast:
+  sequence:
+    - service: script.turn_on
+      entity_id: script.loftstue_tv_turn_on
+    - service: script.turn_on
+      entity_id: script.loftstue_chromecast_turn_on
+    - service: script.turn_on
+      entity_id: script.loftstue_tv_set_input_hdmi3
+
+loftstue_tv_mode_set_input_dvdbd:
+  sequence:
+    - service: script.turn_on
+      entity_id: script.loftstue_dvdbd_turn_on
+    - service: script.turn_on
+      entity_id: script.loftstue_tv_turn_on
+    - service: script.turn_on
+      entity_id: script.loftstue_tv_set_input_hdmi2
+
+# triggers automation
+loftstue_tv_mode_set_input_off:
+  sequence:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.tv_mode_loftstue
+        option: OFF
+
+# all TV devices off
+loftstue_tv_all_off:
+  sequence:
+    - service: script.turn_on
+      entity_id: script.loftstue_tv_turn_off
+    - service: script.turn_on
+      entity_id: script.loftstue_altibox_turn_off
+    - service: script.turn_on
+      entity_id: script.loftstue_dvdbd_turn_off
+    - service: script.turn_on
+      entity_id: script.loftstue_chromecast_turn_off
+
+############################################################ Door/Lift control
+######################## Gewa IR TX - Learned by Broadlink
+
+# door door opener - GEWA relay 4
+entre_doer_open_cmd:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgBQAA08DQsNCw0XDQwZFw0AB1QNPA0JDwwMGA0LGRcNAAjBDTwNCw0MDRcNCxkXDQAKLg09DQsNCw0XDQsaFw0AC5sNPA0LDQsNFw0MGRcNAA0FAAAAAAAAAAA='
+
+# Lift down - GEWA relay 1
+lift_down_cmd:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgCEAw8ADQANPA0XDwgQCBAIHRUPAA0ADTwNFw0LDwgQCB0VDwANAA08DxUPCBAIEAgdFQ4ADQENPA0XDwgQCBAIHBYOAA0BDTwOFg0LDwgQCB0VDgANAQ47DRcPCBAIEAgcFg4ADQAPOw0XDQsPCBAIHBYOAA0ADT0NFw4JEAgQCBwWDgANAA09DRcNCw8IEAgcFg4ADQANPQ4WDgkQCBAIHBUPAA0ADT0MGA4IEAkQCBwVDwANAA08DRgOCBAJEAgcFQ8ADQANPA0YDggQCQ8JHBUPAA0ADzoPFQ8IEAgQCRwVDwANAA86DxUPCRAGEQkcFQ8ADQAPOg8VDwgQCBAJHBUPAA0ADTwNFw8IEQYRCR0UDwANAA08DRcPCBAIEAgdFQ8ADQANPA0XDQsPCBAIHhQPAA0ADjsNFw8IEAgQCB0VDwANAA47DRcNCw8IEAgcFg4ADQEOOw0XDwgQCBAIHBYOAA0BDjsNFw8IEAgQCB0VDgANAA48DhYNCw8IEAgcFg4ADQANPQ0XDgkQCBAIHBYOAA0ADT0NFw4JEAgQCB0VDgANAA09DRcNCw8IEAgcFQ8ADQAPOw4WDgkQCBAIHBUPAA0ADzoNGA4IEAkQCBwVDwANAA86DhcOCBAJEAgcFQ8ADQAPOg0YDggQCQ8JHBUPAA0ADTwPFQ8IEAgQCR0UDwANAA86DxUPCBAIEAkcFQ8ADQAPOg8VDwgRBhEJHBUPAA0ADzoPFQ8IEAgQCB0VDwANAA47DRcPCBAIEAgdFQ8ADQAOOw8VDwgQCBAIHRUPAA0ADjsNFw8IEAgQCB0VDwANAA47DRcPCBAIEAgdFQ8ADQANPA4WDwgQCBAIHBYOAA0BDTwNFw8IEAgQCBwWDwANAA47DhYPCBAIEAgcFg4ADQAPOw4WDgkQCBAIHBYOAA0ADzsOFg4JEAgQCBwWDgANAA87DhYOCRAIEAgcFg4ADQAPOw4WDgkQCBAIHBUPAA0ADzsOFg4IEAkQCBwVDwANAA86DxYOCBAJEAgcFQ8ADQAPOg8WDggQCBEIHBUPAA0ADzoPFQ8IEAgQCRwVDwANAA86DxUPCBAIEAkcFQ8ADQAPOg8VDwgQCBAJHBUPAA0ADzoPFQ8IEAgQCB0VDwALkA86DRcZDA4JEAgQCBAAB1ANPA0XGwgQCRAIEAgQAAi7DTwNFxkLDwgQCQ8JEAANBQAAAAA='
+
+# Lift down - GEWA relay 2
+lift_up_cmd:
+  sequence:
+    - service: switch.broadlink_send_packet_192_168_1_197
+      data:
+        packet:
+          - 'JgCCAxA6KBRMFQ8ADQEQOigUKAYeFQ8ADQIPOg8IEBUPCBAIHRUPAA0CDzoQBhIUTRQQAA0BEDkoFE0UEAANARA5KBUOCBEIHBUQAA0BEDkoFUwUEAANARA6DggSFEwUEAANARA6KBRMFQ8ADQIPOigUEAY2FRAADQEQOSgUTRQQAA0BEDkoFE0UEAANARA5KBVMFBAADQEQOSgVTBQQAA0BEDooFEwUEAANARA6KBRMFQ8ADQEQOg8HEhRMFRAADQEQOSgUTBUQAA0BEDkoFE0UEAANARA5KBRNFBAADQEQOSgVTBQQAA0BEDonFUwUEAANARA6KBRMFQ8ADQEQOigUTBUQAA0BDzooFEwVEAANARA5KBRNFBAADQEQOSgUTBUQAA0BEDkoFUwUEAANARA6JxVMFBAADQEQOg8GExRMFQ8ADQEQOigUTBUPAA0CDzooFEwVEAANAQ86KBRNFBAADQEQOSgUTRQQAA0BEDkoFUwUEAANARA5EAYSFUwUEAANARA6KBRMFBAADQEQOigUTBUPAA0CDzooFA8INRUQAA0BDzooFEwVEAANARA5KBQoBh8UEAANARA5KBVMFBAADQEQOSkUTBQQAA0BEDooFEwUEAANARA6DwYTFCgGHRYPAA0CDzooFEwVEAANAQ86KBRNFBAADQEPOhAGEhRNFBAADQEQOSgUTRQQAA0BEDkQBhIVTBQQAA0BEDonFQ8IEAgdFBAADQEQOigUDwg1FQ8ADQEQOigUTBUPAA0CDzooFEwVEAANAQ86KBRNFBAADQEQOSgUDwg2FBAADQEQOSgVDgg2FBAADQEQOSgVTBQQAA0BEDooFEsVEAANARA6KBRMFQ8ADQIPOigUTBUQAA0BEDkoFE0UEAANARA5KBRNFBAADQEQOSgVTBQQAA0BEDkoFUwUEAANARA6DwYTFEwUEAANARA6KBQPCDUVDwANAg86KBRMFRAADQEQOQ8IERRNFBAADQEQOSgUTRQQAA0BEDkQBhIVTBQQAA0BEDkoFUwUEAANARA6JxVMFBAADQEQOigUTBUPAA0CDzooFEsWEAANARA5KBRMFRAADQEQOSgUTRQQAA0BEDkoFUwUEAANARA5KBVLFRAADQEQOigUTBQQAAz9DzsPFRsIEAhCAAdODzsPFRsIEAgQCBAIEQAIuhA6DhYbCBAIEAgQCBAADQUAAAAAAAA='
+
+lift_to_ground_floor:
+  sequence:
+    - service: script.turn_on
+      entity_id: script.lift_down_cmd
+
+lift_to_first_floor:
+  sequence:
+    - service: script.turn_on
+      entity_id: script.lift_up_cmd

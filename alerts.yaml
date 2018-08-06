@@ -12,10 +12,24 @@ soverom_vindu:
   notifiers:
     - all
 
-kjokken_vindu:
-  name: Kjøkken vindu er åpent
-  done_message: Kjøkken vindu er lukket
+kjokken_vindu_oest:
+  name: Kjøkken vindu øst er åpent
+  done_message: Kjøkken vindu øst er lukket
   entity_id: binary_sensor.strips_kjokken_sensor
+  state: 'on'
+  repeat:
+    - 2
+    - 15
+    - 30
+  can_acknowledge: True
+  skip_first: True
+  notifiers:
+    - all
+
+kjokken_vindu_soer:
+  name: Kjøkken vindu sør er åpent
+  done_message: Kjøkken vindu sør er lukket
+  entity_id: binary_sensor.strips_kjokken_s
   state: 'on'
   repeat:
     - 2
@@ -58,6 +72,34 @@ bad_loft_vindu:
   name: Bad Loft vindu er åpent
   done_message: Bad Loft vindu er lukket
   entity_id: binary_sensor.strips_bad_loft_sensor
+  state: 'on'
+  repeat:
+    - 2
+    - 15
+    - 30
+  can_acknowledge: True
+  skip_first: True
+  notifiers:
+    - all
+
+bad_nede_vindu_soer:
+  name: Bad Nede vindu sør er åpent
+  done_message: Bad Nede vindu sør er lukket
+  entity_id: binary_sensor.strips_bad_nede_s
+  state: 'on'
+  repeat:
+    - 2
+    - 15
+    - 30
+  can_acknowledge: True
+  skip_first: True
+  notifiers:
+    - all
+
+bad_nede_vindu_nord:
+  name: Bad Nede vindu nord er åpent
+  done_message: Bad Nede vindu nord er lukket
+  entity_id: binary_sensor.strips_bad_nede_n
   state: 'on'
   repeat:
     - 2

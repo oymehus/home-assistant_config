@@ -1,0 +1,1490 @@
+sensor.electricity_price_sommerstien_10:
+  config_entry_id:
+  name:
+  platform: tibber
+  unique_id: '707057500070453059'
+climate.loftstue:
+  config_entry_id:
+  name:
+  platform: sensibo
+  unique_id: Lp4e8Uus
+climate.stue:
+  config_entry_id:
+  name:
+  platform: sensibo
+  unique_id: jmZtxHWj
+zwave.aeotec_zw090_zstick_gen5_eu:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-1
+zwave.fwp_soverom_ovn:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-2
+switch.fwp_soverom_ovn_switch:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076282880
+sensor.fwp_soverom_ovn_power:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076479554
+sensor.fwp_soverom_ovn_energy:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076495874
+zwave.fms_soverom:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-3
+sensor.fwp_soverom_ovn_power_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076496002
+sensor.fwp_soverom_ovn_exporting:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076496384
+sensor.fwp_soverom_ovn_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528065
+sensor.fwp_soverom_ovn_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528081
+sensor.fwp_soverom_ovn_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528097
+sensor.fwp_soverom_ovn_power_management:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528241
+binary_sensor.fms_soverom_sensor:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093240320
+sensor.fms_soverom_temperature:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093256722
+sensor.fms_soverom_luminance:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093256754
+sensor.fms_soverom_seismic_intensity:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093257106
+sensor.fms_soverom_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305281
+sensor.fms_soverom_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305297
+sensor.fms_soverom_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305313
+sensor.fms_soverom_burglar:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305441
+zwave.fwp_mats_ovn:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-4
+sensor.fms_soverom_general:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 3-72057594095009793
+switch.fwp_mats_ovn_switch:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 4-72057594109837312
+sensor.fwp_mats_ovn_power:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110033986
+sensor.fwp_mats_ovn_energy:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050306
+sensor.fwp_mats_ovn_power_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050434
+sensor.fwp_mats_ovn_exporting:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050816
+zwave.fms_mats:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-5
+sensor.fwp_mats_ovn_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082497
+sensor.fwp_mats_ovn_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082513
+sensor.fwp_mats_ovn_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082529
+sensor.fwp_mats_ovn_power_management:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082673
+binary_sensor.fms_mats_sensor:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126794752
+sensor.fms_mats_temperature:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126811154
+sensor.fms_mats_luminance:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126811186
+sensor.fms_mats_seismic_intensity:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126811538
+sensor.fms_mats_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859713
+sensor.fms_mats_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859729
+sensor.fms_mats_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859745
+sensor.fms_mats_burglar:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859873
+zwave.fwp_emmalinn_ovn:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-6
+sensor.fms_mats_general:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 5-72057594128564225
+switch.fwp_emmalinn_ovn_switch:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 6-72057594143391744
+sensor.fwp_emmalinn_ovn_power:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 6-72057594143588418
+sensor.fwp_emmalinn_ovn_energy:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 6-72057594143604738
+sensor.fwp_emmalinn_ovn_power_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 6-72057594143604866
+sensor.fwp_emmalinn_ovn_exporting:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 6-72057594143605248
+sensor.fwp_emmalinn_ovn_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 6-72057594144636929
+sensor.fwp_emmalinn_ovn_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 6-72057594144636945
+sensor.fwp_emmalinn_ovn_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 6-72057594144636961
+sensor.fwp_emmalinn_ovn_power_management:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 6-72057594144637105
+zwave.fms_emma_linn:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-7
+binary_sensor.fms_emma_linn_sensor:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 7-72057594160349184
+sensor.fms_emma_linn_temperature:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 7-72057594160365586
+sensor.fms_emma_linn_luminance:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 7-72057594160365618
+sensor.fms_emma_linn_seismic_intensity:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 7-72057594160365970
+sensor.fms_emma_linn_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 7-72057594161414145
+sensor.fms_emma_linn_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 7-72057594161414161
+sensor.fms_emma_linn_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 7-72057594161414177
+sensor.fms_emma_linn_burglar:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 7-72057594161414305
+zwave.fwp_am_ovn:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-8
+sensor.fms_emma_linn_general:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 7-72057594162118657
+switch.fwp_am_ovn_switch:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 8-72057594176946176
+sensor.fwp_am_ovn_power:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 8-72057594177142850
+sensor.fwp_am_ovn_energy:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 8-72057594177159170
+sensor.fwp_am_ovn_power_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 8-72057594177159298
+sensor.fwp_am_ovn_exporting:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 8-72057594177159680
+zwave.fms_am:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-9
+sensor.fwp_am_ovn_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 8-72057594178191361
+sensor.fwp_am_ovn_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 8-72057594178191377
+sensor.fwp_am_ovn_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 8-72057594178191393
+sensor.fwp_am_ovn_power_management:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 8-72057594178191537
+binary_sensor.fms_am_sensor:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 9-72057594193903616
+sensor.fms_am_temperature:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 9-72057594193920018
+sensor.fms_am_luminance:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 9-72057594193920050
+sensor.fms_am_seismic_intensity:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 9-72057594193920402
+sensor.fms_am_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 9-72057594194968577
+sensor.fms_am_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 9-72057594194968593
+sensor.fms_am_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 9-72057594194968609
+sensor.fms_am_burglar:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 9-72057594194968737
+zwave.strips_soverom:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-10
+sensor.fms_am_general:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 9-72057594195673089
+binary_sensor.strips_soverom_sensor:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 10-72057594210680832
+sensor.strips_soverom_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745793
+sensor.strips_soverom_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745809
+sensor.strips_soverom_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745825
+sensor.strips_soverom_access_control:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745937
+sensor.strips_soverom_burglar:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745953
+zwave.fwp_stue_spots:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-11
+switch.fwp_stue_spots_switch:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 11-72057594227277824
+sensor.fwp_stue_spots_power:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 11-72057594227474498
+sensor.fwp_stue_spots_energy:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 11-72057594227490818
+sensor.fwp_stue_spots_power_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 11-72057594227490946
+sensor.fwp_stue_spots_exporting:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 11-72057594227491328
+sensor.fwp_stue_spots_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523009
+sensor.fwp_stue_spots_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523025
+sensor.fwp_stue_spots_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523041
+sensor.fwp_stue_spots_power_management:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523185
+zwave.fwp_entre_ovn:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-12
+switch.fwp_entre_ovn_switch:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 12-72057594244055040
+sensor.fwp_entre_ovn_power:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 12-72057594244251714
+sensor.fwp_entre_ovn_energy:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 12-72057594244268034
+sensor.fwp_entre_ovn_power_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 12-72057594244268162
+sensor.fwp_entre_ovn_exporting:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 12-72057594244268544
+sensor.fwp_entre_ovn_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 12-72057594245300225
+sensor.fwp_entre_ovn_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 12-72057594245300241
+sensor.fwp_entre_ovn_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 12-72057594245300257
+sensor.fwp_entre_ovn_power_management:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 12-72057594245300401
+zwave.fwp_kjokken_ovn:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-13
+switch.fwp_kjokken_ovn_switch:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 13-72057594260832256
+sensor.fwp_kjokken_ovn_power:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 13-72057594261028930
+sensor.fwp_kjokken_ovn_rain_rate:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 13-72057594261029058
+sensor.fwp_kjokken_ovn_energy:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 13-72057594261045250
+sensor.fwp_kjokken_ovn_power_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 13-72057594261045378
+sensor.fwp_kjokken_ovn_exporting:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 13-72057594261045760
+sensor.fwp_kjokken_ovn_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077441
+sensor.fwp_kjokken_ovn_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077457
+sensor.fwp_kjokken_ovn_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077473
+sensor.fwp_kjokken_ovn_power_management:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077617
+zwave.fwp_varmtvannsbereder:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-14
+switch.fwp_varmtvannsbereder_switch:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 14-72057594277609472
+sensor.fwp_varmtvannsbereder_power:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 14-72057594277806146
+sensor.fwp_varmtvannsbereder_energy:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 14-72057594277822466
+sensor.fwp_varmtvannsbereder_power_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 14-72057594277822594
+sensor.fwp_varmtvannsbereder_exporting:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 14-72057594277822976
+zwave.fms_kjokken:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-15
+sensor.fwp_varmtvannsbereder_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 14-72057594278854657
+sensor.fwp_varmtvannsbereder_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 14-72057594278854673
+sensor.fwp_varmtvannsbereder_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 14-72057594278854689
+sensor.fwp_varmtvannsbereder_power_management:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 14-72057594278854833
+binary_sensor.fms_kjokken_sensor:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 15-72057594294566912
+sensor.fms_kjokken_temperature:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 15-72057594294583314
+sensor.fms_kjokken_luminance:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 15-72057594294583346
+sensor.fms_kjokken_seismic_intensity:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 15-72057594294583698
+sensor.fms_kjokken_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 15-72057594295631873
+sensor.fms_kjokken_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 15-72057594295631889
+sensor.fms_kjokken_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 15-72057594295631905
+sensor.fms_kjokken_burglar:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 15-72057594295632033
+zwave.fms_entre:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-16
+sensor.fms_kjokken_general:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 15-72057594296336385
+binary_sensor.fms_entre_sensor:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 16-72057594311344128
+sensor.fms_entre_temperature:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 16-72057594311360530
+sensor.fms_entre_luminance:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 16-72057594311360562
+sensor.fms_entre_seismic_intensity:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 16-72057594311360914
+sensor.fms_entre_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 16-72057594312409089
+sensor.fms_entre_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 16-72057594312409105
+sensor.fms_entre_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 16-72057594312409121
+sensor.fms_entre_burglar:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 16-72057594312409249
+sensor.fms_entre_general:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 16-72057594313113601
+zwave.strips_kjokken:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-17
+binary_sensor.strips_kjokken_sensor:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 17-72057594328121344
+sensor.strips_kjokken_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 17-72057594329186305
+sensor.strips_kjokken_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 17-72057594329186321
+sensor.strips_kjokken_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 17-72057594329186337
+sensor.strips_kjokken_access_control:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 17-72057594329186449
+zwave.strips_mats:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-18
+sensor.strips_kjokken_burglar:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 17-72057594329186465
+binary_sensor.strips_mats_sensor:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 18-72057594344898560
+sensor.strips_mats_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 18-72057594345963521
+sensor.strips_mats_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 18-72057594345963537
+sensor.strips_mats_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 18-72057594345963553
+sensor.strips_mats_access_control:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 18-72057594345963665
+sensor.strips_mats_burglar:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 18-72057594345963681
+zwave.strips_emmalinn:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-19
+binary_sensor.strips_emmalinn_sensor:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 19-72057594361675776
+sensor.strips_emmalinn_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 19-72057594362740737
+sensor.strips_emmalinn_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 19-72057594362740753
+sensor.strips_emmalinn_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 19-72057594362740769
+sensor.strips_emmalinn_access_control:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 19-72057594362740881
+sensor.strips_emmalinn_burglar:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 19-72057594362740897
+zwave.strips_bad_loft:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-20
+binary_sensor.strips_bad_loft_sensor:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 20-72057594378452992
+sensor.strips_bad_loft_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 20-72057594379517953
+sensor.strips_bad_loft_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 20-72057594379517969
+sensor.strips_bad_loft_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 20-72057594379517985
+sensor.strips_bad_loft_access_control:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 20-72057594379518097
+sensor.strips_bad_loft_burglar:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 20-72057594379518113
+zwave.strips_trapp:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-21
+binary_sensor.strips_trapp_sensor:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 21-72057594395230208
+light.entre_tak_panel:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65566
+light.trapp:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65550
+light.loft_gang_vel:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65538
+light.am_sov_tak:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65571
+light.el_sov_tak1:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65547
+light.kjkken_tak_vask:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65563
+light.soverom_loft_tak_2:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65560
+light.am_sov_vegg:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65572
+light.kjkken_spis_panel:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65562
+light.el_sov_tak2:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65548
+light.stue_tak_tv2:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65546
+light.stue_tak_vdr1:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65544
+light.soverom_loft_tak_1:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65559
+light.loft_gang_vbad:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65537
+light.mats_sov_tak2:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65555
+light.mats_sov_tak1:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65540
+light.stue_tak_vdr2:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65545
+light.stue_spisebord:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65543
+light.stue_aj_lampe:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65549
+light.stue_tak_tv1:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1455520440007b-65542
+sensor.strips_trapp_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 21-72057594396295169
+sensor.strips_trapp_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 21-72057594396295185
+sensor.strips_trapp_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 21-72057594396295201
+sensor.strips_trapp_access_control:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 21-72057594396295313
+sensor.strips_trapp_burglar:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 21-72057594396295329
+zwave.entredoer:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-23
+sensor.entredoer_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 23-72057594429849601
+sensor.entredoer_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 23-72057594429849617
+sensor.entredoer_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 23-72057594429849633
+sensor.entredoer_access_control:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 23-72057594429849745
+lock.entredoer_locked:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 23-72057594429603840
+light.el_sov_gruppe:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: group-7e1455520440007b-145301
+light.mats_sov_gruppe:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: group-7e1455520440007b-166545
+light.trapp_gruppe:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: group-7e1455520440007b-183267
+light.loft_gang_gruppe:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: group-7e1455520440007b-176541
+light.am_sov_tak_gruppe:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: group-7e1455520440007b-183272
+light.stue_gruppe:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: group-7e1455520440007b-174085
+light.entre_gruppe:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: group-7e1455520440007b-183270
+light.soverom_loft_tak:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: group-7e1455520440007b-183268
+light.kjkken_gruppe:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: group-7e1455520440007b-183269
+light.am_sov_vegg_gruppe:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: group-7e1455520440007b-151790
+media_player.chromecast_audio_gjestrm:
+  config_entry_id: 1e80fe5d32484d7d998ad1615583b761
+  name:
+  platform: cast
+  unique_id: 81f4fef7-579b-71ec-3d3d-482b48241330
+media_player.chromecast_loftstue:
+  config_entry_id: 1e80fe5d32484d7d998ad1615583b761
+  name:
+  platform: cast
+  unique_id: 282c44b4-d80b-8a1b-2f60-f43503a922ed
+media_player.chromecast_stue:
+  config_entry_id: 1e80fe5d32484d7d998ad1615583b761
+  name:
+  platform: cast
+  unique_id: eca791a4-340e-02b1-b4ce-a818267ec88f
+zwave.soverom_nede_dimmer:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-25
+light.soverom_nede_dimmer_lys2:
+  config_entry_id:
+  name: Soverom nede dimmer lys 2 inactive
+  platform: zwave
+  unique_id: 25-144115188500103169
+sensor.soverom_nede_dimmer_power_2:
+  config_entry_id:
+  name: Soverom Nede Lys Tak Power2
+  platform: zwave
+  unique_id: 25-72057594462371970
+sensor.soverom_nede_dimmer_alarm_type_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 25-72057594463404033
+sensor.soverom_nede_dimmer_alarm_level_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 25-72057594463404049
+sensor.soverom_nede_dimmer_exporting_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 25-72057594462372352
+sensor.soverom_nede_dimmer_sourcenodeid_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 25-72057594463404065
+light.soverom_nede_dimmer_lys:
+  config_entry_id:
+  name: Soverom Nede Lys Tak
+  platform: zwave
+  unique_id: 25-72057594462175233
+sensor.soverom_nede_dimmer_energy:
+  config_entry_id:
+  name: Soverom Nede Lys Tak Energy
+  platform: zwave
+  unique_id: 25-72057594462371842
+sensor.soverom_nede_dimmer_heat_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 25-72057594463404145
+sensor.soverom_nede_dimmer_power_management_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 25-72057594463404209
+sensor.soverom_nede_dimmer_system:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 25-72057594463404225
+sensor.soverom_nede_dimmer_power:
+  config_entry_id:
+  name: Soverom Nede Lys Tak Power
+  platform: zwave
+  unique_id: 25-72057594462355522
+sensor.fms_soverom_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: fms_soverom_battery
+sensor.fms_mats_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: fms_mats_battery
+sensor.fms_emma_linn_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: fms_emma_linn_battery
+sensor.fms_am_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: fms_am_battery
+sensor.strips_soverom_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: strips_soverom_battery
+sensor.fms_kjokken_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: fms_kjokken_battery
+sensor.fms_entre_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: fms_entre_battery
+sensor.strips_kjokken_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: strips_kjokken_battery
+sensor.strips_mats_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: strips_mats_battery
+sensor.strips_emmalinn_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: strips_emmalinn_battery
+sensor.strips_bad_loft_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: strips_bad_loft_battery
+sensor.strips_trapp_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: strips_trapp_battery
+sensor.oystein_xz1_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: oystein_g8441_battery
+sensor.soverom_rc_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: soverom_rc_battery
+sensor.am_sov_vegg_rc_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: am_sov_vegg_rc_battery
+sensor.kjkken_vinskap_temperature_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: kjokken_vinskap_temperature_battery
+sensor.kjkkenvindu_ute_temperature_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: kjokkenvindu_ute_temperature_battery
+sensor.kjkkenvindu_inne_temperature_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: kjokkenvindu_inne_temperature_battery
+sensor.kjkkenvindu_inne_humidity_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: kjokkenvindu_inne_humidity_battery
+sensor.kjkken_fryseboks_temperature_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: kjokken_fryseboks_temperature_battery
+sensor.kjkken_kjleskap_temperature_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: kjokken_kjoleskap_temperature_battery
+sensor.stue_bokhylle_humidity_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: stue_bokhylle_humidity_battery
+sensor.stue_bokhylle_temperature_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: stue_bokhylle_temperature_battery
+sensor.bad_nede_temperature_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: bad_nede_temperature_battery
+sensor.bad_nede_humidity_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: bad_nede_humidity_battery
+sensor.loft_bad_humidity_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: loft_bad_humidity_battery
+sensor.loft_bad_temperature_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: loft_bad_temperature_battery
+sensor.lagringsrom_temperature_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: lagringsrom_temperature_battery
+sensor.lagringsrom_humidity_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: lagringsrom_humidity_battery
+sensor.entredoer_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: entredoer_battery
+zwave.sensative_strips:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-26
+sensor.sensative_strips_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 26-72057594480181281
+sensor.sensative_strips_access_control:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 26-72057594480181393
+sensor.sensative_strips_burglar:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 26-72057594480181409
+sensor.sensative_strips_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: sensative_strips_battery
+sensor.sensative_strips_alarm_type:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 26-72057594480181249
+sensor.sensative_strips_alarm_level:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 26-72057594480181265
+zwave.sensative_strips_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-27
+sensor.sensative_strips_sourcenodeid_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 27-72057594496958497
+sensor.sensative_strips_access_control_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 27-72057594496958609
+sensor.sensative_strips_burglar_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 27-72057594496958625
+sensor.sensative_strips_battery_2:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: sensative_strips_2_battery
+sensor.sensative_strips_alarm_type_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 27-72057594496958465
+sensor.sensative_strips_alarm_level_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 27-72057594496958481
+sensor.unknown_node_26_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: unknown_node_26_battery
+zwave.sensative_strips_3:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-28
+sensor.unknown_node_28_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: unknown_node_28_battery
+sensor.sensative_strips_sourcenodeid_3:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 28-72057594513735713
+sensor.sensative_strips_access_control_3:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 28-72057594513735825
+sensor.sensative_strips_burglar_3:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 28-72057594513735841
+sensor.sensative_strips_battery_3:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: sensative_strips_3_battery
+sensor.sensative_strips_alarm_type_3:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 28-72057594513735681
+sensor.sensative_strips_alarm_level_3:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 28-72057594513735697
+binary_sensor.strips_bad_nede_n:
+  config_entry_id:
+  name: Bad Nede Vindu Nord
+  platform: zwave
+  unique_id: 26-72057594479116288
+binary_sensor.strips_bad_nede_s:
+  config_entry_id:
+  name: Bad Nede Vindu Sør
+  platform: zwave
+  unique_id: 27-72057594495893504
+binary_sensor.strips_kjokken_s:
+  config_entry_id:
+  name: Kjøkken Vindu Sør
+  platform: zwave
+  unique_id: 28-72057594512670720
+sensor.soverom_loft_rc_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: soverom_loft_rc_battery
+sensor.stue_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: stue_battery
+sensor.loftstue_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: loftstue_battery

@@ -11,3 +11,46 @@
     0b11000101b2648203000070:
       name: Nexa 3
       fire_event: True
+
+- platform: group
+  name: Kjokken
+  entities:
+    - light.kjkken_spis_panel
+    - light.kjkken_tak_vask
+- platform: group
+  name: Stue
+  entities:
+    - light.stue_aj_lampe
+    - light.stue_spisebord
+    - light.stue_lys_tak_tv
+    - light.stue_lys_tak_dor
+- platform: group
+  name: Stue tak dor
+  entities:
+    - light.stue_tak_vdr1
+    - light.stue_tak_vdr2
+- platform: group
+  name: Stue tak tv
+  entities:
+    - light.stue_tak_tv1
+    - light.stue_tak_tv2
+- platform: group
+  name: EL tak
+  entities:
+    - light.el_sov_tak1
+    - light.el_sov_tak2
+- platform: group
+  name: Mats tak
+  entities:
+    - light.mats_sov_tak1
+    - light.mats_sov_tak2
+- platform: group
+  name: Soverom loft tak
+  entities:
+    - light.soverom_loft_tak_1
+    - light.soverom_loft_tak_2
+- platform: group
+  name: Loft gang
+  entities:
+    - light.loft_gang_vbad
+    - light.loft_gang_vel

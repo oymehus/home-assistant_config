@@ -1,32 +1,48 @@
-radio_stue:
-  name: Radio
+radio_source_stue:
+  name: 'Radio program stue'
   options:
-   - P3
    - P1
    - P2
+   - P3
    - Alltid Nyheter
-   - Av
-  initial: Av
+   - NRK Super
+   - Poptron
+   - SELECT
+  initial: SELECT
   icon: mdi:music-note
 
-radio_bad:
-  name: Radio
+radio_source_bad:
+  name: 'Radio program bad'
   options:
-   - P3
    - P1
    - P2
+   - P3
    - Alltid Nyheter
-   - Av
-  initial: Av
+   - NRK Super
+   - Poptron
+   - SELECT
+  initial: SELECT
   icon: mdi:music-note
 
-radio_kjokken:
-  name: Radio
+radio_source_kjokken:
+  name: 'Radio program kjokken'
   options:
-   - P3
    - P1
    - P2
+   - P3
    - Alltid Nyheter
-   - Av
-  initial: Av
+   - NRK Super
+   - Poptron
+   - SELECT
+  initial: SELECT
   icon: mdi:music-note
+
+tv_mode_loftstue:
+  name: 'TV mode'
+  options:
+    - OFF
+    - TV
+    - Chromecast
+    - DVD-BD
+  initial: OFF
+  icon: mdi:television

@@ -4,3 +4,42 @@
   friendly_name: "Broadlink Loftstue"
   timeout: 15
   type: rm_mini
+
+- platform: template
+  switches:
+    tv_mode_loftstue:
+      value_template: "{{ is_state('input_select.tv_mode_loftstue', 'TV')}}"
+      turn_on:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.tv_mode_loftstue
+          option: TV
+      turn_off:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.tv_mode_loftstue
+          option: OFF
+    chromecast_mode_loftstue:
+      value_template: "{{ is_state('input_select.tv_mode_loftstue', 'Chromecast')}}"
+      turn_on:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.tv_mode_loftstue
+          option: Chromecast
+      turn_off:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.tv_mode_loftstue
+          option: OFF
+    dvd_bd_mode_loftstue:
+      value_template: "{{ is_state('input_select.tv_mode_loftstue', 'DVD-BD')}}"
+      turn_on:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.tv_mode_loftstue
+          option: DVD-ND
+      turn_off:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.tv_mode_loftstue
+          option: OFF

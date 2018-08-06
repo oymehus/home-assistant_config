@@ -153,19 +153,19 @@ switch.fwp_light_loftstue_switch:
   friendly_name: Loftstue lys
   icon: mdi:lightbulb
 binary_sensor.strips_soverom_sensor:
-  device_class: opening
-  friendly_name: Soverom Vindu
+  device_class: window
+  friendly_name: Soverom Loft Vindu
 binary_sensor.strips_mats_sensor:
-  device_class: opening
+  device_class: window
   friendly_name: Mats Vindu
 binary_sensor.strips_kjokken_sensor:
-  device_class: opening
+  device_class: window
   friendly_name: Kjøkken Vindu
 binary_sensor.strips_emmalinn_sensor:
-  device_class: opening
+  device_class: window
   friendly_name: Emma Linn Vindu
 binary_sensor.strips_bad_loft_sensor:
-  device_class: opening
+  device_class: window
   friendly_name: Bad Loft Vindu
 binary_sensor.fms_am_sensor:
   device_class: motion
@@ -333,7 +333,7 @@ sensor.strips_trapp_burglar:
 sensor.strips_trapp_sourcenodeid:
   hidden: true
 binary_sensor.strips_trapp_sensor:
-  device_class: opening
+  device_class: window
   friendly_name: Trapp Vindu
 climate.emmalinn_termostat:
   friendly_name: Emma Linn Termostat
@@ -443,12 +443,14 @@ sensor.fwp_varmtvannsbereder_sourcenodeid:
 device_tracker.7811dc833947:
   hidden: true
 binary_sensor.lagringsrom_doer:
+  device_class: door
   friendly_name: Lagringsrom dør
 binary_sensor.loft_gang_bevegelse:
   friendly_name: Loft gang motion sov
 binary_sensor.loft_gang_bevegelse2:
   friendly_name: Loft gang motion bad
 binary_sensor.entre_doer:
+  device_class: door
   friendly_name: Entredør
 sensor.085007039700002d79_temperature_battery:
   friendly_name: Kjøkken Kjøleskap Temperature Battery
@@ -487,9 +489,9 @@ sensor.stue_bokhylle_humidity:
   friendly_name: Stue Bokhylle Humidity
   icon: mdi:water-percent
 sensor.am_sov_tak_rc:
+  device_class: battery
   hidden: true
-device_tracker.sasha_iphone:
-  hidden: true
+device_tracker.sasha_iphone: {}
 device_tracker.cc_stue:
   hidden: true
 device_tracker.4409b83f77b9:
@@ -612,4 +614,56 @@ sensor.entredoer_alarm_level:
 sensor.entredoer_alarm_type:
   hidden: true
 sensor.entredoer_sourcenodeid:
+  hidden: true
+device_tracker.desktopk3k2ltb:
+  friendly_name: Mats Gaming Computer
+device_tracker.huawei_p20_lite516bc2163:
+  friendly_name: Mats Mobil
+sensor.soverom_nede_dimmer_alarm_level_2:
+  hidden: true
+sensor.soverom_nede_dimmer_alarm_type_2:
+  hidden: true
+sensor.soverom_nede_dimmer_exporting_2:
+  hidden: true
+sensor.soverom_nede_dimmer_heat_2:
+  hidden: true
+sensor.soverom_nede_dimmer_power_management_2:
+  hidden: true
+sensor.soverom_nede_dimmer_power_2:
+  hidden: true
+sensor.soverom_nede_dimmer_sourcenodeid_2:
+  hidden: true
+sensor.soverom_nede_dimmer_system:
+  hidden: true
+sensor.robbie:
+  icon: mdi:robot
+device_tracker.mats_iphone:
+  hidden: true
+sensor.am_sov_tak_rc_battery_level:
+  device_class: battery
+climate.stue:
+  battery_sensor_creation_disabled: true
+climate.loftstue:
+  battery_sensor_creation_disabled: true
+sensor.nuc4:
+  icon: mdi:desktop-classic
+device_tracker.nuc4:
+  hidden: true
+device_tracker.mats_mobil:
+  icon: mdi:cellphone
+binary_sensor.strips_bad_nede_n:
+  device_class: window
+binary_sensor.strips_bad_nede_s:
+  device_class: window
+binary_sensor.stue_terasse_doer:
+  device_class: door
+binary_sensor.strips_kjokken_s:
+  device_class: window
+sensor.stue_battery:
+  hidden: true
+sensor.loftstue_battery:
+  hidden: true
+sensor.unknown_node_26_battery:
+  hidden: true
+sensor.unknown_node_28_battery:
   hidden: true

@@ -27,8 +27,9 @@ ligthing:
     - group.alex_misha_lys
     - group.emma_linn_lys
     - group.mats_lys
-    - group.soverom_lys
+    - group.soverom_loft_lys
     - group.loft_gang_lys
+    - group.soverom_nede_lys
     - group.entre_lys
     - group.kjokken_lys
     - group.aqua_lys
@@ -72,7 +73,7 @@ apparatus:
   entities:
     - group.rpi_monitor
     - group.fridge_monitor
-    - group.battery_levels
+    - group.battery_status
     - group.battery_alert
 #    - group.vacuumer
     - group.devices
@@ -106,7 +107,7 @@ family:
     - device_tracker.oystein_g8441
 #    - device_tracker.sasha_iphone
     - device_tracker.emma_linn_iphone
-    - device_tracker.mats_iphone
+    - device_tracker.mats_mobil
 
 
 ####################### MISCELANEOUS
@@ -116,51 +117,16 @@ info:
   icon: mdi:information
   entities:
     - sensor.electricity_price_sommerstien_10
+    - sensor.electricity_price_sommerstien_10_min_price
+    - sensor.electricity_price_sommerstien_10_max_price
+    - sensor.electricity_price_sommerstien_10_estimated_annual_consumption
     - history_graph.electricity_price__tibber
-
-alarmclock:
-  view: no
-  name: Wake Me Up
-  entities:
-   - sensor.alarm_time
-   - input_number.alarmhour
-   - input_number.alarmminutes
-   - automation.wake_me_up
-
-battery_levels:
-  view: no
-  name: "Battery levels"
-  icon: mdi:battery-60
-  entities:
-    - automation.low_battery_alert
-    - sensor.am_sov_vegg_rc_battery_level
-    - sensor.am_sov_tak_rc_battery_level
-    - sensor.el_sov_dimmer_battery_level
-    - sensor.mats_sov_dimmer_battery_level
-    - sensor.soverom_rc_battery_level
-    - sensor.loft_gang_rc_battery_level
-    - sensor.stue_rc_battery_level
-    - sensor.kjkken_spis_rc_battery_level
-    - sensor.entre_tak_rc_battery_level
-    - sensor.trapp_motion_detector_battery_level
-    - sensor.fms_am_battery_level
-    - sensor.fms_emma_linn_battery_level
-    - sensor.fms_mats_battery_level
-    - sensor.fms_soverom_battery_level
-    - sensor.fms_entre_battery_level
-    - sensor.fms_kjokken_battery_level
-    - sensor.strips_soverom_battery_level
-    - sensor.strips_kjokken_battery_level
-    - sensor.strips_mats_battery_level
-    - sensor.strips_emmalinn_battery_level
-    - sensor.strips_bad_loft_battery_level
-    - sensor.strips_trapp_battery_level
-    - sensor.entredoer_battery
 
 devices:
   name: 'Devices'
   entities:
     - sensor.hjemmepc
+    - sensor.nuc4
     - sensor.uck
     - sensor.printer
     - sensor.zyxel_switch_loft
@@ -191,11 +157,13 @@ gadgets:
     - device_tracker.emma_linn_pc
     - device_tracker.emma_linn_chromebook
     - device_tracker.emma_linn_tablet
-    - device_tracker.mats_iphone
+    - device_tracker.mats_mobil
     - device_tracker.mats_ipad
     - device_tracker.mats_laptop_lan
-    - device_tracker.mats_pc
+    - device_tracker.mats_laptop
+    - device_tracker.mats_gaming
     - device_tracker.mats_chromebook
+    - device_tracker.sasha_iphone
     - device_tracker.sasha_mbp
     - device_tracker.sasha_tablet
     - device_tracker.oystein_g8441
@@ -217,6 +185,7 @@ energy:
     - sensor.fwp_light_loftstue_energy
     - sensor.fwp_stue_spots_energy
     - sensor.fwp_varmtvannsbereder_energy
+    - sensor.soverom_nede_dimmer_energy
     - sensor.total_energy_usage
 
 power:
@@ -232,6 +201,7 @@ power:
     - sensor.fwp_light_loftstue_power
     - sensor.fwp_stue_spots_power
     - sensor.fwp_varmtvannsbereder_power
+    - sensor.soverom_nede_dimmer_power
     - sensor.total_power_usage
 
 presence:
@@ -277,16 +247,22 @@ windows:
     - binary_sensor.stue_terasse_doer
     - binary_sensor.strips_soverom_sensor
     - binary_sensor.strips_kjokken_sensor
+    - binary_sensor.strips_kjokken_s
     - binary_sensor.strips_mats_sensor
     - binary_sensor.strips_emmalinn_sensor
     - binary_sensor.strips_bad_loft_sensor
+    - binary_sensor.strips_bad_nede_n
+    - binary_sensor.strips_bad_nede_s
     - binary_sensor.strips_trapp_sensor
     - binary_sensor.lagringsrom_doer
-    - alert.kjokken_vindu
+    - alert.kjokken_vindu_oest
+    - alert.kjokken_vindu_soer
     - alert.soverom_vindu
     - alert.mats_vindu
     - alert.emmalinn_vindu
     - alert.bad_loft_vindu
+    - alert.bad_nede_vindu_nord
+    - alert.bad_nede_vindu_soer
     - alert.trapp_vindu
 
 modes:
@@ -304,12 +280,15 @@ rpi_monitor:
   name: "Raspberry Pi monitor"
   icon: mdi:chart-line
   entities:
-    - sensor.cpu_used
-#    - sensor.cpu_temp
-    - sensor.ram_available
-    - sensor.ram_used
-    - sensor.disk_used_
-#    - sensor.since_last_boot
+    - sensor.last_boot
+    - sensor.since_last_boot
+    - sensor.processor_use
+    - sensor.load_15m
+    - sensor.disk_use_
+    - sensor.disk_use_percent_
+    - sensor.disk_free_
+    - sensor.memory_free
+    - sensor.memory_use_percent
 
 fridge_monitor:
   view: no
@@ -423,12 +402,11 @@ stue_lys:
   name: "Stue lys"
   control: hidden
   entities:
+    - light.stue
     - light.stue_aj_lampe
     - light.stue_spisebord
-    - light.stue_tak_tv1
-    - light.stue_tak_tv2
-    - light.stue_tak_vdr1
-    - light.stue_tak_vdr2
+    - light.stue_tak_tv
+    - light.stue_tak_dor
     - switch.fwp_stue_spots_switch
     - group.stue_scene
 
@@ -452,6 +430,7 @@ kjokken_lys:
   name: "Kjokken lys"
   control: hidden
   entities:
+    - light.kjokken
     - light.kjkken_spis_panel
     - light.kjkken_tak_vask
     - group.kjokken_scene
@@ -478,6 +457,7 @@ loft_gang_lys:
   name: "Loft gang lys"
   control: hidden
   entities:
+    - light.loft_gang
     - light.loft_gang_vbad
     - light.loft_gang_vel
     - group.loft_gang_scene
@@ -518,33 +498,47 @@ emma_linn_lys:
   name: "Emma Linn lys"
 #  control: hidden
   entities:
-    - light.el_sov_tak1
-    - light.el_sov_tak2
+    - light.el_tak
 
 mats_lys:
   name: "Mats lys"
 #  control: hidden
   entities:
-    - light.mats_sov_tak1
-    - light.mats_sov_tak2
+    - light.mats_tak
 
-soverom_lys:
-  name: "Soverom lys"
+soverom_loft_lys:
+  name: "Soverom loft lys"
   control: hidden
   entities:
-    - light.soverom_tak_1
-    - light.soverom_tak_2
-    - group.soverom_scene
+    - light.soverom_loft_tak
+    - group.soverom_loft_scene
 
-soverom_scene:
+soverom_loft_scene:
   name: "Soverom Scene"
   control: hidden
   entities:
-    - scene.soverom_min_lys
-    - scene.soverom_dempet_lys
-    - scene.soverom_normal_lys
-    - scene.soverom_mye_lys
-    - scene.soverom_max_lys
+    - scene.soverom_loft_min_lys
+    - scene.soverom_loft_dempet_lys
+    - scene.soverom_loft_normal_lys
+    - scene.soverom_loft_mye_lys
+    - scene.soverom_loft_max_lys
+
+soverom_nede_lys:
+  name: "Soverom nede lys"
+  control: hidden
+  entities:
+    - light.soverom_nede_dimmer_lys
+    - group.soverom_nede_scene
+
+soverom_nede_scene:
+  name: "Soverom Scene"
+  control: hidden
+  entities:
+    - scene.soverom_nede_min_lys
+    - scene.soverom_nede_dempet_lys
+    - scene.soverom_nede_normal_lys
+    - scene.soverom_nede_mye_lys
+    - scene.soverom_nede_max_lys
 
 
 ####################### HEATING
