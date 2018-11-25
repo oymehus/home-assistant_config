@@ -579,8 +579,6 @@ sensor.sensibo_stue:
   icon: mdi:thermostat-box
 sensor.broadlink_mini:
   icon: mdi:remote
-sensor.robbie:
-  icon: mdi:robot
 sensor.zyxel_switch_loft:
   icon: mdi:switch
 sensor.uck:
@@ -667,3 +665,5 @@ sensor.unknown_node_26_battery:
   hidden: true
 sensor.unknown_node_28_battery:
   hidden: true
+binary_sensor.fms_soverom_nede_sensor:
+  device_class: motion

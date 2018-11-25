@@ -1,0 +1,6 @@
+sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_level:
+  ignored: true
+  polling_intensity: 0
+binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor:
+  ignored: false
+  polling_intensity: 0

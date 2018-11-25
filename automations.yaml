@@ -4,7 +4,7 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.fms_am_sensor, binary_sensor.fms_emma_linn_sensor, binary_sensor.fms_entre_sensor, binary_sensor.fms_kjokken_sensor, binary_sensor.fms_mats_sensor, binary_sensor.fms_soverom_sensor, binary_sensor.trapp_motion_via_light, binary_sensor.loft_gang_bevegelse,binary_sensor.loft_gang_bevegelse2, binary_sensor.entre_doer, binary_sensor.lagringsrom_doer, binary_sensor.stue_terasse_doer
+      entity_id: binary_sensor.fms_am_sensor, binary_sensor.fms_emma_linn_sensor, binary_sensor.fms_entre_sensor, binary_sensor.fms_kjokken_sensor, binary_sensor.fms_mats_sensor, binary_sensor.fms_soverom_sensor, binary_sensor.fms_soverom_nede_sensor, binary_sensor.trapp_motion_via_light, binary_sensor.loft_gang_bevegelse,binary_sensor.loft_gang_bevegelse2, binary_sensor.entre_doer, binary_sensor.lagringsrom_doer, binary_sensor.stue_terasse_doer
       to: 'on'
   action:
     - service: variable.set_variable
@@ -218,8 +218,8 @@
     service: homeassistant.turn_off
     entity_id: light.aquarium_light
 
-- id: am_tak_light_off_night
-  alias: Alex Misha Tak lys av om natten
+- id: misha_tak_light_off_night
+  alias: Misha Tak lys av om natten
   initial_state: 'off'
   trigger:
     - platform: state
@@ -235,8 +235,8 @@
     service: homeassistant.turn_off
     entity_id: light.am_sov_tak
 
-- id: am_vegg_light_off_night
-  alias: Alex Misha Vegg lys av om natten
+- id: misha_vegg_light_off_night
+  alias: Misha Vegg lys av om natten
   initial_state: 'on'
   trigger:
     - platform: state
@@ -370,6 +370,30 @@
       entity_id: switch.fwp_stue_spots_switch
 
 
+## Switch kjøkkenbord light on/off with sink lights
+- id: light_on_table_sink_on_kitchen
+  alias: Table light on when sink light turns on kjokken
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: light.kjkken_tak_vask
+      to: 'on'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: light.kjkken_spis_panel
+
+- id: light_off_table_sink_on_kitchen
+  alias: Table light off when sink light turns on kjokken
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: light.kjkken_tak_vask
+      to: 'off'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: light.kjkken_spis_panel
+
+
 ################################################################## HEATING CONTROL
 #turn off varmtvannsbereder in prime time
 - id: varmtvannsbereder_on
@@ -396,12 +420,12 @@
     service: homeassistant.turn_off
     entity_id: switch.fwp_varmtvannsbereder_switch
 
-- id: temp_control_soverom_hour_enabled
-  alias: temp_control_soverom_hour_enabled
+- id: temp_control_alex_hour_enabled
+  alias: temp_control_alex_hour_enabled
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: input_number.temp_control_soverom_natt_temp, input_number.temp_control_soverom_natt_hour, input_number.temp_control_soverom_dagtid_temp, input_number.temp_control_soverom_dagtid_hour, input_number.temp_control_soverom_dagtid_helg_hour
+      entity_id: input_number.temp_control_alex_natt_temp, input_number.temp_control_alex_natt_hour, input_number.temp_control_alex_dagtid_temp, input_number.temp_control_alex_dagtid_hour, input_number.temp_control_alex_dagtid_helg_hour
     - platform: state
       entity_id: input_boolean.mode_away
       to: 'off'
@@ -411,13 +435,13 @@
   - service: homeassistant.turn_on
     data:
       entity_id:
-       - automation.temp_control_soverom_nighttime
-       - automation.temp_control_soverom_bedtime
-       - automation.temp_control_soverom_daytime_weekdays
-       - automation.temp_control_soverom_daytime_weekends
+       - automation.temp_control_alex_nighttime
+       - automation.temp_control_alex_bedtime
+       - automation.temp_control_alex_daytime_weekdays
+       - automation.temp_control_alex_daytime_weekends
 
-- id: temp_control_soverom_daytime_weekdays
-  alias: Varme soverom dagtid ukedag
+- id: temp_control_alex_daytime_weekdays
+  alias: Varme Alex dagtid ukedag
   initial_state: 'on'
   trigger:
     - platform: time
@@ -425,7 +449,7 @@
       seconds: 15
   condition:
     - condition: template
-      value_template: '{{ now().hour == (states.input_number.temp_control_soverom_dagtid_hour.state  | round(0))  }}'
+      value_template: '{{ now().hour == (states.input_number.temp_control_alex_dagtid_hour.state  | round(0))  }}'
     - condition: state
       entity_id: 'binary_sensor.workday_today'
       state: 'on'
@@ -435,12 +459,12 @@
   action:
     - service: climate.set_temperature
       data_template:
-        entity_id: climate.soverom_termostat
-        temperature: "{{ states.input_number.temp_control_soverom_dagtid_temp.state | float }}"
+        entity_id: climate.alex_termostat
+        temperature: "{{ states.input_number.temp_control_alex_dagtid_temp.state | float }}"
         operation_mode: 'heat'
 
-- id: temp_control_soverom_daytime_weekends
-  alias: Varme soverom dagtid helg
+- id: temp_control_alex_daytime_weekends
+  alias: Varme Alex dagtid helg
   initial_state: 'on'
   trigger:
     - platform: time
@@ -448,7 +472,7 @@
       seconds: 15
   condition:
     - condition: template
-      value_template: '{{ now().hour == (states.input_number.temp_control_soverom_dagtid_helg_hour.state  | round(0))  }}'
+      value_template: '{{ now().hour == (states.input_number.temp_control_alex_dagtid_helg_hour.state  | round(0))  }}'
     - condition: state
       entity_id: 'binary_sensor.workday_today'
       state: 'off'
@@ -458,12 +482,12 @@
   action:
     - service: climate.set_temperature
       data_template:
-        entity_id: climate.soverom_termostat
-        temperature: "{{ states.input_number.temp_control_soverom_dagtid_temp.state | float }}"
+        entity_id: climate.alex_termostat
+        temperature: "{{ states.input_number.temp_control_alex_dagtid_temp.state | float }}"
         operation_mode: 'heat'
 
-- id: temp_control_soverom_nighttime
-  alias: Varme soverom natt
+- id: temp_control_alex_nighttime
+  alias: Varme Alex natt
   initial_state: 'on'
   trigger:
     - platform: time
@@ -471,19 +495,19 @@
       seconds: 15
   condition:
     - condition: template
-      value_template: '{{ now().hour == (states.input_number.temp_control_soverom_natt_hour.state  | round(0))  }}'
+      value_template: '{{ now().hour == (states.input_number.temp_control_alex_natt_hour.state  | round(0))  }}'
     - condition: state
       entity_id: input_boolean.mode_away
       state: 'off'
   action:
     - service: climate.set_temperature
       data_template:
-        entity_id: climate.soverom_termostat
-        temperature: "{{ states.input_number.temp_control_soverom_natt_temp.state | float }}"
+        entity_id: climate.alex_termostat
+        temperature: "{{ states.input_number.temp_control_alex_natt_temp.state | float }}"
         operation_mode: 'heat'
 
-- id: temp_control_soverom_bedtime
-  alias: Varme soverom leggetid
+- id: temp_control_alex_bedtime
+  alias: Varme Alex leggetid
   initial_state: 'on'
   trigger:
     - platform: time
@@ -491,19 +515,19 @@
       seconds: 15
   condition:
     - condition: template
-      value_template: '{{ now().hour == (states.input_number.temp_control_soverom_leggetid_hour.state  | round(0))  }}'
+      value_template: '{{ now().hour == (states.input_number.temp_control_alex_leggetid_hour.state  | round(0))  }}'
     - condition: state
       entity_id: input_boolean.mode_away
       state: 'off'
   action:
     - service: climate.set_temperature
       data_template:
-        entity_id: climate.soverom_termostat
-        temperature: "{{ states.input_number.temp_control_soverom_leggetid_temp.state | float }}"
+        entity_id: climate.alex_termostat
+        temperature: "{{ states.input_number.temp_control_alex_leggetid_temp.state | float }}"
         operation_mode: 'heat'
 
-- id: temp_control_soverom_vindu_opened
-  alias: Varme soveromsvindu åpent
+- id: temp_control_alex_vindu_opened
+  alias: Varme Alexsvindu åpent
   initial_state: 'on'
   trigger:
     - platform: state
@@ -514,11 +538,11 @@
   action:
     - service: climate.set_operation_mode
       data:
-        entity_id: climate.soverom_termostat
+        entity_id: climate.alex_termostat
         operation_mode: 'off'
 
-- id: temp_control_soverom_vindu_closed
-  alias: Varme soveromsvindu lukket
+- id: temp_control_alex_vindu_closed
+  alias: Varme Alex vindu lukket
   initial_state: 'on'
   trigger:
     - platform: state
@@ -527,15 +551,15 @@
   action:
     - service: climate.set_operation_mode
       data:
-        entity_id: climate.soverom_termostat
+        entity_id: climate.alex_termostat
         operation_mode: 'heat'
 
-- id: temp_control_alex_misha_hour_enabled
-  alias: temp_control_alex_misha_hour_enabled
+- id: temp_control_misha_hour_enabled
+  alias: temp_control_misha_hour_enabled
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: input_number.temp_control_alex_misha_natt_temp, input_number.temp_control_alex_misha_natt_hour, input_number.temp_control_alex_misha_dagtid_temp, input_number.temp_control_alex_misha_dagtid_hour, input_number.temp_control_alex_misha_dagtid_helg_hour
+      entity_id: input_number.temp_control_misha_natt_temp, input_number.temp_control_misha_natt_hour, input_number.temp_control_misha_dagtid_temp, input_number.temp_control_misha_dagtid_hour, input_number.temp_control_misha_dagtid_helg_hour
     - platform: state
       entity_id: input_boolean.mode_away
       to: 'off'
@@ -545,11 +569,11 @@
     - service: homeassistant.turn_on
       data:
         entity_id:
-         - automation.temp_control_alex_misha_nighttime
-         - automation.temp_control_alex_misha_daytime_weekdays
-         - automation.temp_control_alex_misha_daytime_weekends
+         - automation.temp_control_misha_nighttime
+         - automation.temp_control_misha_daytime_weekdays
+         - automation.temp_control_misha_daytime_weekends
 
-- id: temp_control_alex_misha_daytime_weekdays
+- id: temp_control_misha_daytime_weekdays
   alias: Varme Alex Misha dagtid ukedag
   initial_state: 'on'
   trigger:
@@ -558,7 +582,7 @@
       seconds: 15
   condition:
     - condition: template
-      value_template: '{{ now().hour == (states.input_number.temp_control_alex_misha_dagtid_hour.state  | round(0))  }}'
+      value_template: '{{ now().hour == (states.input_number.temp_control_misha_dagtid_hour.state  | round(0))  }}'
     - condition: state
       entity_id: 'binary_sensor.workday_today'
       state: 'on'
@@ -568,11 +592,11 @@
   action:
     - service: climate.set_temperature
       data_template:
-        entity_id: climate.alex_misha_termostat
-        temperature: "{{ states.input_number.temp_control_alex_misha_dagtid_temp.state | float }}"
+        entity_id: climate.misha_termostat
+        temperature: "{{ states.input_number.temp_control_misha_dagtid_temp.state | float }}"
         operation_mode: 'heat'
 
-- id: temp_control_alex_misha_daytime_weekends
+- id: temp_control_misha_daytime_weekends
   alias: Varme Alex Misha dagtid helg
   initial_state: 'on'
   trigger:
@@ -581,7 +605,7 @@
       seconds: 15
   condition:
     - condition: template
-      value_template: '{{ now().hour == (states.input_number.temp_control_alex_misha_dagtid_helg_hour.state  | round(0))  }}'
+      value_template: '{{ now().hour == (states.input_number.temp_control_misha_dagtid_helg_hour.state  | round(0))  }}'
     - condition: state
       entity_id: 'binary_sensor.workday_today'
       state: 'off'
@@ -591,11 +615,11 @@
   action:
     - service: climate.set_temperature
       data_template:
-        entity_id: climate.alex_misha_termostat
-        temperature: "{{ states.input_number.temp_control_alex_misha_dagtid_temp.state | float }}"
+        entity_id: climate.misha_termostat
+        temperature: "{{ states.input_number.temp_control_misha_dagtid_temp.state | float }}"
         operation_mode: 'heat'
 
-- id: temp_control_alex_misha_nighttime
+- id: temp_control_misha_nighttime
   alias: Varme Alex Misha kveld hver dag
   initial_state: 'on'
   trigger:
@@ -604,15 +628,15 @@
       seconds: 15
   condition:
     - condition: template
-      value_template: '{{ now().hour == (states.input_number.temp_control_alex_misha_natt_hour.state  | round(0))  }}'
+      value_template: '{{ now().hour == (states.input_number.temp_control_misha_natt_hour.state  | round(0))  }}'
     - condition: state
       entity_id: input_boolean.mode_away
       state: 'off'
   action:
     - service: climate.set_temperature
       data_template:
-        entity_id: climate.alex_misha_termostat
-        temperature: "{{ states.input_number.temp_control_alex_misha_natt_temp.state | float }}"
+        entity_id: climate.misha_termostat
+        temperature: "{{ states.input_number.temp_control_misha_natt_temp.state | float }}"
         operation_mode: 'heat'
 
 - id: temp_control_emma_linn_hour_enabled
@@ -1197,7 +1221,7 @@
   action:
     - service: climate.set_away_mode
       data:
-        entity_id: climate.emma_linn_termostat, climate.mats_termostat, climate.soverom_termostat, climate.alex_misha_termostat, climate.kjokken_termostat, climate.entre_termostat
+        entity_id: climate.emma_linn_termostat, climate.mats_termostat, climate.alex_termostat, climate.misha_termostat, climate.kjokken_termostat, climate.entre_termostat
         away_mode: 'on'
 
 - id: temp_control_not_away_mode
@@ -1216,7 +1240,7 @@
   action:
     - service: climate.set_away_mode
       data:
-        entity_id: climate.emma_linn_termostat, climate.mats_termostat, climate.soverom_termostat, climate.alex_misha_termostat, climate.kjokken_termostat, climate.entre_termostat
+        entity_id: climate.emma_linn_termostat, climate.mats_termostat, climate.alex_termostat, climate.misha_termostat, climate.kjokken_termostat, climate.entre_termostat
         away_mode: 'off'
 
 ################################################################## MEDIA CONTROL

@@ -45,7 +45,7 @@
     - light.mats_sov_tak1
     - light.mats_sov_tak2
 - platform: group
-  name: Soverom loft tak
+  name: Alex tak
   entities:
     - light.soverom_loft_tak_1
     - light.soverom_loft_tak_2

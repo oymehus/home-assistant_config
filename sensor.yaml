@@ -19,9 +19,6 @@
     - windSpeed
     - humidity
 
-- platform: tibber
-  access_token: !secret tibber_token
-
 - platform: time_date
   display_options:
     - time
@@ -44,7 +41,7 @@
     - type: memory_use_percent
 
 - platform: rfxtrx
-  automatic_add: False
+  automatic_add: false
   devices:
     0a520904b7000106270269:
       name: Kjokkenvindu Inne
@@ -84,6 +81,11 @@
         - Humidity
     0a520721330e00b0240279:
       name: Lagringsrom
+      data_type:
+        - Temperature
+        - Humidity
+    0a52070b270e00cc3c0179:
+      name: Soverom Nede
       data_type:
         - Temperature
         - Humidity

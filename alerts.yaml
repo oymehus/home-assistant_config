@@ -1,6 +1,6 @@
-soverom_vindu:
-  name: Soverom vindu er åpent
-  done_message: Soverom vindu er lukket
+alex_vindu:
+  name: Alex vindu er åpent
+  done_message: Alex vindu er lukket
   entity_id: binary_sensor.strips_soverom_sensor
   state: 'on'
   repeat:

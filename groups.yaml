@@ -23,11 +23,12 @@ ligthing:
   name: "Lys"
   icon: mdi:lightbulb
   entities:
+    - group.jule_lys
     - group.stue_lys
-    - group.alex_misha_lys
+    - group.alex_lys
+    - group.misha_lys
     - group.emma_linn_lys
     - group.mats_lys
-    - group.soverom_loft_lys
     - group.loft_gang_lys
     - group.soverom_nede_lys
     - group.entre_lys
@@ -41,8 +42,8 @@ heating:
   icon: mdi:temperature-celsius
   entities:
     - group.modes
-    - group.soverom_heating
-    - group.alex_misha_heating
+    - group.alex_heating
+    - group.misha_heating
     - group.mats_heating
     - group.emma_linn_heating
     - group.entre_heating
@@ -52,6 +53,8 @@ heating:
     - group.loftstue_heating
     - group.bad_heating
     - group.lagringsrom_heating
+    - group.soverom_nede_heating
+    - group.gjesterom_heating
 
 media:
   view: yes
@@ -73,8 +76,8 @@ apparatus:
   entities:
     - group.rpi_monitor
     - group.fridge_monitor
-    - group.battery_status
-    - group.battery_alert
+#    - group.battery_status
+#    - group.battery_alert
 #    - group.vacuumer
     - group.devices
     - group.gadgets
@@ -215,6 +218,7 @@ presence:
     - binary_sensor.fms_emma_linn_sensor
     - binary_sensor.fms_mats_sensor
     - binary_sensor.fms_soverom_sensor
+    - binary_sensor.fms_soverom_nede_sensor
     - binary_sensor.fms_entre_sensor
     - binary_sensor.fms_kjokken_sensor
     - binary_sensor.trapp_motion_via_light
@@ -224,6 +228,7 @@ presence:
     - sensor.fms_emma_linn_luminance
     - sensor.fms_mats_luminance
     - sensor.fms_soverom_luminance
+    - sensor.fms_soverom_nede_luminance
     - sensor.fms_entre_luminance
     - sensor.fms_kjokken_luminance
 
@@ -257,7 +262,7 @@ windows:
     - binary_sensor.lagringsrom_doer
     - alert.kjokken_vindu_oest
     - alert.kjokken_vindu_soer
-    - alert.soverom_vindu
+    - alert.alex_vindu
     - alert.mats_vindu
     - alert.emmalinn_vindu
     - alert.bad_loft_vindu
@@ -416,6 +421,13 @@ aqua_lys:
   entities:
     - light.aquarium_light
 
+jule_lys:
+  name: "Jule lys"
+#  control: hidden
+  entities:
+    - light.nexa_2
+    - light.nexa_3
+
 stue_scene:
   name: "Stue Scene"
   control: hidden
@@ -474,18 +486,18 @@ loft_gang_scene:
     - scene.loft_gang_mye_lys
     - scene.loft_gang_max_lys
 
-alex_misha_lys:
-  name: "Alex Misha lys"
+misha_lys:
+  name: "Misha lys"
   control: hidden
   entities:
     - light.am_sov_tak
     - light.am_sov_vegg
-    - group.alex_misha_scene
-    - automation.alex_misha_tak_lys_av_om_natten
-    - automation.alex_misha_vegg_lys_av_om_natten
+    - group.misha_scene
+    - automation.misha_tak_lys_av_om_natten
+    - automation.misha_vegg_lys_av_om_natten
 
-alex_misha_scene:
-  name: "Alex Misha Scene"
+misha_scene:
+  name: "Misha Scene"
   control: hidden
   entities:
     - scene.am_min_lys
@@ -506,22 +518,22 @@ mats_lys:
   entities:
     - light.mats_tak
 
-soverom_loft_lys:
-  name: "Soverom loft lys"
+alex_lys:
+  name: "Alex lys"
   control: hidden
   entities:
-    - light.soverom_loft_tak
-    - group.soverom_loft_scene
+    - light.alex_loft_tak
+    - group.alex_loft_scene
 
-soverom_loft_scene:
-  name: "Soverom Scene"
+alex_scene:
+  name: "Alex Scene"
   control: hidden
   entities:
-    - scene.soverom_loft_min_lys
-    - scene.soverom_loft_dempet_lys
-    - scene.soverom_loft_normal_lys
-    - scene.soverom_loft_mye_lys
-    - scene.soverom_loft_max_lys
+    - scene.alex_min_lys
+    - scene.alex_dempet_lys
+    - scene.alex_normal_lys
+    - scene.alex_mye_lys
+    - scene.alex_max_lys
 
 soverom_nede_lys:
   name: "Soverom nede lys"
@@ -561,24 +573,24 @@ loftstue_heating:
     - history_graph.loftstue_temperature_graph
 
 
-alex_misha_heating:
-  name: Alex Misha Varme
+misha_heating:
+  name: Misha Varme
   control: hidden
   entities:
-    - climate.alex_misha_termostat
+    - climate.misha_termostat
     - switch.fwp_am_ovn_switch
     - sensor.fwp_am_ovn_power
-    - group.alex_misha_temp_control
+    - group.misha_temp_control
 
-alex_misha_temp_control:
-  name: Alex Misha temperatur kontroll
+misha_temp_control:
+  name: Misha temperatur kontroll
   control: hidden
   entities:
-    - input_number.temp_control_alex_misha_dagtid_hour
-    - input_number.temp_control_alex_misha_dagtid_helg_hour
-    - input_number.temp_control_alex_misha_dagtid_temp
-    - input_number.temp_control_alex_misha_natt_hour
-    - input_number.temp_control_alex_misha_natt_temp
+    - input_number.temp_control_misha_dagtid_hour
+    - input_number.temp_control_misha_dagtid_helg_hour
+    - input_number.temp_control_misha_dagtid_temp
+    - input_number.temp_control_misha_natt_hour
+    - input_number.temp_control_misha_natt_temp
 
 mats_heating:
   name: Mats Varme
@@ -622,26 +634,26 @@ emma_linn_temp_control:
     - input_number.temp_control_emma_linn_natt_hour
     - input_number.temp_control_emma_linn_natt_temp
 
-soverom_heating:
-  name: Soverom Varme
+alex_heating:
+  name: Alex Varme
   control: hidden
   entities:
-    - climate.soverom_termostat
+    - climate.alex_termostat
     - switch.fwp_soverom_ovn_switch
     - sensor.fwp_soverom_ovn_power
-    - group.soverom_temp_control
+    - group.alex_temp_control
 
-soverom_temp_control:
-  name: Soverom temperatur kontroll dagtid
+alex_temp_control:
+  name: Alex temperatur kontroll dagtid
   control: hidden
   entities:
-    - input_number.temp_control_soverom_dagtid_hour
-    - input_number.temp_control_soverom_dagtid_helg_hour
-    - input_number.temp_control_soverom_dagtid_temp
-    - input_number.temp_control_soverom_leggetid_hour
-    - input_number.temp_control_soverom_leggetid_temp
-    - input_number.temp_control_soverom_natt_hour
-    - input_number.temp_control_soverom_natt_temp
+    - input_number.temp_control_alex_dagtid_hour
+    - input_number.temp_control_alex_dagtid_helg_hour
+    - input_number.temp_control_alex_dagtid_temp
+    - input_number.temp_control_alex_leggetid_hour
+    - input_number.temp_control_alex_leggetid_temp
+    - input_number.temp_control_alex_natt_hour
+    - input_number.temp_control_alex_natt_temp
 
 kjokken_heating:
   name: "Kjøkken Varme"
@@ -708,3 +720,19 @@ lagringsrom_heating:
     - sensor.Lagringsrom_temperature
     - sensor.lagringsrom_humidity
     - binary_sensor.lagringsrom_doer
+
+soverom_nede_heating:
+  name: "Soverom nede varme"
+  control: hidden
+  entities:
+    - climate.soverom_nede_e
+    - climate.soverom_nede_w
+    - sensor.soverom_nede_temperature
+    - sensor.soverom_nede_humidity
+    - sensor.fms_soverom_nede_temperature
+
+gjesterom_heating:
+  name: "Gjesterom varme"
+  control: hidden
+  entities:
+    - climate.gjesterom

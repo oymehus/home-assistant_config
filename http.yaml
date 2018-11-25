@@ -1,4 +1,4 @@
-api_password: !secret http_password
+#api_password: !secret http_password
 server_port: 8123
 base_url: !secret http_base_url
 trusted_networks:

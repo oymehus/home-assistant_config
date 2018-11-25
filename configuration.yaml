@@ -113,6 +113,8 @@ scene: !include scenes.yaml
 script: !include scripts.yaml
 #script: !include_dir_merge_named scripts
 switch: !include switches.yaml
+tibber:
+  access_token: !secret tibber_token
 #vacuum: !include vacuum.yaml
 zone: !include zones.yaml
 zwave:

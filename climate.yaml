@@ -4,7 +4,7 @@
 #- platform: zwave
 
 - platform: generic_thermostat
-  name: Soverom Termostat
+  name: Alex Termostat
   heater: switch.fwp_soverom_ovn_switch
   target_sensor: sensor.fms_soverom_temperature
   min_temp: 8
@@ -49,7 +49,7 @@
   initial_operation_mode: "auto"
 
 - platform: generic_thermostat
-  name: Alex Misha Termostat
+  name: Misha Termostat
   heater: switch.fwp_am_ovn_switch
   target_sensor: sensor.fms_am_temperature
   min_temp: 8
@@ -92,3 +92,7 @@
     minutes: 3
   away_temp: 15
   initial_operation_mode: "auto"
+
+- platform: mill
+  username: !secret mill_user_name
+  password: !secret mill_user_password

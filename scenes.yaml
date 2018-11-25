@@ -144,36 +144,36 @@
       transition: 3
 
 
-################ Light - Alex Misha
-- name: AM min lys
+################ Light - Misha soverom
+- name: Misha min lys
   entities:
     group.am_lys:
       state: on
       brightness_pct: 1
       transition: 3
 
-- name: AM dempet lys
+- name: Misha dempet lys
   entities:
     group.am_lys:
       state: on
       brightness_pct: 20
       transition: 3
 
-- name: AM normal lys
+- name: Misha normal lys
   entities:
     group.am_lys:
       state: on
       brightness_pct: 60
       transition: 3
 
-- name: AM mye lys
+- name: Misha mye lys
   entities:
     group.am_lys:
       state: on
       brightness_pct: 80
       transition: 3
 
-- name: AM max lys
+- name: Misha max lys
   entities:
     group.am_lys:
       state: on
@@ -181,36 +181,36 @@
       transition: 3
 
 
-################ Light - Soverom loft
-- name: Soverom loft min lys
+################ Light - Alex soverom
+- name: Alex min lys
   entities:
     group.soverom_loft_lys:
       state: on
       brightness_pct: 1
       transition: 3
 
-- name: Soverom loft dempet lys
+- name: Alex dempet lys
   entities:
     group.soverom_loft_lys:
       state: on
       brightness_pct: 20
       transition: 3
 
-- name: Soverom loft normal lys
+- name: Alex normal lys
   entities:
     group.soverom_loft_lys:
       state: on
       brightness_pct: 60
       transition: 3
 
-- name: Soverom loft mye lys
+- name: Alex mye lys
   entities:
     group.soverom_loft_lys:
       state: on
       brightness_pct: 80
       transition: 3
 
-- name: Soverom loft max lys
+- name: Alex max lys
   entities:
     group.soverom_loft_lys:
       state: on
