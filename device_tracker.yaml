@@ -1,14 +1,14 @@
-- platform: owntracks
-  max_gps_accuracy: 200
-  waypoints: True
-  waypoint_whitelist:
-    - oystein_g8441
+#- platform: owntracks
+#  max_gps_accuracy: 200
+#  waypoints: True
+#  waypoint_whitelist:
+#    - oystein_g8441
 
-- platform: owntracks_http
-  max_gps_accuracy: 200
-  waypoints: True
-  waypoint_whitelist:
-    - oystein_g8441
+#- platform: owntracks_http
+#  max_gps_accuracy: 200
+#  waypoints: True
+#  waypoint_whitelist:
+#    - oystein_g8441
 
 - platform: unifi
   host: !secret unifi_controller_ip

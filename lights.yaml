@@ -1,9 +1,9 @@
 - platform: rfxtrx
-  automatic_add: False
+  automatic_add: true
   signal_repetitions: 2
   devices:
     0b11000101b2648201000070:
-      name: Aquarium light
+      name: Nexa 1
       fire_event: True
     0b11000101b2648202000070:
       name: Nexa 2

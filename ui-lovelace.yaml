@@ -18,6 +18,7 @@ views:
         title: Info
         show_header_toggle: true
         entities:
+          - sensor.electricity_price_sommerstien_10
           - sensor.electricity_price_sommerstien_10_min_price
           - sensor.electricity_price_sommerstien_10_max_price
           - sensor.electricity_price_sommerstien_10_estimated_annual_consumption
@@ -111,6 +112,7 @@ views:
           - binary_sensor.fms_emma_linn_sensor
           - binary_sensor.fms_mats_sensor
           - binary_sensor.fms_soverom_sensor
+          - binary_sensor.fms_soverom_nede_sensor
           - binary_sensor.fms_entre_sensor
           - binary_sensor.fms_kjokken_sensor
           - binary_sensor.trapp_motion_via_light
@@ -137,6 +139,7 @@ views:
         entities:
           - binary_sensor.entre_doer
           - binary_sensor.stue_terasse_doer
+          - binary_sensor.loft_balkong_doer
           - binary_sensor.strips_soverom_sensor
           - binary_sensor.strips_kjokken_sensor
           - binary_sensor.strips_kjokken_s
@@ -207,7 +210,6 @@ views:
         title: Media
         show_header_toggle: false
         entities:
-          - remote.harmony_hub
           - input_select.radio_source_stue
       - type: media-control
         entity: media_player.chromecast_stue
@@ -285,10 +287,12 @@ views:
           - scene.stue_mye_lys
           - scene.stue_max_lys
       - type: entities
-        title: Akvarium lys
-        show_header_toggle: false
+        title: Jule lys
+        show_header_toggle: true
         entities:
-          - light.aquarium_light
+          - light.nexa_1
+          - light.nexa_2
+          - light.nexa_3
       - type: entities
         title: Stue Scene
         show_header_toggle: false
@@ -621,6 +625,19 @@ views:
           - sensor.lagringsrom_humidity
           - binary_sensor.lagringsrom_doer
       - type: entities
+        title: Soverom nede varme
+        show_header_toggle: false
+        entities:
+          - climate.soverom_nede_e
+          - climate.soverom_nede_w
+          - sensor.soverom_nede_temperature
+          - sensor.soverom_nede_humidity
+      - type: entities
+        title: Gjesterom varme
+        show_header_toggle: false
+        entities:
+          - climate.gjesterom
+      - type: entities
         title: Battery Alert
         show_header_toggle: false
         entities:
@@ -636,16 +653,48 @@ views:
           - automation.update_battery_status_group_members
           - automation.clear_mqtt_topic
       - type: entities
+        title: all scripts
+        show_header_toggle: true
+        entities:
+          - script.entre_doer_open_cmd
+          - script.lift_down_cmd
+          - script.lift_to_first_floor
+          - script.lift_to_ground_floor
+          - script.lift_up_cmd
+          - script.loftstue_altibox_button_3
+          - script.loftstue_altibox_button_ok
+          - script.loftstue_altibox_turn_off
+          - script.loftstue_altibox_turn_on
+          - script.loftstue_chromecast_turn_off
+          - script.loftstue_chromecast_turn_on
+          - script.loftstue_dvdbd_pause
+          - script.loftstue_dvdbd_play
+          - script.loftstue_dvdbd_turn_off
+          - script.loftstue_dvdbd_turn_on
+          - script.loftstue_tv_all_off
+          - script.loftstue_tv_mode_set_input_chromecast
+          - script.loftstue_tv_mode_set_input_dvdbd
+          - script.loftstue_tv_mode_set_input_off
+          - script.loftstue_tv_mode_set_input_tv
+          - script.loftstue_tv_pause
+          - script.loftstue_tv_play
+          - script.loftstue_tv_set_input_hdmi1
+          - script.loftstue_tv_set_input_hdmi2
+          - script.loftstue_tv_set_input_hdmi3
+          - script.loftstue_tv_stop
+          - script.loftstue_tv_turn_off
+          - script.loftstue_tv_turn_on
+      - type: entities
         title: all automations
         show_header_toggle: true
         entities:
           - automation.alert_when_a_critical_device_goes_offline
-          - automation.aquarium_lights_off
-          - automation.aquarium_lights_on
           - automation.door_open_alert
           - automation.door_unlocked_alert
           - automation.fryseboks_temp_alert
           - automation.home_alerter_kids
+          - automation.julelys_ute_1_lights_off
+          - automation.julelys_ute_1_lights_on
           - automation.kjoleskap_temp_alert
           - automation.light_off_20_minutes_after_motion_detected_kjokken
           - automation.light_off_5_minutes_after_motion_detected_entre
@@ -717,61 +766,12 @@ views:
           - automation.temp_control_misha_hour_enabled
           - automation.update_battery_status_group_members
       - type: entities
-        title: all scripts
-        show_header_toggle: true
-        entities:
-          - script.entre_doer_open_cmd
-          - script.lift_down_cmd
-          - script.lift_to_first_floor
-          - script.lift_to_ground_floor
-          - script.lift_up_cmd
-          - script.loftstue_altibox_button_3
-          - script.loftstue_altibox_button_ok
-          - script.loftstue_altibox_turn_off
-          - script.loftstue_altibox_turn_on
-          - script.loftstue_chromecast_turn_off
-          - script.loftstue_chromecast_turn_on
-          - script.loftstue_dvdbd_pause
-          - script.loftstue_dvdbd_play
-          - script.loftstue_dvdbd_turn_off
-          - script.loftstue_dvdbd_turn_on
-          - script.loftstue_tv_all_off
-          - script.loftstue_tv_mode_set_input_chromecast
-          - script.loftstue_tv_mode_set_input_dvdbd
-          - script.loftstue_tv_mode_set_input_off
-          - script.loftstue_tv_mode_set_input_tv
-          - script.loftstue_tv_pause
-          - script.loftstue_tv_play
-          - script.loftstue_tv_set_input_hdmi1
-          - script.loftstue_tv_set_input_hdmi2
-          - script.loftstue_tv_set_input_hdmi3
-          - script.loftstue_tv_stop
-          - script.loftstue_tv_turn_off
-          - script.loftstue_tv_turn_on
-      - type: entities
-        title: all switches
-        show_header_toggle: true
-        entities:
-          - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
-          - switch.fwp_emmalinn_ovn_switch
-          - switch.fwp_mats_ovn_switch
-          - switch.fwp_am_ovn_switch
-          - switch.fwp_entre_ovn_switch
-          - switch.fwp_kjokken_ovn_switch
-          - switch.fwp_soverom_ovn_switch
-          - switch.fwp_stue_spots_switch
-          - switch.fwp_varmtvannsbereder_switch
-          - switch.chromecast_mode_loftstue
-          - switch.dvd_bd_mode_loftstue
-          - switch.tv_mode_loftstue
-      - type: entities
         title: all lights
         show_header_toggle: true
         entities:
           - light.am_sov_tak
           - light.am_sov_vegg
           - light.alex_tak
-          - light.aquarium_light
           - light.el_sov_tak1
           - light.el_sov_tak2
           - light.el_tak
@@ -785,6 +785,7 @@ views:
           - light.mats_sov_tak1
           - light.mats_sov_tak2
           - light.mats_tak
+          - light.nexa_1
           - light.nexa_2
           - light.nexa_3
           - light.soverom_loft_tak_1
@@ -801,6 +802,22 @@ views:
           - light.stue_tak_dor
           - light.stue_tak_tv
           - light.trapp
+      - type: entities
+        title: all switches
+        show_header_toggle: true
+        entities:
+          - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+          - switch.fwp_emmalinn_ovn_switch
+          - switch.fwp_mats_ovn_switch
+          - switch.fwp_am_ovn_switch
+          - switch.fwp_entre_ovn_switch
+          - switch.fwp_kjokken_ovn_switch
+          - switch.fwp_soverom_ovn_switch
+          - switch.fwp_stue_spots_switch
+          - switch.fwp_varmtvannsbereder_switch
+          - switch.chromecast_mode_loftstue
+          - switch.dvd_bd_mode_loftstue
+          - switch.tv_mode_loftstue
       - type: entities
         title: all devices
         show_header_toggle: true
@@ -871,6 +888,15 @@ views:
           - device_tracker.a057e3bca2a5
           - device_tracker.da1bfd72283f
           - device_tracker.0479705771d0
+          - device_tracker.iphoneannailcuk
+          - device_tracker.switch_stue
+          - device_tracker.f0fe6be82d16
+          - device_tracker.hflpt120
+          - device_tracker.hflpt120_2
+          - device_tracker.galaxytaba2016
+          - device_tracker.4c7c00000000
+          - device_tracker.trondsiniphone
+          - device_tracker.208ed27a283f
       - type: entities
         title: Battery Status
         show_header_toggle: false
@@ -886,6 +912,7 @@ views:
           - sensor.fms_kjokken_battery
           - sensor.fms_mats_battery
           - sensor.fms_soverom_battery
+          - sensor.fms_soverom_nede_battery
           - sensor.kjkken_fryseboks_temperature_battery
           - sensor.kjkken_kjleskap_temperature_battery
           - sensor.kjkken_vinskap_temperature_battery
@@ -908,13 +935,6 @@ views:
           - sensor.strips_mats_battery
           - sensor.strips_soverom_battery
           - sensor.strips_trapp_battery
-          - sensor.stue_bokhylle_humidity_battery
-          - sensor.stue_bokhylle_temperature_battery
-      - type: entities
-        title: all remotes
-        show_header_toggle: true
-        entities:
-          - remote.harmony_hub
       - type: entities
         title: all locks
         show_header_toggle: true
@@ -982,6 +1002,7 @@ views:
           - binary_sensor.fms_emma_linn_sensor
           - binary_sensor.fms_mats_sensor
           - binary_sensor.fms_soverom_sensor
+          - binary_sensor.fms_soverom_nede_sensor
           - binary_sensor.fms_entre_sensor
           - binary_sensor.fms_kjokken_sensor
           - binary_sensor.trapp_motion_via_light
@@ -999,6 +1020,7 @@ views:
         entities:
           - binary_sensor.entre_doer
           - binary_sensor.stue_terasse_doer
+          - binary_sensor.loft_balkong_doer
           - binary_sensor.strips_soverom_sensor
           - binary_sensor.strips_kjokken_sensor
           - binary_sensor.strips_kjokken_s
@@ -1022,6 +1044,7 @@ views:
         title: Info
         show_header_toggle: true
         entities:
+          - sensor.electricity_price_sommerstien_10
           - sensor.electricity_price_sommerstien_10_min_price
           - sensor.electricity_price_sommerstien_10_max_price
           - sensor.electricity_price_sommerstien_10_estimated_annual_consumption
@@ -1062,6 +1085,13 @@ views:
   - title: Lys
     icon: mdi:lightbulb
     cards:
+      - type: entities
+        title: Jule lys
+        show_header_toggle: true
+        entities:
+          - light.nexa_1
+          - light.nexa_2
+          - light.nexa_3
       - type: entities
         title: Stue lys
         show_header_toggle: false
@@ -1165,11 +1195,6 @@ views:
           - scene.kjokken_normal_lys
           - scene.kjokken_mye_lys
           - scene.kjokken_max_lys
-      - type: entities
-        title: Akvarium lys
-        show_header_toggle: false
-        entities:
-          - light.aquarium_light
       - type: entities
         title: Trapp lys
         show_header_toggle: false
@@ -1338,6 +1363,19 @@ views:
           - sensor.lagringsrom_temperature
           - sensor.lagringsrom_humidity
           - binary_sensor.lagringsrom_doer
+      - type: entities
+        title: Soverom nede varme
+        show_header_toggle: false
+        entities:
+          - climate.soverom_nede_e
+          - climate.soverom_nede_w
+          - sensor.soverom_nede_temperature
+          - sensor.soverom_nede_humidity
+      - type: entities
+        title: Gjesterom varme
+        show_header_toggle: false
+        entities:
+          - climate.gjesterom
   - title: Media
     icon: mdi:movie
     cards:
@@ -1362,7 +1400,6 @@ views:
         title: Media
         show_header_toggle: false
         entities:
-          - remote.harmony_hub
           - input_select.radio_source_stue
       - type: media-control
         entity: media_player.chromecast_stue
@@ -1495,6 +1532,7 @@ views:
           - sensor.fms_kjokken_battery
           - sensor.fms_mats_battery
           - sensor.fms_soverom_battery
+          - sensor.fms_soverom_nede_battery
           - sensor.kjkken_fryseboks_temperature_battery
           - sensor.kjkken_kjleskap_temperature_battery
           - sensor.kjkken_vinskap_temperature_battery
@@ -1517,8 +1555,6 @@ views:
           - sensor.strips_mats_battery
           - sensor.strips_soverom_battery
           - sensor.strips_trapp_battery
-          - sensor.stue_bokhylle_humidity_battery
-          - sensor.stue_bokhylle_temperature_battery
       - type: entities
         title: Battery Alert
         show_header_toggle: false

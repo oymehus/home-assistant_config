@@ -4,7 +4,7 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.fms_am_sensor, binary_sensor.fms_emma_linn_sensor, binary_sensor.fms_entre_sensor, binary_sensor.fms_kjokken_sensor, binary_sensor.fms_mats_sensor, binary_sensor.fms_soverom_sensor, binary_sensor.fms_soverom_nede_sensor, binary_sensor.trapp_motion_via_light, binary_sensor.loft_gang_bevegelse,binary_sensor.loft_gang_bevegelse2, binary_sensor.entre_doer, binary_sensor.lagringsrom_doer, binary_sensor.stue_terasse_doer
+      entity_id: binary_sensor.fms_am_sensor, binary_sensor.fms_emma_linn_sensor, binary_sensor.fms_entre_sensor, binary_sensor.fms_kjokken_sensor, binary_sensor.fms_mats_sensor, binary_sensor.fms_soverom_sensor, binary_sensor.fms_soverom_nede_sensor, binary_sensor.trapp_motion_via_light, binary_sensor.loft_gang_bevegelse,binary_sensor.loft_gang_bevegelse2, binary_sensor.entre_doer, binary_sensor.lagringsrom_doer, binary_sensor.stue_terasse_doer, binary_sensor.loft_balkong_doer
       to: 'on'
   action:
     - service: variable.set_variable
@@ -198,26 +198,6 @@
         title: Device Alert
 
 ################################################################## LIGHT CONTROL
-- id: aqua_light_on
-  alias: Aquarium lights on
-  initial_state: 'on'
-  trigger:
-  - at: '10:00:00'
-    platform: time
-  action:
-    service: homeassistant.turn_on
-    entity_id: light.aquarium_light
-
-- id: aqua_light_off
-  alias: Aquarium lights off
-  initial_state: 'on'
-  trigger:
-  - at: '21:00:00'
-    platform: time
-  action:
-    service: homeassistant.turn_off
-    entity_id: light.aquarium_light
-
 - id: misha_tak_light_off_night
   alias: Misha Tak lys av om natten
   initial_state: 'off'
@@ -356,7 +336,7 @@
       to: 'on'
   action:
     - service: homeassistant.turn_on
-      entity_id: switch.fwp_stue_spots_switch
+      entity_id: switch.fwp_stue_spots_switch, light.nexa_3
 
 - id: light_off_tradfri_off_stue
   alias: Lights off when Trådfri turns off stue
@@ -367,7 +347,7 @@
       to: 'off'
   action:
     - service: homeassistant.turn_off
-      entity_id: switch.fwp_stue_spots_switch
+      entity_id: switch.fwp_stue_spots_switch, light.nexa_3
 
 
 ## Switch kjøkkenbord light on/off with sink lights
@@ -392,6 +372,27 @@
   action:
     - service: homeassistant.turn_off
       entity_id: light.kjkken_spis_panel
+
+#turn off julelys during day
+- id: julelys_on
+  alias: Julelys on at night
+  initial_state: 'on'
+  trigger:
+  - at: '16:30:00'
+    platform: time
+  action:
+    service: homeassistant.turn_on
+    entity_id: light.nexa_1
+
+- id: julelys_off
+  alias: Julelys off during daytime
+  initial_state: 'on'
+  trigger:
+  - at: '09:30:00'
+    platform: time
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.nexa_1
 
 
 ################################################################## HEATING CONTROL

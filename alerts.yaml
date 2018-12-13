@@ -123,3 +123,31 @@ trapp_vindu:
   skip_first: True
   notifiers:
     - all
+
+stue_terrasse_doer:
+  name: Terrasse dør er åpen
+  done_message: Terrasse dør er lukket
+  entity_id: binary_sensor.stue_terasse_doer
+  state: 'on'
+  repeat:
+    - 2
+    - 15
+    - 30
+  can_acknowledge: True
+  skip_first: True
+  notifiers:
+    - all
+
+loft_balkong_doer:
+  name: Balkong dør er åpen
+  done_message: Balkong dør er lukket
+  entity_id: binary_sensor.loft_balkong_doer
+  state: 'on'
+  repeat:
+    - 2
+    - 15
+    - 30
+  can_acknowledge: True
+  skip_first: True
+  notifiers:
+    - all

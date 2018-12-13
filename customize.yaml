@@ -421,7 +421,7 @@ light.el_sov_tak1:
   friendly_name: Emma Linn Sov Tak1
 light.el_sov_tak2:
   friendly_name: Emma Linn Sov Tak2
-light.aquarium_light:
+light.nexa_1:
   icon: mdi:lightbulb
 binary_sensor.oystein_home:
   device_class: presence
@@ -667,3 +667,8 @@ sensor.unknown_node_28_battery:
   hidden: true
 binary_sensor.fms_soverom_nede_sensor:
   device_class: motion
+binary_sensor.loft_balkong_doer:
+  device_class: door
+light.nexa_3:
+  friendly_name: Stue Flue
+  icon: mdi:lightbulb

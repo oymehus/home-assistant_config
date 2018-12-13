@@ -33,7 +33,6 @@ ligthing:
     - group.soverom_nede_lys
     - group.entre_lys
     - group.kjokken_lys
-    - group.aqua_lys
     - group.trapp_lys
 
 heating:
@@ -250,6 +249,7 @@ windows:
   entities:
     - binary_sensor.entre_doer
     - binary_sensor.stue_terasse_doer
+    - binary_sensor.loft_balkong_doer
     - binary_sensor.strips_soverom_sensor
     - binary_sensor.strips_kjokken_sensor
     - binary_sensor.strips_kjokken_s
@@ -409,24 +409,19 @@ stue_lys:
   entities:
     - light.stue
     - light.stue_aj_lampe
+    - light.nexa_3
     - light.stue_spisebord
     - light.stue_tak_tv
     - light.stue_tak_dor
     - switch.fwp_stue_spots_switch
     - group.stue_scene
 
-aqua_lys:
-  name: "Akvarium lys"
-  control: hidden
-  entities:
-    - light.aquarium_light
-
 jule_lys:
   name: "Jule lys"
-#  control: hidden
+  control: hidden
   entities:
+    - light.nexa_1
     - light.nexa_2
-    - light.nexa_3
 
 stue_scene:
   name: "Stue Scene"

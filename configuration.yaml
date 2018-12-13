@@ -75,7 +75,7 @@ logger:
 #    homeassistant.components.device_tracker: info
 #    homeassistant.components.http: info
 #    homeassistant.components.mqtt: info
-#    homeassistant.components.rfxtrx: info
+    homeassistant.components.rfxtrx: info
 #    homeassistant.components.script: info
     homeassistant.components.switch.broadlink: info
 

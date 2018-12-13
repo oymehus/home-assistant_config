@@ -13,13 +13,16 @@
   name: 'workday_yesterday'
 
 - platform: rfxtrx
-  automatic_add: False
+  automatic_add: false
   devices:
     0b110078018fc1a20a000070:
       name: 'Lagringsrom doer'
       device_class: opening
     0b110000019138020a000070:
       name: 'Entre doer'
+      device_class: opening
+    0b11003e02b71ffe10000060:
+      name: 'Loft balkong doer'
       device_class: opening
     0b110009017846d20a010f70:
       name: Stue terasse doer
